@@ -1,4 +1,4 @@
-import { Schema, models, model, ObjectId } from "mongoose";
+import mongoose, { Schema, models, model, ObjectId } from "mongoose";
 
 export interface IUserDetail {
   department: string;
@@ -11,6 +11,11 @@ export interface IUserDetail {
 
 const userDetailSchema = new Schema<IUserDetail>(
   {
+    userId: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
     department: {
       type: String,
       enum: ["CO", "IT", "MH", "CL", "AIDS", "CH", "EL"],
@@ -34,5 +39,3 @@ const UserDetail =
   models.UserDetail || model<IUserDetail>("UserDetail", userDetailSchema);
 
 export default UserDetail;
-
-// TODO

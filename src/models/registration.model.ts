@@ -35,3 +35,5 @@ const registrationSchema = new Schema<IRegistration>(
 const Registration =
   models.Registration ||
   model<IRegistration>("Registration", registrationSchema);
+
+export default Registration;
