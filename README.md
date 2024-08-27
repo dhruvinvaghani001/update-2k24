@@ -34,3 +34,48 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+//  pipeline for csv 
+[
+  
+  {
+    $match: {
+      eventId:ObjectId('66cb346fe06ce5bf0dbf0c59'),
+    }
+  }
+  ,
+  {
+    $lookup: {
+      from: "users",
+      localField: "userId",
+      foreignField: "_id",
+      as: "user",
+      pipeline:[
+        {
+          $project: {
+            _id : 0,
+            name: 1,
+            email: 1
+          }
+        }
+      ]
+    }
+  },
+  {
+    $addFields: {
+    		user: { $first : "$user" }
+    }
+  },
+  {
+    $project: {
+      _id:0,
+      userId:0,
+      eventId:0,
+      createdAt:0,
+      updatedAt:0,
+      __v:0,
+      groupMembers:0
+    }
+  }
+]
