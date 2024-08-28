@@ -15,16 +15,33 @@ export async function POST(request: NextRequest) {
         { status: 401 }
       );
     }
-    connectDB();
+    await connectDB();
 
     const existingDetails = await UserDetail.findOne({
       userId: new mongoose.Types.ObjectId(session?.user?.id),
     });
 
     if (existingDetails) {
+      const updatedDetail = await UserDetail.updateOne(
+        {
+          userId: new mongoose.Types.ObjectId(session?.user?.id),
+        },
+        {
+          $set: { ...reqBody },
+        },
+        {
+          new: true,
+        }
+      );
+      if (!updatedDetail) {
+        return NextResponse.json(
+          { message: "Something Went Wrong" },
+          { status: 500 }
+        );
+      }
       return NextResponse.json(
-        { message: "Alredy submitted Details" },
-        { status: 500 }
+        { message: "Details updated!" },
+        { status: 200 }
       );
     }
 
