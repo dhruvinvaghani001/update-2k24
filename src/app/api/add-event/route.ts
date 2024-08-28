@@ -7,8 +7,8 @@ export async function GET(request: Request) {
     await connectDB();
 
     const data = [
-      { name: "avishkar", eventType: "GROUP" },
-      { name: "ddemo", eventType: "GROUP" },
+      { name: "demo3", eventType: "GROUP", maxMember: 4, minMemebr: 2 },
+      { name: "demo4", eventType: "GROUP", minMemebr: 2, maxMember: 3 },
     ];
 
     const result = await Event.insertMany(data);

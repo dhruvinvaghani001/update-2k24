@@ -1,7 +1,7 @@
 import { getServerSession, User } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-import { authOptions } from "../../auth/[...nextauth]/authOptions";
 import SoloRegistration from "@/models/soloRegistration.model";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 
 export async function POST(request: NextRequest) {
   try {
