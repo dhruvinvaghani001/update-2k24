@@ -4,7 +4,7 @@ export interface IEvent {
   name: string;
   eventType: string;
   maxMember: Number;
-  minMemebr: Number;
+  minMember: Number;
 }
 
 // TODO: need to refactor as per requirements;
@@ -25,7 +25,7 @@ const eventSchema = new Schema<IEvent>(
       type: Number,
       required: true,
     },
-    minMemebr: {
+    minMember: {
       type: Number,
       required: true,
     },

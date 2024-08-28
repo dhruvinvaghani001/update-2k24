@@ -31,8 +31,8 @@ const groupRegistration = new Schema<IGroupRegistration>(
   }
 );
 
-const SoloRegistration =
-  models.SoloRegistration ||
-  model<IGroupRegistration>("SoloRegistration", groupRegistration);
+const GroupRegistration =
+  models.GroupRegistration ||
+  model<IGroupRegistration>("GroupRegistration", groupRegistration);
 
-export default SoloRegistration;
+export default GroupRegistration;
