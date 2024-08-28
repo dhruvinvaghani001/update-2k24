@@ -14,11 +14,14 @@ import {
 } from "@/components/ui/form";
 import axios from "axios";
 import { Combobox } from "@/components/ui/combobox";
+import { Input } from "@/components/ui/input";
 
 const formSchema = z.object({
   department: z.string(),
   year: z.string().max(1),
   semester: z.string().max(1),
+  phoneNumber: z.string().length(10),
+  enrollmentNo: z.string(),
 });
 
 type Props = {};
@@ -93,6 +96,42 @@ const Page = (props: Props) => {
               </FormItem>
             )}
           />
+
+          <FormField
+            control={form.control}
+            name="phoneNumber"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Mobile Number</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="enter your phone number."
+                    inputMode="numeric"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="enrollmentNo"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Enrollment No.</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="enter your enrollment number."
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           <Button type="submit">Submit</Button>
         </form>
       </Form>

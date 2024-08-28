@@ -20,20 +20,14 @@ const registrationSchema = new Schema<IRegistration>(
       ref: "Event",
       required: true,
     },
-    groupMembers: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
   },
   {
     timestamps: true,
   }
 );
 
-const Registration =
-  models.Registration ||
-  model<IRegistration>("Registration", registrationSchema);
+const SoloRegistration =
+  models.SoloRegistration ||
+  model<IRegistration>("SoloRegistration", registrationSchema);
 
-export default Registration;
+export default SoloRegistration;

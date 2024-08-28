@@ -5,6 +5,8 @@ export interface IUserDetail {
   year: string;
   semester: string;
   userId: ObjectId;
+  phoneNumber: string;
+  enrollmentNo: string;
 }
 
 //TODO: need to add details as required;
@@ -23,11 +25,21 @@ const userDetailSchema = new Schema<IUserDetail>(
     },
     year: {
       type: String,
+      enum: ["1", "2", "3", "4"],
       required: true,
     },
     semester: {
       type: String,
-      max: 8,
+      enum: ["1", "2", "3", "4", "5", "6", "7", "8"],
+      required: true,
+    },
+    phoneNumber: {
+      type: String,
+      required: true,
+    },
+    enrollmentNo: {
+      type: String,
+      required: true,
     },
   },
   {

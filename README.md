@@ -38,9 +38,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 //  pipeline for csv 
 [
-  
-  {
-    $match: {
+
+{
+$match: {
       eventId:ObjectId('66cb346fe06ce5bf0dbf0c59'),
     }
   }
@@ -63,19 +63,40 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     }
   },
   {
-    $addFields: {
-    		user: { $first : "$user" }
+    $lookup: {
+      from: "userdetails",
+      localField: "userId",
+      foreignField: "userId",
+      as: "result2",
+      pipeline:[
+        {
+          $project: {
+            _id : 0,
+           createdAt:0,
+            updatedAt:0,
+						userId:0,
+            __v:0
+          }
+        }
+      ]
     }
   },
   {
-    $project: {
-      _id:0,
-      userId:0,
-      eventId:0,
-      createdAt:0,
-      updatedAt:0,
-      __v:0,
-      groupMembers:0
-    }
-  }
+    $addFields: {
+    		user: { $first : "$user" },
+detail:{$first:"$result2"}
+}
+},
+{
+$project: {
+\_id:0,
+userId:0,
+eventId:0,
+createdAt:0,
+updatedAt:0,
+\_\_v:0,
+result2:0
+}
+}
 ]
+

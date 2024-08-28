@@ -3,6 +3,8 @@ import { Schema, models, model } from "mongoose";
 export interface IEvent {
   name: string;
   eventType: string;
+  maxMember: Number;
+  minMemebr: Number;
 }
 
 // TODO: need to refactor as per requirements;
@@ -17,6 +19,14 @@ const eventSchema = new Schema<IEvent>(
     eventType: {
       type: String,
       enum: ["SOLO", "GROUP"],
+      required: true,
+    },
+    maxMember: {
+      type: Number,
+      required: true,
+    },
+    minMemebr: {
+      type: Number,
       required: true,
     },
   },
