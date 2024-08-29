@@ -1,0 +1,14 @@
+import React from "react";
+import BlurFade from "./magicui/blur-fade";
+
+const Title = ({ title }: { title: string }) => {
+  return (
+    <BlurFade delay={0.25} inView className="my-12">
+      <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
+        {title}
+      </h2>
+    </BlurFade>
+  );
+};
+
+export default Title;

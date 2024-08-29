@@ -1,6 +1,5 @@
 import GridPattern from "@/components/magicui/animated-grid-pattern";
 import BlurFade from "@/components/magicui/blur-fade";
-import BlurIn from "@/components/magicui/blur-in";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { Navbar } from "@/components/Navbar";
 import { cn } from "@/lib/utils";
@@ -9,7 +8,7 @@ export default async function Page() {
   return (
     <main className="min-h-screen bg-background max-w-7xl mx-auto">
       <Navbar />
-      <section className="relative flex h-screen w-full overflow-hidden rounded-lg bg-background p-20">
+      <section className="relative flex h-[75vh] w-full overflow-hidden rounded-lg bg-background p-20">
         <GridPattern
           numSquares={30}
           maxOpacity={0.1}
@@ -17,7 +16,7 @@ export default async function Page() {
           repeatDelay={1}
           className={cn(
             "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-            "inset-x-0 inset-y-[-30%] h-[150%] skew-y-12",
+            "inset-x-0 inset-y-[-30%] h-[100%] skew-y-12",
             "opacity-60"
           )}
         />
