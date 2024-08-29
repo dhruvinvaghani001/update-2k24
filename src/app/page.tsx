@@ -2,12 +2,15 @@ import GridPattern from "@/components/magicui/animated-grid-pattern";
 import BlurFade from "@/components/magicui/blur-fade";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { Navbar } from "@/components/Navbar";
+import TopNavBar from "@/components/TopNavBar";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import UpdatesLogo from "@/assets/updates-logo.png";
 
 export default async function Page() {
   return (
-    <main className="min-h-screen bg-background max-w-7xl mx-auto">
-      <Navbar />
+    <main className="min-h-screen bg-background max-w-7xl mx-auto relative">
+      {/* <Navbar /> */}
       <section className="relative flex h-[75vh] w-full overflow-hidden rounded-lg bg-background p-20">
         <GridPattern
           numSquares={30}
@@ -27,6 +30,12 @@ export default async function Page() {
               <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600">
                 Updates 2k24
               </h2>
+
+              {/* <Image
+                src={UpdatesLogo}
+                alt="Updates Logo"
+                className="aspect-square "
+              /> */}
             </BlurFade>
             <BlurFade delay={0.25 * 2} inView>
               <p className="text-center text-pretty tracking-tighter sm:text-xl xl:text-2xl/none">
