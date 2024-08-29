@@ -100,3 +100,77 @@ result2:0
 }
 ]
 
+//pieline for groupregistration::
+[
+{
+$match: {
+      eventId: ObjectId(
+        "66cef94fc4200ae4be85e3c1"
+      ),
+    },
+  },
+  {
+    $lookup: {
+      from: "users",
+      localField: "userId",
+      foreignField: "_id",
+      as: "user",
+      pipeline: [
+        {
+          $project: {
+            _id: 0,
+            name: 1,
+            email: 1,
+          },
+        },
+      ],
+    },
+  },
+  {
+    $lookup: {
+      from: "userdetails",
+      localField: "userId",
+      foreignField: "userId",
+      as: "detail",
+      pipeline: [
+        {
+          $project: {
+            _id: 0,
+            createdAt: 0,
+            updatedAt: 0,
+            userId: 0,
+            __v: 0,
+          },
+        },
+      ],
+    },
+  },
+  {
+    $addFields: {
+      user: {
+        $first: "$user",
+},
+detail: {
+$first: "$detail",
+},
+},
+},
+{
+$sort: {
+groupId: 1,
+},
+},
+{
+$project: {
+\_id: 0,
+userId: 0,
+eventId: 0,
+groupId: 0,
+createdAt: 0,
+updatedAt: 0,
+\_\_v: 0,
+},
+},
+]
+
+

@@ -1,4 +1,7 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
+import Group from "@/models/group.model";
+import GroupRegistration from "@/models/groupRegistration.model";
+import mongoose from "mongoose";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -18,9 +21,28 @@ export async function POST(
     const membersId = reqBody.emails.map((item: any) => item.value);
     membersId.push(session?.user.id.toString());
 
-    console.log(membersId);
+    const group = await Group.create({
+      eventId: params.id,
+      ownerId: session.user.id,
+    });
 
-    return NextResponse.json({ message: "done" }, { status: 200 });
+    const data = membersId.map((member: string) => {
+      return {
+        groupId: new mongoose.Types.ObjectId(group._id),
+        eventId: new mongoose.Types.ObjectId(params.id),
+        userId: new mongoose.Types.ObjectId(member),
+      };
+    });
+
+    const groupRegistered = await GroupRegistration.insertMany(data);
+
+    if (!groupRegistered) {
+      return NextResponse.json(
+        { message: "Internal Server Error" },
+        { status: 500 }
+      );
+    }
+    return NextResponse.json({ message: "Group Registered!" }, { status: 200 });
   } catch (error) {
     console.log(error);
     return NextResponse.json(
