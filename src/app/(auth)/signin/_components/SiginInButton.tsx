@@ -6,6 +6,8 @@ import Image from "next/image";
 import React from "react";
 import googleLogo from "@/assets/google-icon.svg";
 import { cn } from "@/lib/utils";
+import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 const SiginInButton = ({
   className,
@@ -24,8 +26,11 @@ const SiginInButton = ({
     | null
     | undefined;
 }) => {
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") || "/";
+
   const handleSignIn = async () => {
-    const user = await signIn("google", { callbackUrl: "/" });
+    const user = await signIn("google", { callbackUrl: callbackUrl });
   };
   return (
     <Button
