@@ -8,7 +8,7 @@ import googleLogo from "@/assets/google-icon.svg";
 
 const SiginInButton = () => {
   const handleSignIn = async () => {
-    const user = await signIn("google");
+    const user = await signIn("google", { callbackUrl: "/" });
   };
   return (
     <Button
