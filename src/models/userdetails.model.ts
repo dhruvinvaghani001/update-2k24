@@ -7,6 +7,7 @@ export interface IUserDetail {
   userId: ObjectId;
   phoneNumber: string;
   enrollmentNo: string;
+  registeredEvents: Array<ObjectId>;
 }
 
 //TODO: need to add details as required;
@@ -41,6 +42,12 @@ const userDetailSchema = new Schema<IUserDetail>(
       type: String,
       required: true,
     },
+    registeredEvents: [
+      {
+        type: mongoose.Types.ObjectId,
+        default: [],
+      },
+    ],
   },
   {
     timestamps: true,
