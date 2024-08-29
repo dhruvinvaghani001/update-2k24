@@ -14,7 +14,7 @@ function Signin() {
             </p>
           </div>
           {/* <div className="grid gap-4"></div> */}
-          <SiginInButton />
+          <SiginInButton className="w-full" text="Sign in with google" />
           <div className="mt-4 text-center text-sm">
             Navigate back to{" "}
             <Link href="/" className="underline">
