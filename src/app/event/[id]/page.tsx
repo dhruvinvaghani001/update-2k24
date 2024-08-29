@@ -18,10 +18,6 @@ const page = async ({ params }: { params: { id: string } }) => {
 
   const session = await getServerSession(authOptions);
 
-  if (!session?.user.id && !session?.user.email) {
-    return redirect("/");
-  }
-
   const eventData = await Event.findOne({
     _id: new mongoose.Types.ObjectId(params.id!),
   });
@@ -31,7 +27,7 @@ const page = async ({ params }: { params: { id: string } }) => {
   }
 
   const data = await GroupRegistration.find({
-    userId: session.user.id,
+    userId: session?.user.id,
     eventId: params.id,
   });
 
