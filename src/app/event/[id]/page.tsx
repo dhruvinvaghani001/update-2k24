@@ -10,6 +10,7 @@ import GroupRegistration from "@/models/groupRegistration.model";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import SoloRegistration from "@/models/soloRegistration.model";
+import GroupRegisterButton from "./_components/GroupRegisterButton";
 
 type Props = {};
 
@@ -85,11 +86,15 @@ const page = async ({ params }: { params: { id: string } }) => {
     });
     isRegister = soloRegistration ? true : false;
   }
+  const isAuthorised = session?.user.email ? true : false;
 
   return (
     <div>
       {eventData.eventType == "GROUP" && dataOfMembers.length == 0 && (
-        <Link href={`/event/${params.id}/registration`}>Register group</Link>
+        <GroupRegisterButton
+          eventId={params.id}
+          isAuthorised={isAuthorised}
+        ></GroupRegisterButton>
       )}
       {eventData.eventType == "GROUP" && dataOfMembers.length > 0 && (
         <>
