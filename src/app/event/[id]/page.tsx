@@ -9,6 +9,7 @@ import { redirect } from "next/navigation";
 import GroupRegistration from "@/models/groupRegistration.model";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
+import SoloRegistration from "@/models/soloRegistration.model";
 
 type Props = {};
 
@@ -33,9 +34,6 @@ const page = async ({ params }: { params: { id: string } }) => {
     userId: session.user.id,
     eventId: params.id,
   });
-
-  console.log("data");
-  console.log(data);
 
   const groupId = data[0]?.groupId;
   const pipeline = [
@@ -83,6 +81,15 @@ const page = async ({ params }: { params: { id: string } }) => {
 
   const dataOfMembers = await GroupRegistration.aggregate(pipeline);
 
+  let isRegister = false;
+  if (eventData?.eventType == "SOLO") {
+    const soloRegistration = await SoloRegistration.findOne({
+      eventId: params.id,
+      userId: session?.user?.id,
+    });
+    isRegister = soloRegistration ? true : false;
+  }
+
   return (
     <div>
       {eventData.eventType == "GROUP" && dataOfMembers.length == 0 && (
@@ -100,9 +107,10 @@ const page = async ({ params }: { params: { id: string } }) => {
           })}
         </>
       )}
-      {eventData.eventType == "SOLO" && (
+      {eventData.eventType == "SOLO" && !isRegister && (
         <RegisterSoloButton eventId={eventData.id} />
       )}
+      {eventData.eventType == "SOLO" && isRegister && <> alredy resgietered </>}
     </div>
   );
 };
