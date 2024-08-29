@@ -1,10 +1,16 @@
 import React from "react";
 import BlurFade from "./magicui/blur-fade";
+import { cn } from "@/lib/utils";
 
-const Title = ({ title }: { title: string }) => {
+const Title = ({ title, className }: { title: string; className?: string }) => {
   return (
     <BlurFade delay={0.25} inView className="my-12">
-      <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
+      <h2
+        className={cn(
+          "text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center",
+          className
+        )}
+      >
         {title}
       </h2>
     </BlurFade>
