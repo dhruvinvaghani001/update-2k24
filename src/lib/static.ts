@@ -242,3 +242,30 @@ export const event = [
     ],
   },
 ];
+
+export const sponsorImages = [
+  {
+    name: "Jack",
+    img: "/./assets/updates-logo.png",
+  },
+  {
+    name: "Jill",
+    img: "/./assets/updates-logo.png",
+  },
+  {
+    name: "John",
+    img: "/src/assets/updates-logo.png",
+  },
+  {
+    name: "Jane",
+    img: "/src/assets/updates-logo.png",
+  },
+  {
+    name: "Jenny",
+    img: "/src/assets/updates-logo.png",
+  },
+  {
+    name: "James",
+    img: "/src/assets/updates-logo.png",
+  },
+];
