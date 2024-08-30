@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -17,6 +17,9 @@ import { Combobox } from "@/components/ui/combobox";
 import { Input } from "@/components/ui/input";
 import Title from "@/components/Title";
 import BlurFade from "@/components/magicui/blur-fade";
+import { Loader2 } from "lucide-react";
+import { toast } from "@/components/ui/use-toast";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   department: z.string(),
@@ -29,6 +32,9 @@ const formSchema = z.object({
 type Props = {};
 
 const Page = (props: Props) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
@@ -36,10 +42,22 @@ const Page = (props: Props) => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     try {
+      setIsLoading(true);
       const response = await axios.post("/api/user-detail", values);
       console.log(response);
+      setIsLoading(false);
+      toast({
+        title: response.data.message,
+        description: "You can start participation now",
+        duration: 1500,
+      });
+      return router.push("/events");
     } catch (error) {
       console.log(error);
+      toast({
+        title: "something went wrong!",
+        variant: "destructive",
+      });
     }
   }
 
@@ -146,7 +164,10 @@ const Page = (props: Props) => {
               )}
             />
 
-            <Button type="submit">Submit</Button>
+            <Button type="submit" className="flex gap-1 items-center">
+              {isLoading && <Loader2 className="size-5 animate-spin" />}
+              Submit
+            </Button>
           </form>
         </Form>
       </BlurFade>
