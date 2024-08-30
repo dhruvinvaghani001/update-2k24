@@ -27,7 +27,7 @@ const SiginInButton = ({
     | undefined;
 }) => {
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/";
+  const callbackUrl = searchParams.get("callbackUrl") || "/user-details";
 
   const handleSignIn = async () => {
     const user = await signIn("google", { callbackUrl: callbackUrl });

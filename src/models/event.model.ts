@@ -23,11 +23,9 @@ const eventSchema = new Schema<IEvent>(
     },
     maxMember: {
       type: Number,
-      required: true,
     },
     minMember: {
       type: Number,
-      required: true,
     },
   },
   {

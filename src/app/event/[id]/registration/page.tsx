@@ -23,7 +23,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   });
 
   if (alredyUserRegistered) {
-    return redirect("/");
+    return redirect(`/event/${params.id}`);
   }
 
   const eventData = await Event.findOne({ _id: params.id });
@@ -52,7 +52,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
     <div>
       <GroupRegistrationForm
         emailOptions={emailOptions}
-        mini={eventData?.minMemebr}
+        mini={eventData?.minMember}
         maxi={eventData?.maxMember}
         eventId={eventData._id.toString()}
       />
