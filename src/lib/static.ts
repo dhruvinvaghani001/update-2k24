@@ -1,6 +1,6 @@
-export const event = [
+export const event: EventType[] = [
   {
-    id: "1",
+    id: "tech-fest",
     name: "Tech Fest",
     description:
       "An annual event showcasing the latest in technology and innovation.",
@@ -19,7 +19,7 @@ export const event = [
     ],
   },
   {
-    id: "2",
+    id: "hackathon",
     name: "Hackathon",
     description: "A 24-hour coding competition to solve real-world problems.",
     rules: [
@@ -37,7 +37,7 @@ export const event = [
     ],
   },
   {
-    id: "3",
+    id: "cultural-night",
     name: "Cultural Night",
     description:
       "A celebration of diverse cultures through performances and exhibitions.",
@@ -56,7 +56,7 @@ export const event = [
     ],
   },
   {
-    id: "4",
+    id: "debate-competition",
     name: "Debate Competition",
     description:
       "A competitive event where students engage in structured arguments on given topics.",
@@ -75,7 +75,7 @@ export const event = [
     ],
   },
   {
-    id: "5",
+    id: "science-exhibition",
     name: "Science Exhibition",
     description: "An exhibition of innovative science projects by students.",
     rules: [
@@ -93,7 +93,7 @@ export const event = [
     ],
   },
   {
-    id: "6",
+    id: "art-workshop",
     name: "Art Workshop",
     description:
       "A hands-on workshop for students to explore various art techniques.",
@@ -112,7 +112,7 @@ export const event = [
     ],
   },
   {
-    id: "7",
+    id: "music-concert",
     name: "Music Concert",
     description:
       "A concert featuring performances by student bands and solo artists.",
@@ -131,7 +131,7 @@ export const event = [
     ],
   },
   {
-    id: "8",
+    id: "photography-contest",
     name: "Photography Contest",
     description:
       "A contest to showcase the best photography talent among students.",
@@ -150,7 +150,7 @@ export const event = [
     ],
   },
   {
-    id: "9",
+    id: "drama-performance",
     name: "Drama Performance",
     description: "A theatrical performance by the drama club.",
     rules: [
@@ -168,7 +168,7 @@ export const event = [
     ],
   },
   {
-    id: "10",
+    id: "math-quiz",
     name: "Math Quiz",
     description: "A competitive quiz focused on mathematical problem-solving.",
     rules: [
@@ -186,7 +186,7 @@ export const event = [
     ],
   },
   {
-    id: "11",
+    id: "sports-meet",
     name: "Sports Meet",
     description:
       "An inter-college sports meet with competitions in various sports.",
@@ -205,7 +205,7 @@ export const event = [
     ],
   },
   {
-    id: "12",
+    id: "robotics-workshop",
     name: "Robotics Workshop",
     description: "A workshop on building and programming robots.",
     rules: [
@@ -223,7 +223,7 @@ export const event = [
     ],
   },
   {
-    id: "13",
+    id: "literary-fest",
     name: "Literary Fest",
     description:
       "A festival celebrating literature with events like poetry readings, storytelling, and book discussions.",

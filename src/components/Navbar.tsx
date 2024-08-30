@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import {
   CalendarClockIcon,
+  CameraIcon,
   GalleryVerticalEndIcon,
   HomeIcon,
   LogOutIcon,
@@ -28,7 +29,7 @@ const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/events", icon: CalendarClockIcon, label: "Events" },
-    { href: "/gallery", icon: GalleryVerticalEndIcon, label: "Gallery" },
+    { href: "/gallery", icon: CameraIcon, label: "Gallery" },
   ],
 };
 

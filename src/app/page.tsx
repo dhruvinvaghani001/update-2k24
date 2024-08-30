@@ -11,7 +11,7 @@ import Card from "@/components/EventCard";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 
 const featuredEvents = event.slice(0, 3);
-console.log(featuredEvents);
+// console.log(featuredEvents);
 
 export default async function Page() {
   return (
