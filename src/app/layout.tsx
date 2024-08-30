@@ -5,6 +5,7 @@ import AuthProvider from "../components/AuthProvider";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]/authOptions";
 import { Navbar } from "@/components/Navbar";
+import { UserProvider } from "@/context/UserContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,13 +20,19 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const session = await getServerSession(authOptions);
+  // console.log("this if from server");
+  // console.log(session);
 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider session={session}>{children}</AuthProvider>
+        <AuthProvider session={session}>
+          <UserProvider>
+            {children}
+            <Navbar />
+          </UserProvider>
+        </AuthProvider>
         {/* <Button className="fixed right-12 top-12">Login/Register</Button> */}
-        <Navbar />
       </body>
     </html>
   );
