@@ -49,7 +49,7 @@ const Page = (props: Props) => {
         title="Fill this details so you would not have to in Future..."
         className="mx-12"
       />
-      <BlurFade delay={0.25 * 2} inView className="my-8 mx-8">
+      <BlurFade delay={0.1 * 2} inView className="my-8 mx-8">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}

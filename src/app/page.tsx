@@ -39,7 +39,7 @@ export default async function Page() {
 
         <div className="flex items-center justify-center h-fit mx-auto">
           <div className="my-48">
-            <BlurFade delay={0.25} inView>
+            <BlurFade delay={0.1} inView>
               {/* <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600">
                 Updates 2k24
               </h2> */}
@@ -59,7 +59,7 @@ export default async function Page() {
                 className="aspect-square "
               /> */}
             </BlurFade>
-            <BlurFade delay={0.25 * 2} inView>
+            <BlurFade delay={0.1 * 2} inView>
               <p className="text-center text-pretty tracking-tighter sm:text-xl xl:text-2xl/none">
                 From floppy to the cloud
               </p>
@@ -69,7 +69,7 @@ export default async function Page() {
       </section>
 
       <section className="my-24 mx-4">
-        <BlurFade delay={0.25 * 2} inView className="my-12">
+        <BlurFade delay={0.1 * 2} inView className="my-12">
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
             Title Sponsor
           </h2>
@@ -107,13 +107,13 @@ export default async function Page() {
       </section>
 
       <section className="my-24 mx-4">
-        <BlurFade delay={0.25} inView className="my-12">
+        <BlurFade delay={0.1} inView className="my-12">
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
             Featured Events
           </h2>
         </BlurFade>
 
-        <BlurFade delay={0.25 * 2} inView className="my-12">
+        <BlurFade delay={0.1 * 2} inView className="my-12">
           {/* card */}
           <div className="grid grid-cols-1  xl:grid-cols-3 gap-8 mx-auto w-fit">
             {featuredEvents.map((data) => {
@@ -128,7 +128,7 @@ export default async function Page() {
             })}
           </div>
         </BlurFade>
-        <BlurFade delay={0.25 * 3} inView className="my-8 text-center">
+        <BlurFade delay={0.1 * 3} inView className="my-8 text-center">
           <a
             href="/events"
             className="text-lg font-medium text-indigo-600 hover:text-indigo-800 transition-colors duration-200"
@@ -139,7 +139,7 @@ export default async function Page() {
       </section>
 
       <section className="my-24 mx-4">
-        <BlurFade delay={0.25 * 2} inView className="my-12">
+        <BlurFade delay={0.1 * 2} inView className="my-12">
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
             Schedule
           </h2>

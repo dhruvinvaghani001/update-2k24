@@ -11,7 +11,7 @@ const page = () => {
       <div className="grid grid-cols-1  xl:grid-cols-3 gap-8 mx-auto w-fit">
         {event.map((data) => {
           return (
-            <Link href={`/event/${data.id}`}>
+            <Link href={`/event/${data.id}`} key={data.id}>
               <Card
                 title={data.name}
                 description={data.description}
