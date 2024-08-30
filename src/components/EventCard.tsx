@@ -10,7 +10,7 @@ const Card = ({
   description: string;
 }) => {
   return (
-    <BlurFade delay={0.1 * 2} inView className="">
+    <BlurFade delay={0.1} inView className="">
       {/* card */}
       <div className="max-w-xs w-full">
         <div

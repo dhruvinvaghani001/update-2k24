@@ -13,6 +13,7 @@ import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import Marquee from "@/components/magicui/marquee";
 import ImageCard from "@/components/ImageCard";
 import Title from "@/components/Title";
+import gradient from "@/assets/top-gradient.svg";
 
 const featuredEvents = event.slice(0, 3);
 // console.log(featuredEvents);
@@ -49,7 +50,7 @@ export default async function Page() {
                     `border-transparent inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent text-4xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none`
                   )}
                 >
-                  Update 2k24
+                  Updates 2k24
                 </span>
               </AnimatedGradientText>
 
@@ -68,7 +69,12 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="my-24 mx-4">
+      <section className="my-24 relative">
+        {/* <Image
+          src={gradient}
+          alt="background gradient"
+          className="absolute -top-10 left-0 right-0"
+        /> */}
         <BlurFade delay={0.1 * 2} inView className="my-12">
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
             Title Sponsor

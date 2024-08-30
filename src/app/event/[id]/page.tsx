@@ -3,7 +3,7 @@ import connectDB from "@/db";
 import Event from "@/models/event.model";
 import mongoose, { ObjectId } from "mongoose";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import RegisterSoloButton from "./_components/RegisterSoloButton";
 import { redirect } from "next/navigation";
 import GroupRegistration from "@/models/groupRegistration.model";
@@ -14,6 +14,8 @@ import GroupRegisterButton from "./_components/GroupRegisterButton";
 import Title from "@/components/Title";
 import { event } from "@/lib/static";
 import Image from "next/image";
+import { toast } from "@/components/ui/use-toast";
+import BlurFade from "@/components/magicui/blur-fade";
 
 type Props = {};
 
@@ -90,6 +92,7 @@ const page = async ({ params }: { params: { id: string } }) => {
   //   isRegister = soloRegistration ? true : false;
   // }
   // const isAuthorised = session?.user.email ? true : false;
+
   const eventId = params.id;
   // console.log(eventId);
   const currEvent = event.filter((event) => {
@@ -98,32 +101,61 @@ const page = async ({ params }: { params: { id: string } }) => {
 
   // console.log(currEvent);
   return (
-    <div>
-      <Title title={currEvent.name} />
-      <p>{currEvent.description}</p>
-      <ul>
-        {currEvent.rules.map((rule, index) => {
-          return <li key={index}>{rule}</li>;
-        })}
-      </ul>
-      <div>
-        <ul className="list-none">
-          {currEvent.coordinators.map((person) => {
-            return (
-              <li key={person.image}>
-                {" "}
-                <p>{person.name}</p>
-                {/* <Image
-                src={person.image}
-                alt={`/photos/${person.name}`}
-                width={60}
-                height={60}
-                /> */}
-              </li>
-            );
+    <div className="mx-8">
+      <Title title={currEvent.name} className="mb-0 font-black" />
+      <BlurFade delay={0.1} inView>
+        <p className="italic text-center text-muted-foreground mt-3 mb-8">
+          &quot;{currEvent.description}&quot;
+        </p>
+        <h4 className="text-xl my-4 font-bold text-pink-500">Rules: </h4>
+        <ul className="list-decimal list-inside">
+          {currEvent.rules.map((rule, index) => {
+            return <li key={index}>{rule}</li>;
           })}
         </ul>
-      </div>
+        <div className="my-8">
+          <h4 className="text-xl my-4 font-bold text-pink-500">
+            Event Coordinators
+          </h4>
+          <ul className="list-none space-y-2">
+            {currEvent.coordinators.map((person) => {
+              return (
+                <li key={person.image} className="flex items-center gap-3">
+                  <Image
+                    alt={person.name}
+                    src={`/photos/${person.image}`}
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                  />
+                  <p>{person.name}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        <div className="my-8">
+          <h4 className="text-xl my-4 font-bold text-pink-500">volunteers</h4>
+          <ul className="list-none space-y-2">
+            {currEvent.volunteer.map((person) => {
+              return (
+                <li key={person.name} className="flex items-center gap-3">
+                  <Image
+                    alt={person.name}
+                    src={`/photos/${person.image}`}
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                  />
+                  <p>{person.name}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <RegisterSoloButton eventId={currEvent.id} />
+      </BlurFade>
 
       {/* {eventData.eventType == "GROUP" && dataOfMembers.length == 0 && (
         <GroupRegisterButton

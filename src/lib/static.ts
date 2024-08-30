@@ -10,12 +10,12 @@ export const event: EventType[] = [
       "Teams must have 4-6 members.",
     ],
     coordinators: [
-      { name: "John Doe", image: "john_doe.jpg" },
-      { name: "Jane Smith", image: "jane_smith.jpg" },
+      { name: "John Doe", image: "avatar.png" },
+      { name: "Jane Smith", image: "avatar.png" },
     ],
     volunteer: [
-      { name: "Alice Johnson", image: "alice_johnson.jpg" },
-      { name: "Bob Brown", image: "bob_brown.jpg" },
+      { name: "Alice Johnson", image: "avatar.png" },
+      { name: "Bob Brown", image: "avatar.png" },
     ],
   },
   {
