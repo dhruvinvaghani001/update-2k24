@@ -1,11 +1,11 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import {
   CalendarClockIcon,
-  CalendarIcon,
   GalleryVerticalEndIcon,
   HomeIcon,
-  MailIcon,
+  LogOutIcon,
   UserIcon,
 } from "lucide-react";
 
@@ -19,6 +19,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Dock, DockIcon } from "@/components/magicui/dock";
+import { useUser } from "@/context/UserContext";
+import { signOut } from "next-auth/react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -31,12 +33,14 @@ const DATA = {
 };
 
 export function Navbar() {
+  const { user, loading } = useUser();
+
   return (
-    <header className="fixed bottom-0 z-30 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <header className="fixed bottom-0 z-30 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-125">
       <TooltipProvider>
         <Dock
           direction="middle"
-          className="bg-background/80 border-2 border-primary"
+          className="bg-background/60 border-2 border-primary"
         >
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
@@ -61,24 +65,45 @@ export function Navbar() {
 
           <Separator orientation="vertical" className="h-full" />
 
-          <DockIcon key={"login"}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link
-                  href={"/signin"}
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12 rounded-full"
-                  )}
-                >
-                  <UserIcon className="size-4" />
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Login</p>
-              </TooltipContent>
-            </Tooltip>
-          </DockIcon>
+          {!loading && user ? (
+            <DockIcon key={"logout"}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    onClick={() => signOut()}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-full"
+                    )}
+                  >
+                    <LogOutIcon className="size-4" />
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Logout</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+          ) : (
+            <DockIcon key={"login"}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={"/signin"}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-full"
+                    )}
+                  >
+                    <UserIcon className="size-4" />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Login</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+          )}
         </Dock>
       </TooltipProvider>
     </header>

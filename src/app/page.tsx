@@ -6,12 +6,18 @@ import TopNavBar from "@/components/TopNavBar";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import UpdatesLogo from "@/assets/updates-logo.png";
+import { event } from "@/lib/static";
+import Card from "@/components/EventCard";
+import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
+
+const featuredEvents = event.slice(0, 3);
+console.log(featuredEvents);
 
 export default async function Page() {
   return (
-    <main className="min-h-screen bg-background max-w-7xl mx-auto relative">
+    <main className="min-h-screen bg-background max-w-7xl mx-auto relative mb-36">
       {/* <Navbar /> */}
-      <section className="relative flex h-[75vh] w-full overflow-hidden rounded-lg bg-background p-20">
+      <section className="relative flex h-[70vh] w-full overflow-hidden rounded-lg bg-background p-20">
         <GridPattern
           numSquares={30}
           maxOpacity={0.1}
@@ -27,9 +33,18 @@ export default async function Page() {
         <div className="flex items-center justify-center h-fit mx-auto">
           <div className="my-48">
             <BlurFade delay={0.25} inView>
-              <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600">
+              {/* <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600">
                 Updates 2k24
-              </h2>
+              </h2> */}
+              <AnimatedGradientText className="mb-2">
+                <span
+                  className={cn(
+                    `border-transparent inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent text-4xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none`
+                  )}
+                >
+                  Update 2k24
+                </span>
+              </AnimatedGradientText>
 
               {/* <Image
                 src={UpdatesLogo}
@@ -54,64 +69,18 @@ export default async function Page() {
         </BlurFade>
 
         <BlurFade delay={0.25 * 2} inView className="my-12">
+          {/* card */}
           <div className="grid grid-cols-1  xl:grid-cols-3 gap-8 mx-auto w-fit">
-            {/* card */}
-            <div className="max-w-xs w-full">
-              <div
-                className={cn(
-                  "group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border"
-                )}
-              >
-                <div className="text relative z-50">
-                  <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative">
-                    Background Overlays
-                  </h1>
-                  <p className="font-normal text-base text-gray-50 relative my-4">
-                    This card is for some special elements, like displaying
-                    background gifs on hover only.
-                  </p>
-                </div>
-                <BorderBeam size={250} duration={48} delay={9} />
-              </div>
-            </div>
-
-            <div className="max-w-xs w-full">
-              <div
-                className={cn(
-                  "group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border"
-                )}
-              >
-                <div className="text relative z-50">
-                  <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative">
-                    Background Overlays
-                  </h1>
-                  <p className="font-normal text-base text-gray-50 relative my-4">
-                    This card is for some special elements, like displaying
-                    background gifs on hover only.
-                  </p>
-                </div>
-                <BorderBeam size={250} duration={48} delay={18} />
-              </div>
-            </div>
-
-            <div className="max-w-xs w-full">
-              <div
-                className={cn(
-                  "group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border"
-                )}
-              >
-                <div className="text relative z-50">
-                  <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative">
-                    Background Overlays
-                  </h1>
-                  <p className="font-normal text-base text-gray-50 relative my-4">
-                    This card is for some special elements, like displaying
-                    background gifs on hover only.
-                  </p>
-                </div>
-                <BorderBeam size={250} duration={48} delay={36} />
-              </div>
-            </div>
+            {featuredEvents.map((data) => {
+              return (
+                <Card
+                  title={data.name}
+                  description={data.description}
+                  // coverImage={data?.coverImage}
+                  key={data.id}
+                />
+              );
+            })}
           </div>
         </BlurFade>
       </section>

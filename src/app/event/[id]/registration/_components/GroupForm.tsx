@@ -42,8 +42,8 @@ export default function GroupRegistrationForm({
           label: z.string().email(),
         })
       )
-      .min(mini, `Please select at least ${mini} participant(s)`)
-      .max(maxi, `You can select up to ${maxi} participant(s)`),
+      .min(mini - 1, `Please select at least ${mini - 1} participant(s)`)
+      .max(maxi - 1, `You can select up to ${maxi - 1} participant(s)`),
   });
 
   type GroupFormValues = z.infer<typeof groupFormSchema>;

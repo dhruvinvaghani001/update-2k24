@@ -47,7 +47,7 @@ export const authOptions = {
       return session;
     },
     async signIn({ profile, account }: { profile: Profile; account: Account }) {
-      console.log(account);
+      console.log(profile);
       if (account.provider == "google") {
         try {
           await connectDB();
