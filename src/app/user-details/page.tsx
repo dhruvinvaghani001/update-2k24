@@ -16,11 +16,7 @@ import axios from "axios";
 import { Combobox } from "@/components/ui/combobox";
 import { Input } from "@/components/ui/input";
 import Title from "@/components/Title";
-<<<<<<< HEAD
-import { BorderBeam } from "@/components/magicui/border-beam";
-=======
 import BlurFade from "@/components/magicui/blur-fade";
->>>>>>> 7c4c025ea3f36fafafadca5800032b1531fc078f
 
 const formSchema = z.object({
   department: z.string(),
@@ -48,13 +44,6 @@ const Page = (props: Props) => {
   }
 
   return (
-<<<<<<< HEAD
-    <div>
-      <Title title="User Details"></Title>
-      <div className="max-w-3xl mx-auto ">
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-=======
     <div className="mb-36">
       <Title
         title="Fill this details so you would not have to in Future..."
@@ -66,20 +55,14 @@ const Page = (props: Props) => {
             onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-8 border p-6 bg-card"
           >
->>>>>>> 7c4c025ea3f36fafafadca5800032b1531fc078f
             <FormField
               control={form.control}
               name="year"
               render={({ field }) => (
-<<<<<<< HEAD
-                <FormItem>
-                  <FormLabel>Year : </FormLabel>
-=======
                 <FormItem className="flex flex-col gap-2">
                   <FormLabel className="ml-1">
                     Select the year you are in
                   </FormLabel>
->>>>>>> 7c4c025ea3f36fafafadca5800032b1531fc078f
                   <FormControl>
                     <Combobox
                       options={["1", "2", "3", "4"]}
@@ -95,13 +78,8 @@ const Page = (props: Props) => {
               control={form.control}
               name="department"
               render={({ field }) => (
-<<<<<<< HEAD
-                <FormItem>
-                  <FormLabel>Department : </FormLabel>
-=======
                 <FormItem className="flex flex-col gap-2">
                   <FormLabel className="ml-1">Select your department</FormLabel>
->>>>>>> 7c4c025ea3f36fafafadca5800032b1531fc078f
                   <FormControl>
                     <Combobox
                       options={["CO", "IT", "AIDS", "EL", "MH", "CL", "CH"]}
@@ -117,13 +95,8 @@ const Page = (props: Props) => {
               control={form.control}
               name="semester"
               render={({ field }) => (
-<<<<<<< HEAD
-                <FormItem>
-                  <FormLabel>Semester : </FormLabel>
-=======
                 <FormItem className="flex flex-col gap-2">
                   <FormLabel className="ml-1">Select your semester</FormLabel>
->>>>>>> 7c4c025ea3f36fafafadca5800032b1531fc078f
                   <FormControl>
                     <Combobox
                       options={["1", "2", "3", "4", "5", "6", "7", "8"]}
@@ -144,16 +117,10 @@ const Page = (props: Props) => {
                   <FormLabel>Mobile Number</FormLabel>
                   <FormControl>
                     <Input
-<<<<<<< HEAD
-                      placeholder="enter your phone number."
-                      inputMode="numeric"
-                      {...field}
-=======
                       placeholder="9897865668"
                       inputMode="numeric"
                       {...field}
                       className="max-w-xs"
->>>>>>> 7c4c025ea3f36fafafadca5800032b1531fc078f
                     />
                   </FormControl>
                   <FormMessage />
@@ -169,14 +136,9 @@ const Page = (props: Props) => {
                   <FormLabel>Enrollment No.</FormLabel>
                   <FormControl>
                     <Input
-<<<<<<< HEAD
-                      placeholder="enter your enrollment number."
-                      {...field}
-=======
                       placeholder="ET20BTCO001"
                       {...field}
                       className="max-w-xs"
->>>>>>> 7c4c025ea3f36fafafadca5800032b1531fc078f
                     />
                   </FormControl>
                   <FormMessage />
@@ -184,19 +146,10 @@ const Page = (props: Props) => {
               )}
             />
 
-<<<<<<< HEAD
-            <Button className="mx-auto " type="submit">
-              Submit
-            </Button>
-          </form>0
-        </Form>
-      </div>
-=======
             <Button type="submit">Submit</Button>
           </form>
         </Form>
       </BlurFade>
->>>>>>> 7c4c025ea3f36fafafadca5800032b1531fc078f
     </div>
   );
 };
