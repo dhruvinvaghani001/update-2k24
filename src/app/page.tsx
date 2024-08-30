@@ -7,14 +7,20 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import UpdatesLogo from "@/assets/updates-logo.png";
 import ScheduleImage from "@/assets/eventSchedule.jpg";
-import { event } from "@/lib/static";
+import { event, sponsorImages } from "@/lib/static";
 import Card from "@/components/EventCard";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
+import Marquee from "@/components/magicui/marquee";
+import ImageCard from "@/components/ImageCard";
+import Title from "@/components/Title";
 
 const featuredEvents = event.slice(0, 3);
 // console.log(featuredEvents);
 
 export default async function Page() {
+  const firstRow = sponsorImages.slice(0, sponsorImages.length / 2);
+  const secondRow = sponsorImages.slice(sponsorImages.length / 2);
+
   return (
     <main className="min-h-screen bg-background max-w-7xl mx-auto relative mb-36">
       {/* <Navbar /> */}
@@ -68,17 +74,38 @@ export default async function Page() {
             Title Sponsor
           </h2>
         </BlurFade>
-        <Image
-          src={ScheduleImage}
-          alt="Events Schedule"
-          className="aspect-video"
-        />
-        <Image
-          src={ScheduleImage}
-          alt="Events Schedule"
-          className="aspect-video"
-        />
+        <div className="flex justify-center items-center gap-4">
+          <Image
+            src={ScheduleImage}
+            alt="Events Schedule"
+            className="aspect-video w-1/4"
+          />
+          <Image
+            src={ScheduleImage}
+            alt="Events Schedule"
+            className="aspect-video w-1/4"
+          />
+        </div>
       </section>
+
+      <section className="my-24 mx-4">
+        <Title title="Co-Sponsors"></Title>
+        <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-lg max-w-5xl mx-auto">
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {firstRow.map((review) => (
+              <ImageCard key={review.name} img={review.img} />
+            ))}
+          </Marquee>
+          {/* <Marquee reverse pauseOnHover className="[--duration:20s]">
+            {secondRow.map((review) => (
+              <ImageCard key={review.name} img={review.img} />
+            ))}
+          </Marquee> */}
+          {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div> */}
+          {/* <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div> */}
+        </div>
+      </section>
+
       <section className="my-24 mx-4">
         <BlurFade delay={0.25} inView className="my-12">
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
