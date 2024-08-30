@@ -41,13 +41,7 @@ const userDetailSchema = new Schema<IUserDetail>(
     enrollmentNo: {
       type: String,
       required: true,
-    },
-    registeredEvents: [
-      {
-        type: mongoose.Types.ObjectId,
-        default: [],
-      },
-    ],
+    }
   },
   {
     timestamps: true,
