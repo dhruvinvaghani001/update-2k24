@@ -6,6 +6,7 @@ import TopNavBar from "@/components/TopNavBar";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import UpdatesLogo from "@/assets/updates-logo.png";
+import ScheduleImage from "@/assets/eventSchedule.jpg";
 import { event } from "@/lib/static";
 import Card from "@/components/EventCard";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
@@ -62,6 +63,23 @@ export default async function Page() {
       </section>
 
       <section className="my-24 mx-4">
+        <BlurFade delay={0.25 * 2} inView className="my-12">
+          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
+            Title Sponsor
+          </h2>
+        </BlurFade>
+        <Image
+          src={ScheduleImage}
+          alt="Events Schedule"
+          className="aspect-video"
+        />
+        <Image
+          src={ScheduleImage}
+          alt="Events Schedule"
+          className="aspect-video"
+        />
+      </section>
+      <section className="my-24 mx-4">
         <BlurFade delay={0.25} inView className="my-12">
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
             Featured Events
@@ -83,6 +101,27 @@ export default async function Page() {
             })}
           </div>
         </BlurFade>
+        <BlurFade delay={0.25 * 3} inView className="my-8 text-center">
+          <a
+            href="/events"
+            className="text-lg font-medium text-indigo-600 hover:text-indigo-800 transition-colors duration-200"
+          >
+            Show More Events
+          </a>
+        </BlurFade>
+      </section>
+
+      <section className="my-24 mx-4">
+        <BlurFade delay={0.25 * 2} inView className="my-12">
+          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
+            Schedule
+          </h2>
+        </BlurFade>
+        <Image
+          src={ScheduleImage}
+          alt="Events Schedule"
+          className="aspect-video"
+        />
       </section>
     </main>
   );

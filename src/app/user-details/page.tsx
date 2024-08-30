@@ -153,5 +153,4 @@ const Page = (props: Props) => {
     </div>
   );
 };
-
 export default Page;
