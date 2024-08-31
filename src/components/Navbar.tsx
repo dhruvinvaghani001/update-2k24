@@ -4,9 +4,9 @@ import Link from "next/link";
 import {
   CalendarClockIcon,
   CameraIcon,
-  GalleryVerticalEndIcon,
   HomeIcon,
   LogOutIcon,
+  UserCog,
   UserIcon,
 } from "lucide-react";
 
@@ -66,6 +66,28 @@ export function Navbar() {
 
           <Separator orientation="vertical" className="h-full" />
 
+          {!loading && user ? (
+            <DockIcon key={"Edit user details"}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={"/user-details"}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-full"
+                    )}
+                  >
+                    <UserCog className="size-4" />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{"Edit Details"}</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+          ) : (
+            <></>
+          )}
           {!loading && user ? (
             <DockIcon key={"logout"}>
               <Tooltip>
