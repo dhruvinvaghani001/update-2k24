@@ -1,105 +1,125 @@
-import { Button } from "@/components/ui/button";
 import connectDB from "@/db";
 import Event from "@/models/event.model";
 import mongoose, { ObjectId } from "mongoose";
-import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import RegisterSoloButton from "./_components/RegisterSoloButton";
 import { redirect } from "next/navigation";
 import GroupRegistration from "@/models/groupRegistration.model";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import SoloRegistration from "@/models/soloRegistration.model";
-import GroupRegisterButton from "./_components/GroupRegisterButton";
 import Title from "@/components/Title";
 import { event } from "@/lib/static";
 import Image from "next/image";
-import { toast } from "@/components/ui/use-toast";
 import BlurFade from "@/components/magicui/blur-fade";
+import GroupRegistrationForm, { EmailOption } from "./_components/GroupForm";
+import User from "@/models/user.model";
 
 type Props = {};
 
 const page = async ({ params }: { params: { id: string } }) => {
-  await connectDB();
-
   const session = await getServerSession(authOptions);
 
-  // const eventData = await Event.findOne({
-  //   _id: new mongoose.Types.ObjectId(params.id!),
-  // });
-
-  // if (!eventData) {
-  //   return redirect("/");
-  // }
-
-  // const data = await GroupRegistration.find({
-  //   userId: session?.user.id,
-  //   eventId: params.id,
-  // });
-
-  // const groupId = data[0]?.groupId;
-  // const pipeline = [
-  //   {
-  //     $match: {
-  //       groupId: new mongoose.Types.ObjectId(groupId),
-  //     },
-  //   },
-  //   {
-  //     $lookup: {
-  //       from: "users",
-  //       localField: "userId",
-  //       foreignField: "_id",
-  //       as: "result",
-  //       pipeline: [
-  //         {
-  //           $project: {
-  //             _id: 0,
-  //             createdAt: 0,
-  //             updatedAt: 0,
-  //             __v: 0,
-  //           },
-  //         },
-  //       ],
-  //     },
-  //   },
-  //   {
-  //     $addFields: {
-  //       user: { $first: "$result" },
-  //     },
-  //   },
-  //   {
-  //     $project: {
-  //       _id: 0,
-  //       groupId: 0,
-  //       result: 0,
-  //       userId: 0,
-  //       eventId: 0,
-  //       createdAt: 0,
-  //       updatedAt: 0,
-  //       __v: 0,
-  //     },
-  //   },
-  // ];
-
-  // const dataOfMembers = await GroupRegistration.aggregate(pipeline);
-
-  // let isRegister = false;
-  // if (eventData?.eventType == "SOLO") {
-  //   const soloRegistration = await SoloRegistration.findOne({
-  //     eventId: params.id,
-  //     userId: session?.user?.id,
-  //   });
-  //   isRegister = soloRegistration ? true : false;
-  // }
-  // const isAuthorised = session?.user.email ? true : false;
-
   const eventId = params.id;
-  // console.log(eventId);
   const currEvent = event.filter((event) => {
     return event.id === eventId;
   })[0];
 
-  // console.log(currEvent);
+  if (!currEvent) {
+    return redirect("/events");
+  }
+
+  await connectDB();
+
+  const eventData = await Event.findOne({
+    name: params.id,
+  });
+  if (!eventData) {
+    return redirect("/events");
+  }
+
+  let isSoloAlredyRegistered = false;
+  if (eventData.eventType == "SOLO") {
+    const alredyRegistered = await SoloRegistration.find({
+      userId: session?.user.id,
+      eventId: eventData._id,
+    });
+    isSoloAlredyRegistered = alredyRegistered.length == 0 ? false : true;
+  }
+  let dataOfMembers = [];
+  let emailOptions: EmailOption[] = [];
+  if (eventData.eventType == "GROUP") {
+    let alredyresgitersIds: (string | undefined)[] = [];
+
+    const allRegistration = await GroupRegistration.find({
+      eventId: eventData._id,
+    });
+    const existedUsers = allRegistration.map((gp) => gp.userId);
+    alredyresgitersIds.push(session?.user.id);
+    alredyresgitersIds = [...alredyresgitersIds, ...existedUsers];
+
+    const userdata = await User.find({
+      _id: { $nin: alredyresgitersIds },
+    });
+
+    // all emails which is available for the group
+    emailOptions = userdata.map((user) => ({
+      label: user.email,
+      value: user._id.toString(),
+    }));
+
+    const data = await GroupRegistration.find({
+      userId: session?.user.id,
+      eventId: eventData._id,
+    });
+
+    const groupId = data[0]?.groupId;
+    const pipeline = [
+      {
+        $match: {
+          groupId: new mongoose.Types.ObjectId(groupId),
+        },
+      },
+      {
+        $lookup: {
+          from: "users",
+          localField: "userId",
+          foreignField: "_id",
+          as: "result",
+          pipeline: [
+            {
+              $project: {
+                _id: 0,
+                createdAt: 0,
+                updatedAt: 0,
+                __v: 0,
+              },
+            },
+          ],
+        },
+      },
+      {
+        $addFields: {
+          user: { $first: "$result" },
+        },
+      },
+      {
+        $project: {
+          _id: 0,
+          groupId: 0,
+          result: 0,
+          userId: 0,
+          eventId: 0,
+          createdAt: 0,
+          updatedAt: 0,
+          __v: 0,
+        },
+      },
+    ];
+
+    dataOfMembers = await GroupRegistration.aggregate(pipeline);
+  }
+
   return (
     <div className="mx-8">
       <Title title={currEvent.name} className="mb-0 font-black" />
@@ -154,7 +174,30 @@ const page = async ({ params }: { params: { id: string } }) => {
             })}
           </ul>
         </div>
-        <RegisterSoloButton eventId={currEvent.id} />
+        {eventData.eventType == "SOLO" ? (
+          <RegisterSoloButton
+            eventId={eventData._id.toString()}
+            isAlredyRegister={isSoloAlredyRegistered}
+          />
+        ) : dataOfMembers.length == 0 ? (
+          <GroupRegistrationForm
+            mini={eventData.minMember}
+            maxi={eventData.maxMember}
+            eventId={eventData._id.toString()}
+            emailOptions={emailOptions}
+          />
+        ) : (
+          <>
+            Data of memebers
+            {dataOfMembers.map((data, index) => {
+              return (
+                <li key={index}>
+                  {data.user.name} || {data.user.email}
+                </li>
+              );
+            })}
+          </>
+        )}
       </BlurFade>
 
       {/* {eventData.eventType == "GROUP" && dataOfMembers.length == 0 && (

@@ -15,8 +15,11 @@ import {
 } from "@/components/ui/form";
 import { z } from "zod";
 import axios from "axios";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { toast } from "@/components/ui/use-toast";
 
-type EmailOption = {
+export type EmailOption = {
   value: string;
   label: string;
 };
@@ -34,6 +37,10 @@ export default function GroupRegistrationForm({
   maxi,
   eventId,
 }: GroupRegistrationFormProps) {
+  const [isLoading, setIsLoading] = React.useState(false);
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
   const groupFormSchema = z.object({
     emails: z
       .array(
@@ -56,14 +63,32 @@ export default function GroupRegistrationForm({
   });
 
   const onSubmit = async (values: GroupFormValues) => {
-    try {
-      const response = await axios.post(
-        `/api/event/${eventId}/group-registration`,
-        values
-      );
-      console.log("Group registered successfully");
-    } catch (error) {
-      console.error("Error registering group:", error);
+    if (status == "authenticated") {
+      try {
+        setIsLoading(true);
+        const response = await axios.post(
+          `/api/event/${eventId}/group-registration`,
+          values
+        );
+        setIsLoading(false);
+        router.refresh();
+        return toast({
+          title: response.data.message,
+          description: "You can start participation now",
+          duration: 1500,
+        });
+      } catch (error) {
+        setIsLoading(false);
+        return toast({
+          title: "Something went wrong",
+          variant: "destructive",
+          description: "You can start participation now",
+          duration: 1500,
+        });
+      }
+    } else {
+      const callbackUrl = encodeURIComponent(window.location.href);
+      router.push(`/signin?callbackUrl=${callbackUrl}`);
     }
   };
 

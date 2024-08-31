@@ -5,11 +5,17 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
 import { toast } from "@/components/ui/use-toast";
-import { Loader2 } from "lucide-react";
+import { CheckCircle, Loader2 } from "lucide-react";
 
 type Props = {};
 
-const RegisterSoloButton = ({ eventId }: { eventId: string }) => {
+const RegisterSoloButton = ({
+  eventId,
+  isAlredyRegister,
+}: {
+  eventId: string;
+  isAlredyRegister: boolean;
+}) => {
   const { data: session, status } = useSession();
   const router = useRouter();
 
@@ -25,6 +31,7 @@ const RegisterSoloButton = ({ eventId }: { eventId: string }) => {
           }
         );
         setIsLoading(false);
+        router.refresh();
         console.log(response);
         return toast({
           title: response.data.message,
@@ -48,12 +55,20 @@ const RegisterSoloButton = ({ eventId }: { eventId: string }) => {
   return (
     <Button
       onClick={handleSoloRegistration}
+      disabled={isAlredyRegister}
       className="flex items-center gap-2 max-md:w-full"
     >
       {isLoading && (
         <Loader2 className="size-5 animate-spin text-foreground/75 " />
       )}
-      Register for this event
+      {isAlredyRegister ? (
+        <>
+          {" "}
+          <CheckCircle className="text-green-100" /> Alredy Registered
+        </>
+      ) : (
+        <>Register for this Event</>
+      )}
     </Button>
   );
 };
