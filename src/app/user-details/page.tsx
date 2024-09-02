@@ -37,7 +37,7 @@ const Page = async (props: Props) => {
         title="Fill this details so you would not have to in Future..."
         className="mx-12"
       />
-      <BlurFade delay={0.1 * 2} inView className="my-8 mx-8">
+      <BlurFade inView className="my-8 mx-8">
         <DetailForm userDetails={userData} />
       </BlurFade>
     </div>

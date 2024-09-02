@@ -127,7 +127,7 @@ const page = async ({ params }: { params: { id: string } }) => {
   return (
     <div className="px-8 max-w-7xl mx-auto">
       <Title title={currEvent.name} className="mb-0 font-black" />
-      <BlurFade delay={0.1} inView>
+      <BlurFade inView>
         <p className="italic text-center text-muted-foreground mt-3 mb-8">
           &quot;{currEvent.Tagline}&quot;
         </p>
@@ -175,7 +175,7 @@ const page = async ({ params }: { params: { id: string } }) => {
               <>
                 <h1>{round.name}</h1>
                 {round.Rules.map((rule, index) => {
-                  return <p>{rule}</p>;
+                  return <p key={rule}>{rule}</p>;
                 })}
               </>
             );

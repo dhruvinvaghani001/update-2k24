@@ -14,8 +14,13 @@ import Marquee from "@/components/magicui/marquee";
 import ImageCard from "@/components/ImageCard";
 import Title from "@/components/Title";
 import gradient from "@/assets/top-gradient.svg";
+import GradientAnimatedText from "@/components/GradientAnimatedText";
+import { Button } from "@/components/ui/button";
+import { ArrowRightCircleIcon, ArrowRightIcon } from "lucide-react";
+import Link from "next/link";
+import events from "@/lib/events";
 
-const featuredEvents = event.slice(0, 3);
+const featuredEvents = events.slice(0, 3);
 // console.log(featuredEvents);
 
 export default async function Page() {
@@ -25,7 +30,7 @@ export default async function Page() {
   return (
     <main className="min-h-screen bg-background max-w-7xl mx-auto relative mb-36">
       {/* <Navbar /> */}
-      <section className="relative flex h-[70vh] w-full overflow-hidden rounded-lg bg-background p-20">
+      <section className="relative flex  w-full overflow-hidden rounded-lg bg-background py-20">
         <GridPattern
           numSquares={30}
           maxOpacity={0.1}
@@ -33,26 +38,17 @@ export default async function Page() {
           repeatDelay={1}
           className={cn(
             "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-            "inset-x-0 inset-y-[-30%] h-[100%] skew-y-12",
-            "opacity-60"
+            "inset-x-0 max-md:inset-y-[-70%] sm:h-[100%] h-[200%] skew-y-12",
+            "opacity-40"
           )}
         />
 
         <div className="flex items-center justify-center h-fit mx-auto">
           <div className="my-48">
-            <BlurFade delay={0.1} inView>
-              {/* <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600">
+            <BlurFade inView>
+              <GradientAnimatedText className="font-bold tracking-tighter text-5xl xl:text-6xl/none ">
                 Updates 2k24
-              </h2> */}
-              <AnimatedGradientText className="mb-2">
-                <span
-                  className={cn(
-                    `border-transparent inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent text-4xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none`
-                  )}
-                >
-                  Updates 2k24
-                </span>
-              </AnimatedGradientText>
+              </GradientAnimatedText>
 
               {/* <Image
                 src={UpdatesLogo}
@@ -60,7 +56,7 @@ export default async function Page() {
                 className="aspect-square "
               /> */}
             </BlurFade>
-            <BlurFade delay={0.1 * 2} inView>
+            <BlurFade inView>
               <p className="text-center text-pretty tracking-tighter sm:text-xl xl:text-2xl/none">
                 From floppy to the cloud
               </p>
@@ -69,34 +65,30 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="my-24 relative">
-        {/* <Image
-          src={gradient}
-          alt="background gradient"
-          className="absolute -top-10 left-0 right-0"
-        /> */}
-        <BlurFade delay={0.1 * 2} inView className="my-12">
-          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
+      <section className="py-24 relative">
+        <div className="w-[400px] sm:w-[600px] h-[600px] absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 rounded-full blur-3xl bg-gradient-to-br from-slate-900 to-violet-900 opacity-40"></div>
+        <BlurFade inView className="my-12">
+          <GradientAnimatedText className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none  text-center">
             Title Sponsor
-          </h2>
+          </GradientAnimatedText>
         </BlurFade>
-        <BlurFade delay={0.1 * 4} inView className="my-12">
+        <BlurFade inView className="my-12">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 m-4">
             <Image
               src={ScheduleImage}
               alt="Events Schedule"
-              className="aspect-video md:w-1/4 rounded"
+              className="aspect-video w-4/5 md:w-1/4 rounded-lg"
             />
             <Image
               src={ScheduleImage}
               alt="Events Schedule"
-              className="aspect-video md:w-1/4"
+              className="aspect-video w-4/5 md:w-1/4 rounded-lg"
             />
           </div>
         </BlurFade>
       </section>
 
-      <section className="my-24 mx-4">
+      {/* <section className="my-24 mx-4">
         <Title title="Co-Sponsors"></Title>
         <BlurFade delay={0.1 * 4} inView className="my-12">
           <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-lg max-w-5xl mx-auto">
@@ -107,23 +99,38 @@ export default async function Page() {
             </Marquee>
           </div>
         </BlurFade>
-      </section>
+      </section> */}
 
       <section className="my-24 mx-4">
-        <BlurFade delay={0.1} inView className="my-12">
-          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
-            Featured Events
-          </h2>
+        <BlurFade inView className="my-12">
+          <div className="flex items-center justify-between max-w-5xl mx-auto px-8">
+            <div className="group relative flex max-w-fit flex-row items-center justify-center rounded-2xl py-1.5 text-3xl font-medium backdrop-blur-sm transition-shadow duration-500 ease-out [--bg-size:300%] ">
+              <span
+                className={`border-none inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none`}
+              >
+                Featured Events
+              </span>
+            </div>
+            <Link href={"/events"}>
+              <Button
+                className="rounded-full flex items-center justify-center gap-1 px-3 py-1.5 h-auto"
+                variant={"outline"}
+              >
+                <span className="capitalize text-xs">all events</span>
+                <ArrowRightIcon className="size-3.5" />
+              </Button>
+            </Link>
+          </div>
         </BlurFade>
 
-        <BlurFade delay={0.1 * 2} inView className="my-12">
+        <BlurFade inView className="my-12">
           {/* card */}
           <div className="grid grid-cols-1  xl:grid-cols-3 gap-8 mx-auto w-fit">
             {featuredEvents.map((data) => {
               return (
                 <Card
                   title={data.name}
-                  description={data.description}
+                  tagline={data.Tagline}
                   // coverImage={data?.coverImage}
                   key={data.id}
                 />
@@ -131,23 +138,16 @@ export default async function Page() {
             })}
           </div>
         </BlurFade>
-        <BlurFade delay={0.1 * 3} inView className="my-8 text-center">
-          <a
-            href="/events"
-            className="text-lg font-medium text-indigo-600 hover:text-indigo-800 transition-colors duration-200"
-          >
-            Show More Events
-          </a>
-        </BlurFade>
       </section>
 
-      <section className="my-24 mx-4">
-        <BlurFade delay={0.1 * 2} inView className="my-12">
-          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
+      <section className="my-24 relative mx-4">
+        <div className="w-[400px] h-[400px] absolute -translate-x-1/2 -translate-y-1/2 left-1/3 top-1/3 rounded-full blur-3xl bg-gradient-to-br from-slate-900 to-violet-900 opacity-40 overflow-hidden"></div>
+        <BlurFade inView className="my-12">
+          <GradientAnimatedText className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none  text-center">
             Schedule
-          </h2>
+          </GradientAnimatedText>
         </BlurFade>
-        <BlurFade delay={0.1 * 4} inView className="my-12">
+        <BlurFade inView className="my-12">
           <Image
             src={ScheduleImage}
             alt="Events Schedule"

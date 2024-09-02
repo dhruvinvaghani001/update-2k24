@@ -14,7 +14,7 @@ const page = () => {
             <Link href={`/event/${data.id}`} key={data.id}>
               <Card
                 title={data.name}
-                description={data.description}
+                tagline={data.Tagline}
                 // coverImage={data?.coverImage}
                 key={data.id}
               />

@@ -41,7 +41,7 @@ export function Navbar() {
       <TooltipProvider>
         <Dock
           direction="middle"
-          className="bg-background/60 border-2 border-primary"
+          className="bg-gradient-to-br from-slate-900/30 to-violet-900/30 border-2 border-primary"
         >
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
@@ -51,7 +51,7 @@ export function Navbar() {
                     href={item.href}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-10 rounded-full hover:bg-violet-600"
                     )}
                   >
                     <item.icon className="size-4" />
@@ -74,7 +74,7 @@ export function Navbar() {
                     href={"/user-details"}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-10 rounded-full hover:bg-violet-600"
                     )}
                   >
                     <UserCog className="size-4" />
@@ -96,7 +96,7 @@ export function Navbar() {
                     onClick={() => signOut()}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-10 rounded-full hover:bg-destructive"
                     )}
                   >
                     <LogOutIcon className="size-4" />
@@ -115,7 +115,7 @@ export function Navbar() {
                     href={"/signin"}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-10 rounded-full hover:bg-violet-600"
                     )}
                   >
                     <UserIcon className="size-4" />

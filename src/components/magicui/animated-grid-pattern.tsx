@@ -60,8 +60,8 @@ export function GridPattern({
               ...sq,
               pos: getPos(),
             }
-          : sq,
-      ),
+          : sq
+      )
     );
   };
 
@@ -99,8 +99,8 @@ export function GridPattern({
       ref={containerRef}
       aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/30",
-        className,
+        "pointer-events-none absolute inset-0 h-full w-full fill-violet-100 stroke-violet-600/50",
+        className
       )}
       {...props}
     >
