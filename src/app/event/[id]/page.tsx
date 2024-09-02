@@ -9,7 +9,6 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import SoloRegistration from "@/models/soloRegistration.model";
 import Title from "@/components/Title";
-import { event } from "@/lib/static";
 import Image from "next/image";
 import BlurFade from "@/components/magicui/blur-fade";
 import GroupRegistrationForm, { EmailOption } from "./_components/GroupForm";
@@ -132,32 +131,43 @@ const page = async ({ params }: { params: { id: string } }) => {
         <p className="italic text-center text-muted-foreground mt-3 mb-8">
           &quot;{currEvent.Tagline}&quot;
         </p>
-        <div className="flex items-center justify-center">
-          {eventData.eventType == "SOLO" ? (
+        {eventData.eventType == "SOLO" ? (
+          <div className="flex items-center justify-center">
             <RegisterSoloButton
               eventId={eventData._id.toString()}
               isAlredyRegister={isSoloAlredyRegistered}
             />
-          ) : dataOfMembers.length == 0 ? (
-            <GroupRegistrationForm
-              mini={eventData.minMember}
-              maxi={eventData.maxMember}
-              eventId={eventData._id.toString()}
-              emailOptions={emailOptions}
-            />
-          ) : (
-            <>
-              Data of memebers
+          </div>
+        ) : dataOfMembers.length == 0 ? (
+          <GroupRegistrationForm
+            mini={eventData.minMember}
+            maxi={eventData.maxMember}
+            eventId={eventData._id.toString()}
+            emailOptions={emailOptions}
+          />
+        ) : (
+          <div>
+            <p className="italic text-sm text-muted-foreground">
+              * you have already registered for this event
+            </p>
+            <h4 className="text-xl mb-4 font-bold text-pink-500">Your Team</h4>
+            <ul className="flex flex-col">
               {dataOfMembers.map((data, index) => {
                 return (
-                  <li key={index}>
-                    {data.user.name} || {data.user.email}
+                  <li
+                    key={data.user.name}
+                    className="flex items-center gap-3 my-2"
+                  >
+                    <div>
+                      <p>{data.user.name}</p>
+                      <p>{data.user.mobileNumber}</p>
+                    </div>
                   </li>
                 );
               })}
-            </>
-          )}
-        </div>
+            </ul>
+          </div>
+        )}
         <h4 className="text-3xl my-4 font-bold text-pink-500">Rules: </h4>
         <ul className="list-decimal list-inside">
           {currEvent?.rounds.map((round, index) => {
