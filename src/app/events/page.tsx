@@ -1,5 +1,5 @@
 import Card from "@/components/EventCard";
-import Title from "@/components/Title";
+import GradientAnimatedText from "@/components/GradientAnimatedText";
 import events from "@/lib/events";
 import Link from "next/link";
 import React from "react";
@@ -7,7 +7,9 @@ import React from "react";
 const page = () => {
   return (
     <section className="mb-36">
-      <Title title="Events"></Title>
+      <GradientAnimatedText className="mt-8 mb-10 text-3xl font-bold tracking-tighter xl:text-4xl/none  text-center">
+        Events
+      </GradientAnimatedText>
       <div className="grid grid-cols-1  xl:grid-cols-3 gap-8 mx-auto w-fit">
         {events.map((data) => {
           return (
@@ -15,7 +17,7 @@ const page = () => {
               <Card
                 title={data.name}
                 tagline={data.Tagline}
-                // coverImage={data?.coverImage}
+                // coverImage={data.coverImage ? data.coverImage : "/"}
                 key={data.id}
               />
             </Link>

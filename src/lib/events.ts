@@ -13,7 +13,7 @@ const events = [
     time: "9:30 to 11:00 AM",
     rounds: [
       {
-        name: "round1",
+        name: "round 1",
         Rules: [
           "Solo as well as group event (Min 1 participant and Max 3 participants)",
           "Participants have to pitch their ideas to jury",
@@ -310,7 +310,7 @@ const events = [
   },
   {
     id: "the-resume-relay",
-    name: "The Resume Relay: Craft, Pitch, Exchange!",
+    name: "The Resume Relay",
     coverImage: " ",
     Tagline: "Resume Ready, Job Steady",
     description: "",
@@ -706,7 +706,7 @@ const events = [
   },
   {
     id: "devBattle",
-    name: "Codewinglet DevBattle",
+    name: "DevBattle",
     coverImage: "",
     Tagline: "Showcase Your Coding Skills in a Thrilling Competition!",
     description:

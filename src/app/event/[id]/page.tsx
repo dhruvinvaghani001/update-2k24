@@ -8,12 +8,12 @@ import GroupRegistration from "@/models/groupRegistration.model";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import SoloRegistration from "@/models/soloRegistration.model";
-import Title from "@/components/Title";
 import Image from "next/image";
 import BlurFade from "@/components/magicui/blur-fade";
 import GroupRegistrationForm, { EmailOption } from "./_components/GroupForm";
 import User from "@/models/user.model";
 import events from "@/lib/events";
+import GradientAnimatedText from "@/components/GradientAnimatedText";
 
 type Props = {};
 
@@ -125,10 +125,12 @@ const page = async ({ params }: { params: { id: string } }) => {
   }
 
   return (
-    <div className="px-8 max-w-7xl mx-auto">
-      <Title title={currEvent.name} className="mb-0 font-black" />
+    <div className="px-8 max-w-7xl mx-auto mb-36">
+      <GradientAnimatedText className="mt-12 text-3xl font-black xl:text-4xl/none text-center">
+        {currEvent.name}
+      </GradientAnimatedText>
       <BlurFade inView>
-        <p className="italic text-center text-muted-foreground mt-3 mb-8">
+        <p className="italic text-center text-violet-100 mb-8">
           &quot;{currEvent.Tagline}&quot;
         </p>
         {eventData.eventType == "SOLO" ? (
@@ -146,21 +148,21 @@ const page = async ({ params }: { params: { id: string } }) => {
             emailOptions={emailOptions}
           />
         ) : (
-          <div>
-            <p className="italic text-sm text-muted-foreground">
-              * you have already registered for this event
+          <div className="p-4 w-full bg-gradient-to-br from-red-950/30 to-red-800/30 rounded-lg border border-red-900/70">
+            <p className="italic text-sm text-violet-50/60 mb-4">
+              *you have already registered for this event
             </p>
-            <h4 className="text-xl mb-4 font-bold text-pink-500">Your Team</h4>
-            <ul className="flex flex-col">
+            <h4 className="text-lg font-bold text-white">Team Members:</h4>
+            <ul className="list-disc list-inside text-muted-foreground">
               {dataOfMembers.map((data, index) => {
                 return (
                   <li
                     key={data.user.name}
-                    className="flex items-center gap-3 my-2"
+                    className="flex items-center gap-3 ml-4 mt-0.5"
                   >
                     <div>
                       <p>{data.user.name}</p>
-                      <p>{data.user.mobileNumber}</p>
+                      {/* <p>{data.user.mobileNumber}</p> */}
                     </div>
                   </li>
                 );
@@ -168,65 +170,83 @@ const page = async ({ params }: { params: { id: string } }) => {
             </ul>
           </div>
         )}
-        <h4 className="text-3xl my-4 font-bold text-pink-500">Rules: </h4>
-        <ul className="list-decimal list-inside">
-          {currEvent?.rounds.map((round, index) => {
-            return (
-              <>
-                <h1>{round.name}</h1>
-                {round.Rules.map((rule, index) => {
-                  return <p key={rule}>{rule}</p>;
-                })}
-              </>
-            );
-          })}
-        </ul>
-        <div className="my-8">
-          <h4 className="text-xl my-4 font-bold text-pink-500">
-            Event Coordinators
+        <div className="p-4 mt-6 w-full bg-gradient-to-br from-slate-900/30 to-violet-900/30 rounded-lg border border-violet-400/70">
+          <h4 className="text-3xl mb-2 mt-1 font-bold text-violet-500">
+            Rules:
           </h4>
-          <ul className="list-none space-y-2">
-            {currEvent["co-ordinators"].map((person) => {
+          <ul>
+            {currEvent?.rounds.map((round, index) => {
               return (
-                <li key={person.profilePic} className="flex items-center gap-3">
-                  <Image
-                    alt={person.name}
-                    src={`/photos/${person.profilePic}`}
-                    width={48}
-                    height={40}
-                    className="rounded-full border"
-                  />
-                  <div className="flex flex-col">
-                    <p>{person.name}</p>
-                    <p>{person.mobileNumber}</p>
-                  </div>
+                <li className="mt-3" key={round.name}>
+                  <p className="text-lg mt-3 mb-1 capitalize font-bold underline text-yellow-200">
+                    {round.name}
+                  </p>
+                  <ul className="list-disc px-3">
+                    {round.Rules.map((rule, index) => {
+                      return (
+                        <li key={rule} className="text-sm mt-0.5">
+                          {rule}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </li>
               );
             })}
           </ul>
         </div>
-
-        <div className="my-8">
-          <h4 className="text-xl my-4 font-bold text-pink-500">volunteers</h4>
-          <ul className="list-none space-y-2">
-            {currEvent.volunteers.map((person) => {
-              return (
-                <li key={person.name} className="flex items-center gap-3">
-                  <Image
-                    alt={person.name}
-                    src={`/photos/${person.profilePic}`}
-                    width={48}
-                    height={48}
-                    className="rounded-full border"
-                  />
-                  <div>
-                    <p>{person.name}</p>
-                    <p>{person.mobileNumber}</p>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+        <div className="p-4 mt-6 w-full bg-gradient-to-br from-slate-900/30 to-teal-900/30 rounded-lg border border-teal-400/70">
+          <div>
+            <h4 className="text-xl mb-4 font-bold text-teal-400 capitalize">
+              Event Coordinators
+            </h4>
+            <ul className="list-none space-y-2">
+              {currEvent["co-ordinators"].map((person) => {
+                return (
+                  <li
+                    key={person.profilePic}
+                    className="flex items-center gap-3"
+                  >
+                    <Image
+                      alt={person.name}
+                      src={`/photos/${person.profilePic}`}
+                      width={48}
+                      height={40}
+                      className="rounded-full border"
+                    />
+                    <div className="flex flex-col">
+                      <p>{person.name}</p>
+                      {/* <p>{person.mobileNumber}</p> */}
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div className="my-8">
+            <h4 className="text-xl my-4 font-bold text-teal-400 capitalize">
+              volunteers
+            </h4>
+            <ul className="list-none space-y-2">
+              {currEvent.volunteers.map((person) => {
+                return (
+                  <li key={person.name} className="flex items-center gap-3">
+                    <Image
+                      alt={person.name}
+                      src={`/photos/${person.profilePic}`}
+                      width={48}
+                      height={48}
+                      className="rounded-full border"
+                    />
+                    <div>
+                      <p>{person.name}</p>
+                      {/* <p>{person.mobileNumber}</p> */}
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </BlurFade>
     </div>

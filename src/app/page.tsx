@@ -1,22 +1,12 @@
 import GridPattern from "@/components/magicui/animated-grid-pattern";
 import BlurFade from "@/components/magicui/blur-fade";
-import { BorderBeam } from "@/components/magicui/border-beam";
-import { Navbar } from "@/components/Navbar";
-import TopNavBar from "@/components/TopNavBar";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import UpdatesLogo from "@/assets/updates-logo.png";
 import ScheduleImage from "@/assets/eventSchedule.jpg";
-import { event, sponsorImages } from "@/lib/static";
 import Card from "@/components/EventCard";
-import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
-import Marquee from "@/components/magicui/marquee";
-import ImageCard from "@/components/ImageCard";
-import Title from "@/components/Title";
-import gradient from "@/assets/top-gradient.svg";
 import GradientAnimatedText from "@/components/GradientAnimatedText";
 import { Button } from "@/components/ui/button";
-import { ArrowRightCircleIcon, ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import events from "@/lib/events";
 
@@ -24,13 +14,10 @@ const featuredEvents = events.slice(0, 3);
 // console.log(featuredEvents);
 
 export default async function Page() {
-  const firstRow = sponsorImages.slice(0, sponsorImages.length / 2);
-  const secondRow = sponsorImages.slice(sponsorImages.length / 2);
-
   return (
     <main className="min-h-screen bg-background max-w-7xl mx-auto relative mb-36">
       {/* <Navbar /> */}
-      <section className="relative flex  w-full overflow-hidden rounded-lg bg-background py-20">
+      <section className="relative flex w-full overflow-hidden rounded-lg bg-background py-20">
         <GridPattern
           numSquares={30}
           maxOpacity={0.1}
@@ -125,15 +112,21 @@ export default async function Page() {
 
         <BlurFade inView className="my-12">
           {/* card */}
-          <div className="grid grid-cols-1  xl:grid-cols-3 gap-8 mx-auto w-fit">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 w-fit mx-auto">
             {featuredEvents.map((data) => {
               return (
-                <Card
-                  title={data.name}
-                  tagline={data.Tagline}
-                  // coverImage={data?.coverImage}
+                <Link
+                  href={`/event/${data.id}`}
+                  className="w-full"
                   key={data.id}
-                />
+                >
+                  <Card
+                    title={data.name}
+                    tagline={data.Tagline}
+                    // coverImage={data?.coverImage}
+                    key={data.id}
+                  />
+                </Link>
               );
             })}
           </div>
@@ -142,17 +135,19 @@ export default async function Page() {
 
       <section className="my-24 relative mx-4">
         <div className="w-[400px] h-[400px] absolute -translate-x-1/2 -translate-y-1/2 left-1/3 top-1/3 rounded-full blur-3xl bg-gradient-to-br from-slate-900 to-violet-900 opacity-40 overflow-hidden"></div>
-        <BlurFade inView className="my-12">
+        <BlurFade inView className="mb-6">
           <GradientAnimatedText className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none  text-center">
             Schedule
           </GradientAnimatedText>
         </BlurFade>
-        <BlurFade inView className="my-12">
-          <Image
-            src={ScheduleImage}
-            alt="Events Schedule"
-            className="aspect-video"
-          />
+        <BlurFade inView className="mx-4">
+          <div className="overflow-hidden">
+            <Image
+              src={ScheduleImage}
+              alt="Events Schedule"
+              className="aspect-video rounded-xl md:rounded-2xl"
+            />
+          </div>
         </BlurFade>
       </section>
     </main>

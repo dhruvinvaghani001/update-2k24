@@ -94,13 +94,19 @@ export default function GroupRegistrationForm({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-4 p-4 bg-gradient-to-br from-purple-950/30 to-slate-900/30 rounded-lg border border-purple-900/70"
+      >
         <FormField
           control={form.control}
           name="emails"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Select Group Members for Event {eventId}</FormLabel>
+              {/* <FormLabel>Select Group Members for Event {eventId}</FormLabel> */}
+              <FormLabel className="text-purple-400 text-lg font-bold">
+                Select Group Members
+              </FormLabel>
               <FormControl>
                 <MultiSelectCombobox
                   options={emailOptions}
@@ -113,7 +119,9 @@ export default function GroupRegistrationForm({
           )}
         />
 
-        <Button type="submit">Register Group</Button>
+        <Button type="submit" className="w-full md:w-fit">
+          Register Group
+        </Button>
       </form>
     </Form>
   );

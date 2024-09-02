@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { Check, ChevronsUpDown, X } from "lucide-react";
+import { Check, ChevronsUpDown, XCircleIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -61,7 +61,7 @@ export const MultiSelectCombobox = ({
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between"
+            className="w-full justify-between bg-slate-950 overflow-x-hidden"
           >
             {selectedOptions?.length > 0
               ? selectedOptions.map((opt) => opt.label).join(", ")
@@ -69,7 +69,7 @@ export const MultiSelectCombobox = ({
             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-full p-0">
+        <PopoverContent className="w-full p-0 bg-slate-900">
           <Command>
             <CommandInput
               placeholder="Search emails..."
@@ -103,10 +103,10 @@ export const MultiSelectCombobox = ({
           </Command>
         </PopoverContent>
       </Popover>
-      <div className="space-y-2 mt-2">
+      <div className=" mt-4 flex flex-col gap-4">
         {selectedOptions?.map((option) => (
           <div key={option.value} className="flex items-center space-x-2">
-            <span className="text-sm font-medium text-gray-700">
+            <span className="text-sm font-medium text-purple-100 ml-2">
               {option.label}
             </span>
             <button
@@ -116,9 +116,9 @@ export const MultiSelectCombobox = ({
                   selectedOptions.filter((opt) => opt.value !== option.value)
                 )
               }
-              className="text-red-500"
+              className="text-rose-600 cursor-pointer"
             >
-              <X className="h-5 w-5" />
+              <XCircleIcon className="h-5 w-5" />
             </button>
           </div>
         ))}
