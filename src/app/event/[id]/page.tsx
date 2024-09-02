@@ -126,16 +126,49 @@ const page = async ({ params }: { params: { id: string } }) => {
   }
 
   return (
-    <div className="mx-8">
+    <div className="px-8 max-w-7xl mx-auto">
       <Title title={currEvent.name} className="mb-0 font-black" />
       <BlurFade delay={0.1} inView>
         <p className="italic text-center text-muted-foreground mt-3 mb-8">
-          &quot;{currEvent.description}&quot;
+          &quot;{currEvent.Tagline}&quot;
         </p>
-        <h4 className="text-xl my-4 font-bold text-pink-500">Rules: </h4>
+        <div className="flex items-center justify-center">
+          {eventData.eventType == "SOLO" ? (
+            <RegisterSoloButton
+              eventId={eventData._id.toString()}
+              isAlredyRegister={isSoloAlredyRegistered}
+            />
+          ) : dataOfMembers.length == 0 ? (
+            <GroupRegistrationForm
+              mini={eventData.minMember}
+              maxi={eventData.maxMember}
+              eventId={eventData._id.toString()}
+              emailOptions={emailOptions}
+            />
+          ) : (
+            <>
+              Data of memebers
+              {dataOfMembers.map((data, index) => {
+                return (
+                  <li key={index}>
+                    {data.user.name} || {data.user.email}
+                  </li>
+                );
+              })}
+            </>
+          )}
+        </div>
+        <h4 className="text-3xl my-4 font-bold text-pink-500">Rules: </h4>
         <ul className="list-decimal list-inside">
-          {currEvent?.rounds.map((rule, index) => {
-            return <li key={index}>{rule.name}</li>;
+          {currEvent?.rounds.map((round, index) => {
+            return (
+              <>
+                <h1>{round.name}</h1>
+                {round.Rules.map((rule, index) => {
+                  return <p>{rule}</p>;
+                })}
+              </>
+            );
           })}
         </ul>
         <div className="my-8">
@@ -145,15 +178,18 @@ const page = async ({ params }: { params: { id: string } }) => {
           <ul className="list-none space-y-2">
             {currEvent["co-ordinators"].map((person) => {
               return (
-                <li key={person.image} className="flex items-center gap-3">
+                <li key={person.profilePic} className="flex items-center gap-3">
                   <Image
                     alt={person.name}
-                    src={`/photos/${person.image}`}
-                    width={40}
+                    src={`/photos/${person.profilePic}`}
+                    width={48}
                     height={40}
-                    className="rounded-full"
+                    className="rounded-full border"
                   />
-                  <p>{person.name}</p>
+                  <div className="flex flex-col">
+                    <p>{person.name}</p>
+                    <p>{person.mobileNumber}</p>
+                  </div>
                 </li>
               );
             })}
@@ -163,46 +199,25 @@ const page = async ({ params }: { params: { id: string } }) => {
         <div className="my-8">
           <h4 className="text-xl my-4 font-bold text-pink-500">volunteers</h4>
           <ul className="list-none space-y-2">
-            {currEvent.volunteer.map((person) => {
+            {currEvent.volunteers.map((person) => {
               return (
                 <li key={person.name} className="flex items-center gap-3">
                   <Image
                     alt={person.name}
-                    src={`/photos/${person.image}`}
-                    width={40}
-                    height={40}
-                    className="rounded-full"
+                    src={`/photos/${person.profilePic}`}
+                    width={48}
+                    height={48}
+                    className="rounded-full border"
                   />
-                  <p>{person.name}</p>
+                  <div>
+                    <p>{person.name}</p>
+                    <p>{person.mobileNumber}</p>
+                  </div>
                 </li>
               );
             })}
           </ul>
         </div>
-        {eventData.eventType == "SOLO" ? (
-          <RegisterSoloButton
-            eventId={eventData._id.toString()}
-            isAlredyRegister={isSoloAlredyRegistered}
-          />
-        ) : dataOfMembers.length == 0 ? (
-          <GroupRegistrationForm
-            mini={eventData.minMember}
-            maxi={eventData.maxMember}
-            eventId={eventData._id.toString()}
-            emailOptions={emailOptions}
-          />
-        ) : (
-          <>
-            Data of memebers
-            {dataOfMembers.map((data, index) => {
-              return (
-                <li key={index}>
-                  {data.user.name} || {data.user.email}
-                </li>
-              );
-            })}
-          </>
-        )}
       </BlurFade>
     </div>
   );

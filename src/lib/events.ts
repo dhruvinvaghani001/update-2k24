@@ -160,7 +160,7 @@ const events = [
     ],
     "co-ordinators": [
       {
-        name: "Aditya Bhakar",
+        name: "Aditya Bhakhar",
         profilePic: "",
         mobileNumber: "9925347434",
       },
