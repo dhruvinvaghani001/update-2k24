@@ -96,7 +96,18 @@ const DetailForm = ({ userDetails }: any) => {
               <FormLabel className="ml-1">Select your department</FormLabel>
               <FormControl>
                 <Combobox
-                  options={["CO", "IT", "AIDS", "EL", "MH", "CL", "CH"]}
+                  options={[
+                    "CO",
+                    "IT",
+                    "MH",
+                    "CL",
+                    "AIDS",
+                    "CH",
+                    "EL",
+                    "EC",
+                    "MCA",
+                    "TT",
+                  ]}
                   {...field}
                   label="Select Department"
                 />

@@ -21,7 +21,7 @@ const userDetailSchema = new Schema<IUserDetail>(
     },
     department: {
       type: String,
-      enum: ["CO", "IT", "MH", "CL", "AIDS", "CH", "EL"],
+      enum: ["CO", "IT", "MH", "CL", "AIDS", "CH", "EL", "EC", "MCA", "TT"],
       required: true,
     },
     year: {
@@ -41,7 +41,7 @@ const userDetailSchema = new Schema<IUserDetail>(
     enrollmentNo: {
       type: String,
       required: true,
-    }
+    },
   },
   {
     timestamps: true,
