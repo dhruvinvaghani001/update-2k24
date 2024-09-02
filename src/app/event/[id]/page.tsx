@@ -9,7 +9,6 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import SoloRegistration from "@/models/soloRegistration.model";
 import Title from "@/components/Title";
-import { event } from "@/lib/static";
 import Image from "next/image";
 import BlurFade from "@/components/magicui/blur-fade";
 import GroupRegistrationForm, { EmailOption } from "./_components/GroupForm";
@@ -30,9 +29,9 @@ const page = async ({ params }: { params: { id: string } }) => {
   console.log("EVENT PAGE");
   console.log(currEvent);
 
-  // if (!currEvent) {
-  //   return redirect("/events");
-  // }
+  if (!currEvent) {
+    return redirect("/events");
+  }
 
   await connectDB();
 
