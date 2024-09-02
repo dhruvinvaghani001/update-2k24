@@ -7,16 +7,54 @@ export async function GET(request: Request) {
     await connectDB();
 
     const data = [
-      { name: "demo3", eventType: "GROUP", maxMember: 4, minMember: 2 },
-      { name: "demo4", eventType: "GROUP", minMember: 2, maxMember: 3 },
+      { name: "avishkaar", eventType: "GROUP", minMember: 1, maxMember: 3 },
+      { name: "cineverse", eventType: "GROUP", minMember: 2, maxMember: 3 },
       {
-        name: "demo1",
+        name: "man-in-the-middle",
+        eventType: "GROUP",
+        minMember: 2,
+        maxMember: 3,
+      },
+      {
+        name: "escape-the-room",
+        eventType: "GROUP",
+        minMember: 4,
+        maxMember: 4,
+      },
+
+      {
+        name: "brain-o-teaser",
+        eventType: "GROUP",
+        minMember: 1,
+        maxMember: 2,
+      },
+
+      {
+        name: "the-resume-relay",
         eventType: "SOLO",
       },
       {
-        name: "demo2",
+        name: "stock-x-stake",
+        eventType: "GROUP",
+        minMember: 3,
+        maxMember: 3,
+      },
+      {
+        name: "memefest",
+        eventType: "GROUP",
+        minMember: 2,
+        maxMember: 3,
+      },
+      {
+        name: "human-or-ai",
         eventType: "SOLO",
       },
+      {
+        name: "split-or-steal",
+        eventType: "SOLO",
+      },
+      { name: "dataloom", eventType: "SOLO" },
+      { name: "devBattle", eventType: "SOLO" },
     ];
 
     const result = await Event.insertMany(data);

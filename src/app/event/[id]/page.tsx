@@ -14,6 +14,7 @@ import Image from "next/image";
 import BlurFade from "@/components/magicui/blur-fade";
 import GroupRegistrationForm, { EmailOption } from "./_components/GroupForm";
 import User from "@/models/user.model";
+import events from "@/lib/events";
 
 type Props = {};
 
@@ -21,13 +22,17 @@ const page = async ({ params }: { params: { id: string } }) => {
   const session = await getServerSession(authOptions);
 
   const eventId = params.id;
-  const currEvent = event.filter((event) => {
+  const currEvent = events.filter((event) => {
     return event.id === eventId;
   })[0];
 
-  if (!currEvent) {
-    return redirect("/events");
-  }
+  console.log(eventId);
+  console.log("EVENT PAGE");
+  console.log(currEvent);
+
+  // if (!currEvent) {
+  //   return redirect("/events");
+  // }
 
   await connectDB();
 
@@ -129,8 +134,8 @@ const page = async ({ params }: { params: { id: string } }) => {
         </p>
         <h4 className="text-xl my-4 font-bold text-pink-500">Rules: </h4>
         <ul className="list-decimal list-inside">
-          {currEvent.rules.map((rule, index) => {
-            return <li key={index}>{rule}</li>;
+          {currEvent?.rounds.map((rule, index) => {
+            return <li key={index}>{rule.name}</li>;
           })}
         </ul>
         <div className="my-8">
@@ -138,7 +143,7 @@ const page = async ({ params }: { params: { id: string } }) => {
             Event Coordinators
           </h4>
           <ul className="list-none space-y-2">
-            {currEvent.coordinators.map((person) => {
+            {currEvent["co-ordinators"].map((person) => {
               return (
                 <li key={person.image} className="flex items-center gap-3">
                   <Image
@@ -199,29 +204,6 @@ const page = async ({ params }: { params: { id: string } }) => {
           </>
         )}
       </BlurFade>
-
-      {/* {eventData.eventType == "GROUP" && dataOfMembers.length == 0 && (
-        <GroupRegisterButton
-          eventId={params.id}
-          isAuthorised={isAuthorised}
-        ></GroupRegisterButton>
-      )}
-      {eventData.eventType == "GROUP" && dataOfMembers.length > 0 && (
-        <>
-          <h1>Group Memebrs of your team</h1>
-          {dataOfMembers.map((item, index) => {
-            return (
-              <li key={index}>
-                {item.user.name} || {item.user.email}
-              </li>
-            );
-          })}
-        </>
-      )}
-      {eventData.eventType == "SOLO" && !isRegister && (
-        <RegisterSoloButton eventId={eventData.id} />
-      )}
-      {eventData.eventType == "SOLO" && isRegister && <> alredy resgietered </>} */}
     </div>
   );
 };

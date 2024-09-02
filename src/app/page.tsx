@@ -97,26 +97,6 @@ export default async function Page() {
       </section>
 
       <section className="my-24 mx-4">
-        <Title title="Co-Sponsors"></Title>
-        <BlurFade delay={0.1 * 4} inView className="my-12">
-          <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-lg max-w-5xl mx-auto">
-            <Marquee pauseOnHover className="[--duration:20s]">
-              {firstRow.map((review) => (
-                <ImageCard key={review.name} img={review.img} />
-              ))}
-            </Marquee>
-            {/* <Marquee reverse pauseOnHover className="[--duration:20s]">
-            {secondRow.map((review) => (
-              <ImageCard key={review.name} img={review.img} />
-            ))}
-          </Marquee> */}
-            {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div> */}
-            {/* <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div> */}
-          </div>
-        </BlurFade>
-      </section>
-
-      <section className="my-24 mx-4">
         <BlurFade delay={0.1} inView className="my-12">
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-pink-600 to-purple-600 text-center">
             Featured Events
