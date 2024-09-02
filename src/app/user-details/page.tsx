@@ -21,7 +21,15 @@ const Page = async (props: Props) => {
 
   const data = await UserDetail.findOne({
     userId: new mongoose.Types.ObjectId(session?.user.id),
-  }).select("-userId -createdAt -updateAt -id");
+  }).select("-userId -createdAt -updatedAt -_id -__v");
+
+  const userData = {
+    department: data.department,
+    year: data.year,
+    semester: data.semester,
+    enrollmentNo: data.enrollmentNo,
+    phoneNumber: data.phoneNumber,
+  };
 
   return (
     <div className="mb-36">
@@ -30,7 +38,7 @@ const Page = async (props: Props) => {
         className="mx-12"
       />
       <BlurFade delay={0.1 * 2} inView className="my-8 mx-8">
-        <DetailForm userDetails={data} />
+        <DetailForm userDetails={userData} />
       </BlurFade>
     </div>
   );

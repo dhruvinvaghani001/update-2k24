@@ -29,9 +29,9 @@ const page = async ({ params }: { params: { id: string } }) => {
   console.log("EVENT PAGE");
   console.log(currEvent);
 
-  // if (!currEvent) {
-  //   return redirect("/events");
-  // }
+  if (!currEvent) {
+    return redirect("/events");
+  }
 
   await connectDB();
 
