@@ -19,7 +19,7 @@ const Card = ({
           )}
         >
           <div className="text relative z-50">
-            <h1 className="font-bold text-xl md:text-3xl text-primary-foreground relative">
+            <h1 className="font-bold text-xl md:text-3xl text-primary-foreground relative ">
               {title}
             </h1>
             <p className="font-normal text-base text-muted-foreground relative my-4">
