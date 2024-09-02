@@ -1,6 +1,6 @@
 import connectDB from "@/db";
 import Event from "@/models/event.model";
-import mongoose, { ObjectId } from "mongoose";
+import mongoose from "mongoose";
 import React from "react";
 import RegisterSoloButton from "./_components/RegisterSoloButton";
 import { redirect } from "next/navigation";

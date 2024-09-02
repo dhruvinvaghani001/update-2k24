@@ -81,16 +81,16 @@ export default async function Page() {
           </h2>
         </BlurFade>
         <BlurFade delay={0.1 * 4} inView className="my-12">
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 m-4">
             <Image
               src={ScheduleImage}
               alt="Events Schedule"
-              className="aspect-video w-1/4"
+              className="aspect-video md:w-1/4 rounded"
             />
             <Image
               src={ScheduleImage}
               alt="Events Schedule"
-              className="aspect-video w-1/4"
+              className="aspect-video md:w-1/4"
             />
           </div>
         </BlurFade>
