@@ -1,4 +1,3 @@
-import Title from "@/components/Title";
 import BlurFade from "@/components/magicui/blur-fade";
 import DetailForm from "./_components/Form";
 import { getServerSession } from "next-auth";
@@ -7,6 +6,7 @@ import { redirect } from "next/navigation";
 import UserDetail from "@/models/userdetails.model";
 import mongoose from "mongoose";
 import connectDB from "@/db";
+import GradientAnimatedText from "@/components/GradientAnimatedText";
 
 type Props = {};
 
@@ -32,11 +32,10 @@ const Page = async (props: Props) => {
   };
 
   return (
-    <div className="mb-36">
-      <Title
-        title="Fill this details so you would not have to in Future..."
-        className="mx-12"
-      />
+    <div className="mt-8 mb-36">
+      <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none ">
+        Let's Get You Started
+      </GradientAnimatedText>
       <BlurFade inView className="my-8 mx-8">
         <DetailForm userDetails={userData} />
       </BlurFade>

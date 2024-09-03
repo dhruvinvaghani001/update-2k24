@@ -69,7 +69,7 @@ const DetailForm = ({ userDetails }: any) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 border p-6 bg-card"
+        className="space-y-8 p-6 bg-card max-w-7xl mx-auto w-full col-span-4 bg-gradient-to-br from-slate-900/30 to-violet-900/20 rounded-lg border border-violet-400/70"
       >
         <FormField
           control={form.control}
@@ -171,7 +171,7 @@ const DetailForm = ({ userDetails }: any) => {
           )}
         />
 
-        <Button type="submit" className="flex gap-1 items-center">
+        <Button type="submit" className="flex gap-1 items-center max-md:w-full">
           {isLoading && <Loader2 className="size-5 animate-spin" />}
           Submit
         </Button>
