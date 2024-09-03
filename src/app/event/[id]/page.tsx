@@ -195,8 +195,8 @@ const page = async ({ params }: { params: { id: string } }) => {
             })}
           </ul>
         </div>
-        <div className="p-4 mt-6 w-full bg-gradient-to-br from-slate-900/30 to-teal-900/30 rounded-lg border border-teal-400/70">
-          <div>
+        <div className="p-4 mt-6 w-full bg-gradient-to-br from-slate-900/30 to-teal-900/30 rounded-lg border border-teal-400/70 sm:grid sm:grid-cols-2">
+          <div className="sm:border-r-2 sm:mr-4">
             <h4 className="text-xl mb-4 font-bold text-teal-400 capitalize">
               Event Coordinators
             </h4>
@@ -210,7 +210,7 @@ const page = async ({ params }: { params: { id: string } }) => {
                     <Image
                       alt={person.name}
                       src={`/photos/${person.profilePic}`}
-                      width={48}
+                      width={48}  
                       height={40}
                       className="rounded-full border"
                     />
@@ -223,8 +223,8 @@ const page = async ({ params }: { params: { id: string } }) => {
               })}
             </ul>
           </div>
-          <div className="my-8">
-            <h4 className="text-xl my-4 font-bold text-teal-400 capitalize">
+          <div className="">
+            <h4 className="text-xl mb-4 mt-8 sm:mt-0 font-bold text-teal-400 capitalize">
               volunteers
             </h4>
             <ul className="list-none space-y-2">
