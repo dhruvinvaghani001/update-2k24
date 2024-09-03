@@ -30,6 +30,7 @@ const Card = ({
             width={1080}
             height={1920}
             className="object-cover h-48 aspect-video rounded border border-violet-100/20 shadow-lg shadow-violet-500/40 bg-violet-900/20"
+            priority
           />
           {/* </div> */}
           <div className="text relative z-50 my-auto">

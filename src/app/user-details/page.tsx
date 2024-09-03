@@ -34,7 +34,7 @@ const Page = async (props: Props) => {
   return (
     <div className="mt-8 mb-36">
       <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none ">
-        Let's Get You Started
+        Let&apos;s Get You Started
       </GradientAnimatedText>
       <BlurFade inView className="my-8 mx-8">
         <DetailForm userDetails={userData} />
