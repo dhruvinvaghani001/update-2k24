@@ -784,4 +784,191 @@ const events = [
   },
 ];
 
+export const featuredEvents = [
+  {
+    id: "brain-o-teaser",
+    name: "Brain-O-Teaser",
+    coverImage: "/events/poster/brain-o-teaser.png",
+    logo: "/events/logo/brain-o-teaser.png",
+    Tagline: "Trace the Error, Chase the IP",
+    description: "",
+    eventType: "SOLO & GROUP",
+    teamSize: "2",
+    minMember: "1",
+    maxMember: "2",
+    date: "",
+    time: "",
+    rounds: [
+      {
+        name: "Round 1: Bug Finder & Output Crack",
+        Rules: [
+          "Marks based evaluation will be done. In case of tie time factor will be considered.",
+        ],
+      },
+      {
+        name: "Round 2: Find your IP and get the key",
+        Rules: [
+          "Participants will be given a couple of codes to solve and reach to the final machine and get the key from the computer and submit it.",
+          "Time based evaluation.",
+        ],
+      },
+    ],
+    "co-ordinators": [
+      {
+        name: "Kirtan Vaghasia",
+        profilePic: "",
+        mobileNumber: "9824570380",
+      },
+      {
+        name: "Pritesh Pandya",
+        profilePic: "",
+        mobileNumber: "8799483232",
+      },
+      {
+        name: "Parva Shah",
+        profilePic: "",
+        mobileNumber: "9327453584",
+      },
+    ],
+    volunteers: [
+      {
+        name: "Jainil Tailor",
+        profilePic: "",
+        mobileNumber: "9510054054",
+      },
+      {
+        name: "Parv Shekhaliya",
+        profilePic: "",
+        mobileNumber: "7801811690",
+      },
+    ],
+    facultyCoordinators: [
+      {
+        name: "Prof. Jaydeep Gheewala",
+      },
+    ],
+  },
+  {
+    id: "memefest",
+    name: "Meme Fest",
+    coverImage: "/events/poster/meme-fest.png",
+    logo: "/events/logo/meme-fest.png",
+    Tagline: "Where Memes Meet Madness!",
+    description: "",
+    eventType: "GROUP",
+    teamSize: "",
+    minMember: "2",
+    maxMember: "3",
+    date: "21 September",
+    time: "9:30 AM to 12:00 PM",
+    rounds: [
+      {
+        name: "Round 1: Meme Challenge",
+        Rules: [
+          "Complete three types of meme-related questions: Punchline Recovery, Emoji Meme Guessing, and Muted Meme Clips.",
+          "A surprise question will help participants advance to Round 2.",
+        ],
+      },
+      {
+        name: "Round 2: Puzzle Challenge",
+        Rules: [
+          "Guess famous personalities or characters based on their shadows.",
+          "Complete a crossword puzzle related to famous personalities, YouTubers, or other well-known figures.",
+        ],
+      },
+    ],
+    "co-ordinators": [
+      {
+        name: "Hetvi Patel",
+        profilePic: "",
+        mobileNumber: "9426670831",
+      },
+      {
+        name: "Meet Oza",
+        profilePic: "",
+        mobileNumber: "9429929250",
+      },
+      {
+        name: "Nirav Paneliya",
+        profilePic: "",
+        mobileNumber: "6352389172",
+      },
+      {
+        name: "Aryan Nimavat",
+        profilePic: "",
+        mobileNumber: "6351863630",
+      },
+    ],
+    volunteers: [
+      {
+        name: "Ansh Patel",
+        profilePic: "",
+        mobileNumber: "8849621862",
+      },
+      {
+        name: "Suhani Gohil",
+        profilePic: "",
+        mobileNumber: "6354167241",
+      },
+    ],
+    facultyCoordinators: [
+      {
+        name: "None",
+      },
+    ],
+  },
+  {
+    id: "escape-the-room",
+    name: "Escape Room",
+    coverImage: "/events/poster/escape-room.png",
+    logo: "/events/logo/escape-room.png",
+    Tagline: "Your Mind is the Key OR Challenge the Room, Find the Exit",
+    description: "",
+    eventType: "GROUP",
+    teamSize: "4",
+    minMember: "4",
+    maxMember: "4",
+    date: "",
+    time: "",
+    rounds: [
+      {
+        name: "Round 1: Escape The Room",
+        Rules: [
+          "Stage 1: Debug The Code",
+          "Participants need to debug the code and find the first two digits for the lock.",
+          "Any participant found engaging in unfair practices or violating the integrity of the competition will be immediately disqualified.",
+        ],
+      },
+    ],
+    "co-ordinators": [
+      {
+        name: "Tirth Asodariya",
+        profilePic: "",
+        mobileNumber: "8485912886",
+      },
+      {
+        name: "Aadyanshi Patel",
+        profilePic: "",
+        mobileNumber: "9409610008",
+      },
+      {
+        name: "Anjali Jariwala",
+        profilePic: "",
+        mobileNumber: "9662522126",
+      },
+    ],
+    volunteers: [
+      {
+        name: "Om Sonani",
+        profilePic: "",
+        mobileNumber: "9081488388",
+      },
+    ],
+    facultyCoordinators: [
+      {
+        name: "Prof. Vandana Joshi",
+      },
+    ],
+  },
+];
 export default events;

@@ -15,8 +15,6 @@ import User from "@/models/user.model";
 import events from "@/lib/events";
 import GradientAnimatedText from "@/components/GradientAnimatedText";
 
-type Props = {};
-
 const page = async ({ params }: { params: { id: string } }) => {
   const session = await getServerSession(authOptions);
 
@@ -170,30 +168,46 @@ const page = async ({ params }: { params: { id: string } }) => {
             </ul>
           </div>
         )}
-        <div className="p-4 mt-6 w-full bg-gradient-to-br from-slate-900/30 to-violet-900/30 rounded-lg border border-violet-400/70">
-          <h4 className="text-3xl mb-2 mt-1 font-bold text-violet-500">
-            Rules:
-          </h4>
-          <ul>
-            {currEvent?.rounds.map((round, index) => {
-              return (
-                <li className="mt-3" key={round.name}>
-                  <p className="text-lg mt-3 mb-1 capitalize font-bold underline text-yellow-200">
-                    {round.name}
-                  </p>
-                  <ul className="list-disc px-3">
-                    {round.Rules.map((rule, index) => {
-                      return (
-                        <li key={rule} className="text-sm mt-0.5">
-                          {rule}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </li>
-              );
-            })}
-          </ul>
+        <Image
+          src={currEvent.coverImage}
+          alt={currEvent.id}
+          width={1080}
+          height={1920}
+          className="w-full rounded-xl border border-violet-400/70 md:hidden mx-auto my-6"
+        />
+        <div className="md:grid grid-cols-6 gap-6  mt-6">
+          <Image
+            src={currEvent.coverImage}
+            alt={currEvent.id}
+            width={1080}
+            height={1920}
+            className="w-full col-span-2 rounded-xl border border-violet-400/70 shadow-lg shadow-purple-600/30 max-md:hidden mx-auto"
+          />
+          <div className="p-4 w-full col-span-4 bg-gradient-to-br from-slate-900/30 to-violet-900/30 rounded-lg border border-violet-400/70">
+            <h4 className="text-3xl mb-2 mt-1 font-bold text-violet-500">
+              Rules:
+            </h4>
+            <ul>
+              {currEvent?.rounds.map((round, index) => {
+                return (
+                  <li className="mt-3" key={round.name}>
+                    <p className="text-lg mt-3 mb-1 capitalize font-bold underline text-yellow-200">
+                      {round.name}
+                    </p>
+                    <ul className="list-disc px-3">
+                      {round.Rules.map((rule, index) => {
+                        return (
+                          <li key={rule} className="text-sm mt-0.5">
+                            {rule}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
         <div className="p-4 mt-6 w-full bg-gradient-to-br from-slate-900/30 to-teal-900/30 rounded-lg border border-teal-400/70 sm:grid sm:grid-cols-2">
           <div className="sm:border-r-2 sm:mr-4">
@@ -210,7 +224,7 @@ const page = async ({ params }: { params: { id: string } }) => {
                     <Image
                       alt={person.name}
                       src={`/photos/${person.profilePic}`}
-                      width={48}  
+                      width={48}
                       height={40}
                       className="rounded-full border"
                     />

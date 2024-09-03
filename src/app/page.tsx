@@ -8,13 +8,11 @@ import GradientAnimatedText from "@/components/GradientAnimatedText";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
-import events from "@/lib/events";
 
 import codewinglet from "/public/sponsers/codewinglet.svg";
+import vsOverseas from "/public/sponsers/vs-overseas.png";
 
-const featuredEvents = events.slice(0, 3);
-// console.log(featuredEvents);
-
+import { featuredEvents } from "@/lib/events";
 export default async function Page() {
   return (
     <main className="min-h-screen bg-background max-w-7xl mx-auto relative mb-36">
@@ -62,16 +60,16 @@ export default async function Page() {
           </GradientAnimatedText>
         </BlurFade>
         <BlurFade inView className="my-12">
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4 m-4">
+          <div className="flex flex-col md:divide-x md:flex-row justify-center items-center md:gap-4 m-4">
             <Image
               src={codewinglet}
               alt="Events Schedule"
-              className="aspect-video invert w-4/5 md:w-1/4 rounded-lg"
+              className="aspect-video scale-75 md:scale-100 invert w-4/5 md:w-1/4 rounded-lg"
             />
             <Image
-              src={ScheduleImage}
+              src={vsOverseas}
               alt="Events Schedule"
-              className="aspect-video w-4/5 md:w-1/4 rounded-lg"
+              className="w-4/5 md:w-1/4 rounded-lg scale-75"
             />
           </div>
         </BlurFade>
