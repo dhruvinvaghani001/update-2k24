@@ -60,7 +60,7 @@ export default async function Page() {
           </GradientAnimatedText>
         </BlurFade>
         <BlurFade inView className="my-12">
-          <div className="flex flex-col md:divide-x md:flex-row justify-center items-center md:gap-4 m-4">
+          <div className="flex flex-col md:flex-row justify-center items-center md:gap-4 m-4">
             <Image
               src={codewinglet}
               alt="Events Schedule"

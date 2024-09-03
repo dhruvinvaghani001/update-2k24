@@ -5,7 +5,7 @@ const ImageCard = ({ img }: { img: string }) => {
   return (
     <div
       className={cn(
-        "relative w-64 h-64 cursor-pointer overflow-hidden rounded-xl ",
+        "relative w-80 h-96 cursor-pointer overflow-hidden rounded-xl ",
         "bg-secondary"
       )}
     >
@@ -14,7 +14,7 @@ const ImageCard = ({ img }: { img: string }) => {
         alt="Co-sponsor"
         layout="fill"
         objectFit="cover"
-        className="rounded-xl aspect-video"
+        className="rounded-xl object-center"
       />
     </div>
   );

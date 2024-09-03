@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat as SansFont } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "../components/AuthProvider";
 import { getServerSession } from "next-auth";
@@ -9,7 +9,7 @@ import { UserProvider } from "@/context/UserContext";
 import { Toaster } from "@/components/ui/toaster";
 import NextTopLoader from "nextjs-toploader";
 
-const inter = Inter({ subsets: ["latin"] });
+const sansFont = SansFont({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Updates 2k24",
@@ -27,7 +27,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={sansFont.className}>
         <NextTopLoader
           color="rgb(109, 40, 217)"
           initialPosition={0.08}
