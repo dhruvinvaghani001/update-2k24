@@ -10,6 +10,8 @@ import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import events from "@/lib/events";
 
+import codewinglet from "/public/sponsers/codewinglet.svg";
+
 const featuredEvents = events.slice(0, 3);
 // console.log(featuredEvents);
 
@@ -62,9 +64,9 @@ export default async function Page() {
         <BlurFade inView className="my-12">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 m-4">
             <Image
-              src={ScheduleImage}
+              src={codewinglet}
               alt="Events Schedule"
-              className="aspect-video w-4/5 md:w-1/4 rounded-lg"
+              className="aspect-video invert w-4/5 md:w-1/4 rounded-lg"
             />
             <Image
               src={ScheduleImage}
@@ -123,7 +125,7 @@ export default async function Page() {
                   <Card
                     title={data.name}
                     tagline={data.Tagline}
-                    // coverImage={data?.coverImage}
+                    coverImage={data.coverImage}
                     key={data.id}
                   />
                 </Link>

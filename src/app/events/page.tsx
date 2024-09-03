@@ -17,7 +17,7 @@ const page = () => {
               <Card
                 title={data.name}
                 tagline={data.Tagline}
-                // coverImage={data.coverImage ? data.coverImage : "/"}
+                coverImage={data.coverImage}
                 key={data.id}
               />
             </Link>

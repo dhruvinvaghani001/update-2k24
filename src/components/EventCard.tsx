@@ -11,7 +11,7 @@ const Card = ({
 }: {
   title: string;
   tagline: string;
-  coverImage?: string;
+  coverImage: string;
 }) => {
   return (
     <BlurFade inView className="overflow-hidden mx-auto">
@@ -23,15 +23,15 @@ const Card = ({
             "flex flex-col justify-between gap-6 py-8"
           )}
         >
-          <div className="aspect-video overflow-hidden rounded border border-violet-200/30 bg-violet-900/20">
-            <Image
-              src={coverImage ? coverImage : thubmnail}
-              alt={`cover image for event ${title}`}
-              // width={36}
-              // height={16}
-              className=""
-            />
-          </div>
+          {/* <div className="overflow-hidden aspect-video h-full rounded border border-violet-500/50 shadow-lg shadow-violet-500/30 bg-violet-900/20"> */}
+          <Image
+            src={coverImage}
+            alt={`cover image for event ${title}`}
+            width={1080}
+            height={1920}
+            className="object-cover h-48 aspect-video rounded border border-violet-100/20 shadow-lg shadow-violet-500/40 bg-violet-900/20"
+          />
+          {/* </div> */}
           <div className="text relative z-50 my-auto">
             <h1 className="font-bold text-xl md:text-3xl text-primary-foreground relative uppercase text-center">
               {title}

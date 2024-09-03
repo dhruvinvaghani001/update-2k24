@@ -1,8 +1,9 @@
 const events = [
   {
     id: "avishkaar",
-    name: "AVISHKAAR",
-    coverImage: " ",
+    name: "Avishkaar",
+    coverImage: "/events/poster/avishkaar.png",
+    logo: "/events/logo/avishkaar.png",
     Tagline: "Innovate to Elevate",
     description: "",
     eventType: "GROUP",
@@ -57,7 +58,8 @@ const events = [
   {
     id: "cineverse",
     name: "Cineverse",
-    coverImage: " ",
+    coverImage: "/events/poster/cineverse.png",
+    logo: "/events/logo/cineverse.png",
     Tagline: "Challenge Your Inner Movie Buff!",
     description: "",
     eventType: "GROUP",
@@ -131,8 +133,9 @@ const events = [
 
   {
     id: "man-in-the-middle",
-    name: "Man In The Middle",
-    coverImage: " ",
+    name: "Man In Middle",
+    coverImage: "/events/poster/man-in-the-middle.png",
+    logo: "/events/logo/man-in-the-middle.png",
     Tagline: "The Art of Interception!",
     description: "",
     eventType: "SOLO",
@@ -196,8 +199,9 @@ const events = [
 
   {
     id: "escape-the-room",
-    name: "Escape The Room",
-    coverImage: " ",
+    name: "Escape Room",
+    coverImage: "/events/poster/escape-room.png",
+    logo: "/events/logo/escape-room.png",
     Tagline: "Your Mind is the Key OR Challenge the Room, Find the Exit",
     description: "",
     eventType: "GROUP",
@@ -249,7 +253,8 @@ const events = [
   {
     id: "brain-o-teaser",
     name: "Brain-O-Teaser",
-    coverImage: " ",
+    coverImage: "/events/poster/brain-o-teaser.png",
+    logo: "/events/logo/brain-o-teaser.png",
     Tagline: "Trace the Error, Chase the IP",
     description: "",
     eventType: "SOLO & GROUP",
@@ -310,8 +315,9 @@ const events = [
   },
   {
     id: "the-resume-relay",
-    name: "The Resume Relay",
-    coverImage: " ",
+    name: "Resume Relay",
+    coverImage: "/events/poster/the-resume-relay.png",
+    logo: "/events/logo/the-resume-relay.png",
     Tagline: "Resume Ready, Job Steady",
     description: "",
     eventType: "SOLO",
@@ -372,7 +378,8 @@ const events = [
   {
     id: "stock-x-stake",
     name: "Stock X Stake",
-    coverImage: " ",
+    coverImage: "/events/poster/stock-x-stake.png",
+    logo: "/events/logo/stock-x-stake.png",
     Tagline: "Paisa kamya nahi banya jata hai",
     description: "",
     eventType: "GROUP",
@@ -441,8 +448,9 @@ const events = [
   },
   {
     id: "memefest",
-    name: "MemeFest",
-    coverImage: " ",
+    name: "Meme Fest",
+    coverImage: "/events/poster/meme-fest.png",
+    logo: "/events/logo/meme-fest.png",
     Tagline: "Where Memes Meet Madness!",
     description: "",
     eventType: "GROUP",
@@ -510,7 +518,8 @@ const events = [
   {
     id: "human-or-ai",
     name: "Human Or Ai",
-    coverImage: " ",
+    coverImage: "/events/poster/human-or-ai.png",
+    logo: "/events/logo/human-or-ai.png",
     Tagline: "Where Imagination Meets Innovation",
     description: "",
     eventType: "SOLO",
@@ -573,7 +582,8 @@ const events = [
   {
     id: "split-or-steal",
     name: "Split Or Steal",
-    coverImage: " ",
+    coverImage: "/events/poster/split-or-steal.png",
+    logo: "/events/logo/split-or-steal.png",
     Tagline: "Take it or Leave it!",
     description: "",
     eventType: "GROUP",
@@ -643,8 +653,9 @@ const events = [
 
   {
     id: "dataloom",
-    name: "DataLoom",
-    coverImage: " ",
+    name: "Data Loom",
+    coverImage: "/events/poster/data-loom.png",
+    logo: "/events/logo/data-loom.png",
     Tagline: "Weaving Insights from Every Byte.",
     description: "",
     eventType: "GROUP",
@@ -706,8 +717,9 @@ const events = [
   },
   {
     id: "devBattle",
-    name: "DevBattle",
-    coverImage: "",
+    name: "Dev Battle",
+    coverImage: "/events/poster/dev-battle.png",
+    logo: "/events/logo/dev-battle.png",
     Tagline: "Showcase Your Coding Skills in a Thrilling Competition!",
     description:
       "A dynamic and competitive coding event challenging participants to showcase their debugging and coding skills in two exciting rounds.",
