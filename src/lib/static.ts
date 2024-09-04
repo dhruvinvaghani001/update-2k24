@@ -115,7 +115,7 @@ const graphicsTeam: PersonProps[] = [
   },
   {
     name: "Divyam Desai",
-    image: "Divyam_Desai.jpg",
+    image: "Divyam_Desai.JPG",
   },
   {
     name: "Dwip Shah",
