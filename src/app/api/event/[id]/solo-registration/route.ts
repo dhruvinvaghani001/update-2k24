@@ -2,9 +2,11 @@ import { getServerSession, User } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 import SoloRegistration from "@/models/soloRegistration.model";
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
+import connectDB from "@/db";
 
 export async function POST(request: NextRequest) {
   try {
+    await connectDB();
     const { eventId } = await request.json();
 
     if (!eventId) {
