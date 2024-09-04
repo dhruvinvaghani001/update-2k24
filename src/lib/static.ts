@@ -64,7 +64,7 @@ const updatesLeads: PersonProps[] = [
 const marketingTeam: PersonProps[] = [
   {
     name: "Manthan Vaghani",
-    image: "Manthan_Vaghani.jpg",
+    image: "Manthan_Vaghani.JPG",
   },
   {
     name: "Deep Gadhiya",
@@ -99,7 +99,7 @@ const graphicsTeam: PersonProps[] = [
   },
   {
     name: "Jay Variya",
-    image: "Jay_Variya.jpg",
+    image: "JAY_VARIYA.jpg",
   },
   {
     name: "Aayushi Tamakuwala",
@@ -115,7 +115,7 @@ const graphicsTeam: PersonProps[] = [
   },
   {
     name: "Divyam Desai",
-    image: "Divyam_Desai.jpg",
+    image: "Divyam_Desai.JPG",
   },
   {
     name: "Dwip Shah",
@@ -158,7 +158,7 @@ const decorationTeam: PersonProps[] = [
   },
   {
     name: "Tanvi Dhola",
-    image: "Tanvi_Dhola.jpg",
+    image: "Tanvi_Dhola.JPG",
   },
   {
     name: "Diya Patel",
