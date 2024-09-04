@@ -27,7 +27,7 @@ const events = [
     "co-ordinators": [
       {
         name: "Neeraja Joshi",
-        profilePic: "Neeraja_Joshi.jpg",
+        profilePic: "Neeraja_Joshi.JPG",
         mobileNumber: "6352849431",
       },
       {
