@@ -227,10 +227,10 @@ const page = async ({ params }: { params: { id: string } }) => {
                       src={`/photos/${
                         person.profilePic ? person.profilePic : "avatar.png"
                       }`}
-                      width={48}
-                      height={40}
+                      width={256}
+                      height={256}
                       loading="lazy"
-                      className="rounded-full border object-cover"
+                      className="rounded-full border size-12 object-cover object-center"
                     />
                     <div className="flex flex-col">
                       <p>{person.name}</p>
@@ -254,9 +254,9 @@ const page = async ({ params }: { params: { id: string } }) => {
                       src={`/photos/${
                         person.profilePic ? person.profilePic : "avatar.png"
                       }`}
-                      width={48}
-                      height={48}
-                      className="rounded-full border"
+                      width={256}
+                      height={256}
+                      className="rounded-full border size-12 object-cover object-center"
                       loading="lazy"
                     />
                     <div>
