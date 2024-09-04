@@ -13,35 +13,35 @@ const imageData = [
   },
   {
     alt: "photo",
-    url: "/gallery/2.JPG",
+    url: "/gallery/2.jpg",
   },
   {
     alt: "photo",
-    url: "/gallery/3.JPG",
+    url: "/gallery/3.jpg",
   },
   {
     alt: "photo",
-    url: "/gallery/4.JPG",
+    url: "/gallery/4.jpg",
   },
   {
     alt: "photo",
-    url: "/gallery/5.JPG",
+    url: "/gallery/5.jpg",
   },
   {
     alt: "photo",
-    url: "/gallery/6.JPG",
+    url: "/gallery/6.jpg",
   },
   {
     alt: "photo",
-    url: "/gallery/7.JPG",
+    url: "/gallery/7.jpg",
   },
   {
     alt: "photo",
-    url: "/gallery/8.JPG",
+    url: "/gallery/8.jpg",
   },
   {
     alt: "photo",
-    url: "/gallery/9.JPG",
+    url: "/gallery/9.jpg",
   },
 ];
 const page = () => {
@@ -51,7 +51,7 @@ const page = () => {
         Gallery
       </GradientAnimatedText>
 
-      <p className="text-xl mt-8 mb-2 text-center text-muted-foreground font-bold tracking-tighter sm:text-xl xl:text-2xl/none">
+      <p className="text-center text-pretty tracking-tighter text-lg sm:text-xl xl:text-2xl/none italic text-transparent bg-clip-text bg-gradient-to-br text-gradient-to-br from-yellow-200 to-orange-700">
         Glimpse from Updates 2k23
       </p>
       {/* <Marquee
@@ -59,12 +59,12 @@ const page = () => {
         pauseOnHover
         className="[--duration:30s] max-w-7xl mx-auto"
       >
-        {imageData.map((review) => (
+        {imaata.map((revw) => (
           <ImageCard key={review.url} img={review.url} />
         ))}
       </Marquee> */}
       <div className="container mx-auto p-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {imageData.map((image, index) => (
             <div
               key={index}
@@ -72,7 +72,7 @@ const page = () => {
               ${index === 0 ? "col-span-2 row-span-2" : ""}
               ${index === 5 ? "col-span-1" : ""}
               ${index === 6 ? "col-span-1" : ""}
-              overflow-hidden rounded-lg shadow-lg
+              overlow-hidden rounded-lg shadow-lg
             `}
             >
               <Image
@@ -80,7 +80,7 @@ const page = () => {
                 alt={image.alt}
                 width={500}
                 height={500}
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center rounded border shadow-lg shadow-violet-500/15"
               />
             </div>
           ))}

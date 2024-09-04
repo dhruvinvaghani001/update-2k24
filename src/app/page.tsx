@@ -11,13 +11,15 @@ import Link from "next/link";
 
 import codewinglet from "/public/sponsers/codewinglet.svg";
 import vsOverseas from "/public/sponsers/vs-overseas.png";
+// import UpdatesLogo from "/public/updates-logo.gif";
+import UpdatesLogo from "@/assets/updates-logo.png";
 
 import { featuredEvents } from "@/lib/events";
 export default async function Page() {
   return (
     <main className="min-h-screen bg-background max-w-7xl mx-auto relative mb-36">
       {/* <Navbar /> */}
-      <section className="relative flex w-full overflow-hidden rounded-lg bg-background py-20">
+      <section className="relative flex w-full overflow-hidden rounded-lg bg-background md:py-10">
         <GridPattern
           numSquares={30}
           maxOpacity={0.1}
@@ -26,25 +28,26 @@ export default async function Page() {
           className={cn(
             "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
             "inset-x-0 max-md:inset-y-[-70%] sm:h-[100%] h-[200%] skew-y-12",
-            "opacity-40"
+            "opacity-60"
           )}
         />
 
         <div className="flex items-center justify-center h-fit mx-auto">
-          <div className="my-48">
-            <BlurFade inView>
-              <GradientAnimatedText className="font-bold tracking-tighter text-5xl xl:text-6xl/none ">
+          <div className="mt-32">
+            <BlurFade inView className="mx-6">
+              {/* <GradientAnimatedText className="font-bold tracking-tighter text-5xl xl:text-6xl/none ">
                 Updates 2k24
-              </GradientAnimatedText>
+              </GradientAnimatedText> */}
 
-              {/* <Image
+              <Image
                 src={UpdatesLogo}
                 alt="Updates Logo"
-                className="aspect-square "
-              /> */}
+                className="aspect-video"
+                priority
+              />
             </BlurFade>
             <BlurFade inView>
-              <p className="text-center text-pretty tracking-tighter sm:text-xl xl:text-2xl/none">
+              <p className="text-center text-pretty tracking-tighter text-lg sm:text-xl xl:text-2xl/none italic text-transparent bg-clip-text bg-gradient-to-br text-gradient-to-br from-yellow-300 to-orange-900">
                 From floppy to the cloud
               </p>
             </BlurFade>

@@ -10,7 +10,7 @@ const page = () => {
       <GradientAnimatedText className="mt-8 mb-10 text-3xl font-bold tracking-tighter xl:text-4xl/none  text-center">
         Events
       </GradientAnimatedText>
-      <div className="grid grid-cols-1  xl:grid-cols-3 gap-8 mx-auto w-fit">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mx-auto w-fit">
         {events.map((data) => {
           return (
             <Link href={`/event/${data.id}`} key={data.id}>
