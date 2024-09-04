@@ -100,7 +100,7 @@ export default function GroupRegistrationForm({
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-4 p-4 bg-gradient-to-br from-purple-950/30 to-slate-900/30 rounded-lg border border-purple-900/70"
       >
-        <div className="flex h-5 items-center space-x-2 text-sm">
+        <div className="flex h-5 items-center space-x-2 text-sm text-green-300">
           <div>Team Size :</div>
           <Separator orientation="vertical" />
           <div>Min - {mini}</div>
@@ -123,16 +123,16 @@ export default function GroupRegistrationForm({
                   onChange={field.onChange}
                 />
               </FormControl>
-              <FormMessage className="text-sm">
+              <FormMessage className="text-sm text-rose-600">
                 If a friend&apos;s email isn&apos;t available, they might be in
                 another group or not signed in.
+              </FormMessage>
+              <FormMessage className="text-sm text-rose-600">
+                Groups are final once created; no changes can be made.
               </FormMessage>
             </FormItem>
           )}
         />
-        <FormMessage className="text-sm font-rose">
-          Groups are final once created; no changes can be made.
-        </FormMessage>
         <Button type="submit" className="w-full md:w-fit">
           Register Group
         </Button>
