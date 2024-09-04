@@ -99,7 +99,7 @@ const graphicsTeam: PersonProps[] = [
   },
   {
     name: "Jay Variya",
-    image: "JAY_VARIYA.JPG",
+    image: "JAY_VARIYA.jpg",
   },
   {
     name: "Aayushi Tamakuwala",
