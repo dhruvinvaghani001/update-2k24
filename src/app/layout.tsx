@@ -8,12 +8,13 @@ import { Navbar } from "@/components/Navbar";
 import { UserProvider } from "@/context/UserContext";
 import { Toaster } from "@/components/ui/toaster";
 import NextTopLoader from "nextjs-toploader";
+import Footer from "@/components/Footer";
 
 const sansFont = SansFont({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Updates 2k24",
-  description: "",
+  description: "From Floppy to Cloud, be a part in this amazing journey!",
 };
 
 export default async function RootLayout({
@@ -22,8 +23,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const session = await getServerSession(authOptions);
-  // console.log("this if from server");
-  // console.log(session);
 
   return (
     <html lang="en">
@@ -50,7 +49,7 @@ export default async function RootLayout({
             <Navbar />
           </UserProvider>
         </AuthProvider>
-        {/* <Button className="fixed right-12 top-12">Login/Register</Button> */}
+        <Footer />
       </body>
     </html>
   );
