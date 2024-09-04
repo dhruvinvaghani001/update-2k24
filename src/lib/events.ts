@@ -27,7 +27,7 @@ const events = [
     "co-ordinators": [
       {
         name: "Neeraja Joshi",
-        profilePic: "Neeraja_Joshi.jpg",
+        profilePic: "Neeraja_Joshi.JPG",
         mobileNumber: "6352849431",
       },
       {
@@ -181,12 +181,12 @@ const events = [
     volunteers: [
       {
         name: "Dishali Rabadiya",
-        profilePic: "dishali_rabadiya.jpg",
+        profilePic: "dishali_rabadiya.JPG",
         mobileNumber: "6355600581",
       },
       {
         name: "Mangalya Desai",
-        profilePic: "Mangalya _Desai.jpg",
+        profilePic: "Mangalya _Desai.JPG",
         mobileNumber: "9428146849",
       },
     ],
@@ -436,7 +436,7 @@ const events = [
       },
       {
         name: "Dhyey Chauhan",
-        profilePic: "Dhyey_chauhan.jpg",
+        profilePic: "Dhyey_chauhan.JPG",
         mobileNumber: "9054680228",
       },
     ],
@@ -505,7 +505,7 @@ const events = [
       },
       {
         name: "Suhani Gohil",
-        profilePic: "Suhani_Gohil.jpg",
+        profilePic: "Suhani_Gohil.JPG",
         mobileNumber: "6354167241",
       },
     ],
@@ -623,7 +623,7 @@ const events = [
       },
       {
         name: "Om Vasoya",
-        profilePic: "Om_vasoya.jpg",
+        profilePic: "Om_vasoya.JPG",
         mobileNumber: "8320169729",
       },
       {
@@ -683,7 +683,7 @@ const events = [
     "co-ordinators": [
       {
         name: "Brahmi Shah",
-        profilePic: "Brahmi_Shah.jpg",
+        profilePic: "Brahmi_Shah.JPG",
         mobileNumber: "9054448281",
       },
       {

@@ -21,6 +21,10 @@ const RegisterSoloButton = ({
 
   const [isLoading, setIsLoading] = useState(false);
   const handleSoloRegistration = async () => {
+    if (eventId == "66d55fb267e58136c12b353c") {
+      window.location.href = "https://www.codewinglet.com/event-form";
+      return;
+    }
     if (status == "authenticated") {
       try {
         setIsLoading(true);

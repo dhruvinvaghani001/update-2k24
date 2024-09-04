@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -18,6 +19,7 @@ import axios from "axios";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { toast } from "@/components/ui/use-toast";
+import { Separator } from "@radix-ui/react-separator";
 
 export type EmailOption = {
   value: string;
@@ -98,6 +100,13 @@ export default function GroupRegistrationForm({
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-4 p-4 bg-gradient-to-br from-purple-950/30 to-slate-900/30 rounded-lg border border-purple-900/70"
       >
+        <div className="flex h-5 items-center space-x-2 text-sm text-green-300">
+          <div>Team Size :</div>
+          <Separator orientation="vertical" />
+          <div>Min - {mini}</div>
+          <Separator orientation="vertical" />
+          <div>Max - {maxi}</div>
+        </div>
         <FormField
           control={form.control}
           name="emails"
@@ -114,11 +123,16 @@ export default function GroupRegistrationForm({
                   onChange={field.onChange}
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-sm text-rose-600">
+                If a friend&apos;s email isn&apos;t available, they might be in
+                another group or not signed in.
+              </FormMessage>
+              <FormMessage className="text-sm text-rose-600">
+                Groups are final once created; no changes can be made.
+              </FormMessage>
             </FormItem>
           )}
         />
-
         <Button type="submit" className="w-full md:w-fit">
           Register Group
         </Button>
