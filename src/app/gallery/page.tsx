@@ -1,68 +1,27 @@
 import GradientAnimatedText from "@/components/GradientAnimatedText";
-import ImageCard from "@/components/ImageCard";
-import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import Marquee from "@/components/magicui/marquee";
-import { sponsorImages } from "@/lib/static";
+import {
+  decorationTeam,
+  graphicsTeam,
+  imageData,
+  mainCoordinators,
+  marketingTeam,
+  updatesLeads,
+  webTeam,
+} from "@/lib/static";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 
-const imageData = [
-  {
-    alt: "photo",
-    url: "/gallery/1.jpg",
-  },
-  {
-    alt: "photo",
-    url: "/gallery/2.jpg",
-  },
-  {
-    alt: "photo",
-    url: "/gallery/3.jpg",
-  },
-  {
-    alt: "photo",
-    url: "/gallery/4.jpg",
-  },
-  {
-    alt: "photo",
-    url: "/gallery/5.jpg",
-  },
-  {
-    alt: "photo",
-    url: "/gallery/6.jpg",
-  },
-  {
-    alt: "photo",
-    url: "/gallery/7.jpg",
-  },
-  {
-    alt: "photo",
-    url: "/gallery/8.jpg",
-  },
-  {
-    alt: "photo",
-    url: "/gallery/9.jpg",
-  },
-];
 const page = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto mb-48">
       <GradientAnimatedText className="text-3xl mt-8 mb-2  font-bold tracking-tighter sm:text-3xl xl:text-4xl/none  text-center">
         Gallery
       </GradientAnimatedText>
-
       <p className="text-center text-pretty tracking-tighter text-lg sm:text-xl xl:text-2xl/none italic text-transparent bg-clip-text bg-gradient-to-br text-gradient-to-br from-yellow-200 to-orange-700">
         Glimpse from Updates 2k23
       </p>
-      {/* <Marquee
-        // reverse
-        pauseOnHover
-        className="[--duration:30s] max-w-7xl mx-auto"
-      >
-        {imaata.map((revw) => (
-          <ImageCard key={review.url} img={review.url} />
-        ))}
-      </Marquee> */}
       <div className="container mx-auto p-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {imageData.map((image, index) => (
@@ -86,32 +45,94 @@ const page = () => {
           ))}
         </div>
       </div>
-      <GradientAnimatedText className="text-2xl mt-8 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
-        Main Co-ordinators
+
+      <GradientAnimatedText className="text-2xl mt-16 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
+        Main Coordinators
       </GradientAnimatedText>
+      <PersonCardList data={mainCoordinators} />
+
       <GradientAnimatedText className="text-2xl mt-8 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
+        Updates Leads
+      </GradientAnimatedText>
+      <PersonCardList data={updatesLeads} />
+
+      <GradientAnimatedText className="text-2xl mt-10 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
         Web Team
       </GradientAnimatedText>
-      <GradientAnimatedText className="text-2xl mt-8 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
+      <PersonCardList data={webTeam} />
+
+      <GradientAnimatedText className="text-2xl mt-10 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
         Marketing Team
       </GradientAnimatedText>
-      <GradientAnimatedText className="text-2xl mt-8 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
+      <MarqueeTeams data={marketingTeam} />
+
+      <GradientAnimatedText className="text-2xl mt-10 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
         Graphics Team
       </GradientAnimatedText>
-      <PersonCard />
-      <GradientAnimatedText className="text-2xl mt-8 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
+      <MarqueeTeams data={graphicsTeam} />
+
+      <GradientAnimatedText className="text-2xl mt-10 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
         Decoration Team
       </GradientAnimatedText>
+      <MarqueeTeams data={decorationTeam} />
     </div>
   );
 };
 
-const PersonCard = () => {
+const PersonCardList = ({ data }: { data: PersonProps[] }) => {
   return (
-    <>
-      <Image src={""} alt="" />
-      <p>Name</p>
-    </>
+    <div
+      className={cn(
+        "grid grid-cols-3 mx-8 mt-6  gap-3 md:gap-6 md:grid-cols-3 md:max-w-xl md:mx-auto"
+      )}
+    >
+      {data.map((person, index) => {
+        return (
+          <div className="mx-auto" key={person.image}>
+            <Image
+              alt={person.name}
+              src={`/photos/${person.image ? person.image : "avatar.png"}`}
+              width={512}
+              height={512}
+              className="rounded-full shadow-lg shadow-violet-400/15 border-2 border-purple-400/50 mx-auto size-20 md:size-28 object-cover object-center"
+              loading="lazy"
+            />
+            <p className="text-center text-muted-foreground text-sm w-20 md:w-28 mx-auto mt-2 mb-6 capitalize">
+              {person.name}
+            </p>
+          </div>
+        );
+      })}
+    </div>
   );
 };
+
+const MarqueeTeams = ({ data }: { data: PersonProps[] }) => {
+  return (
+    <div className="relative overflow-hidden">
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background max-md:to-background/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-background max-md:to-background/90"></div>
+      </div>
+      <Marquee pauseOnHover className="[--duration:22s] max-w-7xl mx-auto">
+        {data.map((person) => (
+          <div className="mx-auto" key={person.image}>
+            <Image
+              alt={person.name}
+              src={`/photos/${person.image ? person.image : "avatar.png"}`}
+              width={512}
+              height={512}
+              className="rounded-full border-2 border-purple-300/50 mx-auto size-16 md:size-24 object-cover object-center"
+              loading="lazy"
+            />
+            <p className="text-center w-20 md:w-28 text-muted-foreground text-sm mt-2 mb-6 capitalize">
+              {person.name}
+            </p>
+          </div>
+        ))}
+      </Marquee>
+    </div>
+  );
+};
+
 export default page;

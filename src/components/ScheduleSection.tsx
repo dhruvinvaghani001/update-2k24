@@ -2,7 +2,7 @@ import React from "react";
 import BlurFade from "./magicui/blur-fade";
 import GradientAnimatedText from "./GradientAnimatedText";
 import Image from "next/image";
-import ScheduleImage from "@/assets/eventSchedule.jpg";
+import ScheduleImage from "@/assets/eventSchedule.png";
 
 const ScheduleSection = () => {
   return (
