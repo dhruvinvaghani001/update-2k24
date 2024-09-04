@@ -128,7 +128,7 @@ const page = async ({ params }: { params: { id: string } }) => {
         {currEvent.name}
       </GradientAnimatedText>
       <BlurFade inView>
-        <p className="italic text-center text-violet-100 mb-8">
+        <p className="italic text-center text-violet-100 mb-12 mt-2">
           &quot;{currEvent.Tagline}&quot;
         </p>
         {eventData.eventType == "SOLO" ? (

@@ -19,7 +19,7 @@ const page = () => {
       <GradientAnimatedText className="text-3xl mt-8 mb-2  font-bold tracking-tighter sm:text-3xl xl:text-4xl/none  text-center">
         Gallery
       </GradientAnimatedText>
-      <p className="text-center text-pretty tracking-tighter text-lg sm:text-xl xl:text-2xl/none italic text-transparent bg-clip-text bg-gradient-to-br text-gradient-to-br from-yellow-200 to-orange-700">
+      <p className="text-center text-pretty tracking-tighter text-lg sm:text-xl xl:text-2xl/none italic text-muted-foreground mt-4">
         Glimpse from Updates 2k23
       </p>
       <div className="container mx-auto p-4">
