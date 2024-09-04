@@ -93,34 +93,34 @@ const events = [
     "co-ordinators": [
       {
         name: "Yug Golakiya",
-        profilePic: "",
+        profilePic: "Yug_Golakiya.jpg",
         mobileNumber: "9510705625",
       },
       {
         name: "Rushi Patel",
-        profilePic: "",
+        profilePic: "Rushi_Patel.jpg",
         mobileNumber: "7359760025",
       },
       {
         name: "Priyanshi Dobariya",
-        profilePic: "",
+        profilePic: "Priyanshi_Dobariya.jpg",
         mobileNumber: "7984790671",
       },
       {
         name: "Shriya Lukhi",
-        profilePic: "",
+        profilePic: "Shriya_Lukhi.jpg",
         mobileNumber: "9825995867",
       },
     ],
     volunteers: [
       {
         name: "Palak Thumber",
-        profilePic: "",
+        profilePic: "Palak_thumber.jpg",
         mobileNumber: "6351704499",
       },
       {
         name: "Jiya Kalathiya",
-        profilePic: "",
+        profilePic: "Jiya_Kalathiya.jpg",
         mobileNumber: "7016496279",
       },
     ],
@@ -409,34 +409,34 @@ const events = [
     "co-ordinators": [
       {
         name: "Kenil Vekriya",
-        profilePic: "",
+        profilePic: "kenil_vekariya.jpg",
         mobileNumber: "9723354048",
       },
       {
         name: "Aryan Jadav",
-        profilePic: "",
+        profilePic: "Aryan_jadav.jpg",
         mobileNumber: "8490817117",
       },
       {
         name: "Rahul Mehta",
-        profilePic: "",
+        profilePic: "Rahul_Mehta.jpg",
         mobileNumber: "",
       },
       {
         name: "Dev Vaghani",
-        profilePic: "",
+        profilePic: "Dev_Vaghani_.jpg",
         mobileNumber: "9313960234",
       },
     ],
     volunteers: [
       {
         name: "Ronak Talaviya",
-        profilePic: "",
+        profilePic: "Ronak_Talaviya.jpg",
         mobileNumber: "9265677161",
       },
       {
         name: "Dhyey Chauhan",
-        profilePic: "",
+        profilePic: "Dhyey_chauhan.JPG",
         mobileNumber: "9054680228",
       },
     ],

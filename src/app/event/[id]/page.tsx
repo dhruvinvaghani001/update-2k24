@@ -223,10 +223,12 @@ const page = async ({ params }: { params: { id: string } }) => {
                   >
                     <Image
                       alt={person.name}
-                      src={`/photos/${person.profilePic}`}
+                      src={`/photos/${
+                        person?.profilePic ? person.profilePic : "avatar.png"
+                      }`}
                       width={48}
                       height={40}
-                      className="rounded-full border"
+                      className="rounded-full border object-cover"
                     />
                     <div className="flex flex-col">
                       <p>{person.name}</p>
