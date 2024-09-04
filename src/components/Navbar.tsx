@@ -53,6 +53,7 @@ export function Navbar() {
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-10 rounded-full hover:bg-violet-600"
                     )}
+                    prefetch={false}
                   >
                     <item.icon className="size-4" />
                   </Link>

@@ -182,6 +182,7 @@ const page = async ({ params }: { params: { id: string } }) => {
             width={1080}
             height={1920}
             className="w-full col-span-2 rounded-xl border border-violet-400/70 shadow-lg shadow-purple-600/30 max-md:hidden mx-auto"
+            loading="eager"
           />
           <div className="p-4 w-full col-span-4 bg-gradient-to-br from-slate-900/30 to-violet-900/30 rounded-lg border border-violet-400/70">
             <h4 className="text-3xl mb-2 mt-1 font-bold text-violet-500">
@@ -227,6 +228,7 @@ const page = async ({ params }: { params: { id: string } }) => {
                       width={48}
                       height={40}
                       className="rounded-full border"
+                      loading="lazy"
                     />
                     <div className="flex flex-col">
                       <p>{person.name}</p>
@@ -251,6 +253,7 @@ const page = async ({ params }: { params: { id: string } }) => {
                       width={48}
                       height={48}
                       className="rounded-full border"
+                      loading="lazy"
                     />
                     <div>
                       <p>{person.name}</p>
