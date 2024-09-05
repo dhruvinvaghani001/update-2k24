@@ -39,8 +39,8 @@ export async function generateMetadata({
       images: [
         {
           url: currEvent.coverImage,
-          // width: 1200,
-          // height: 630,
+          width: 1200,
+          height: 630,
           alt: currEvent.name,
         },
       ],
