@@ -28,7 +28,11 @@ export async function POST(
 
     const existingDocument = await GroupRegistration.findOne({
       userId: { $in: objectIdInstances },
+      eventId: new mongoose.Types.ObjectId(params?.id!),
     }).select("_id");
+
+    console.log("Hello");
+    console.log(existingDocument);
 
     if (existingDocument) {
       return NextResponse.json(
