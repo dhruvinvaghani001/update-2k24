@@ -14,6 +14,45 @@ import GroupRegistrationForm, { EmailOption } from "./_components/GroupForm";
 import User from "@/models/user.model";
 import events from "@/lib/events";
 import GradientAnimatedText from "@/components/GradientAnimatedText";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const eventId = params.id;
+  const currEvent = events.filter((event) => event.id === eventId)[0];
+
+  if (!currEvent) {
+    return {
+      title: "Event Not Found",
+    };
+  }
+
+  return {
+    title: `${currEvent.name} | Updates 2k24`,
+    description: currEvent.Tagline,
+    openGraph: {
+      title: currEvent.name,
+      description: currEvent.Tagline,
+      images: [
+        {
+          url: currEvent.coverImage,
+          // width: 1200,
+          // height: 630,
+          alt: currEvent.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: currEvent.name,
+      description: currEvent.Tagline,
+      images: [currEvent.coverImage],
+    },
+  };
+}
 
 const page = async ({ params }: { params: { id: string } }) => {
   const session = await getServerSession(authOptions);
