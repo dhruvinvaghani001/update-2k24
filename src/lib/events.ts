@@ -54,7 +54,69 @@ const events = [
       },
     ],
   },
-
+  {
+    id: "brain-o-teaser",
+    name: "Brain-O-Teaser",
+    coverImage: "/events/poster/brain-o-teaser.png",
+    logo: "/events/logo/brain-o-teaser.png",
+    Tagline: "Trace the Error, Chase the IP",
+    description: "",
+    eventType: "SOLO & GROUP",
+    teamSize: "2",
+    minMember: "1",
+    maxMember: "2",
+    date: "",
+    time: "",
+    rounds: [
+      {
+        name: "Round 1: Bug Finder & Output Crack",
+        Rules: [
+          "Marks based evaluation will be done. In case of tie time factor will be considered.",
+        ],
+      },
+      {
+        name: "Round 2: Find your IP and get the key",
+        Rules: [
+          "Participants will be given a couple of codes to solve and reach to the final machine and get the key from the computer and submit it.",
+          "Time based evaluation.",
+        ],
+      },
+    ],
+    "co-ordinators": [
+      {
+        name: "Krish Padmani",
+        profilePic: "KRISH_PADMANI.jpg",
+        mobileNumber: "",
+      },
+      {
+        name: "Kirtan Vaghasia",
+        profilePic: "kirtan_vaghasia.jpg",
+        mobileNumber: "9824570380",
+      },
+      {
+        name: "Parva Shah",
+        profilePic: "Parva_Shah.jpg",
+        mobileNumber: "9327453584",
+      },
+    ],
+    volunteers: [
+      {
+        name: "Jainil Tailor",
+        profilePic: "Jainil_Tailor.jpg",
+        mobileNumber: "9510054054",
+      },
+      {
+        name: "Parv Shekhaliya",
+        profilePic: "Parv_Shekhaliya.jpg",
+        mobileNumber: "7801811690",
+      },
+    ],
+    facultyCoordinators: [
+      {
+        name: "Prof. Jaydeep Gheewala",
+      },
+    ],
+  },
   {
     id: "cineverse",
     name: "Cineverse",
@@ -130,527 +192,6 @@ const events = [
       },
     ],
   },
-
-  {
-    id: "man-in-the-middle",
-    name: "Man In Middle",
-    coverImage: "/events/poster/man-in-the-middle.png",
-    logo: "/events/logo/man-in-the-middle.png",
-    Tagline: "The Art of Interception!",
-    description: "",
-    eventType: "SOLO",
-    teamSize: "",
-    minMember: "",
-    maxMember: "",
-    date: "",
-    time: "",
-    rounds: [
-      {
-        name: "Round 1: Decode the Message",
-        Rules: [
-          "Participants must decode the given words based on substitution technique.",
-          "Any participant found engaging in unfair practices or violating the integrity of the competition will be immediately disqualified.",
-        ],
-      },
-      {
-        name: "Round 2: Man in the Middle",
-        Rules: [
-          "A part of participants(sender) has to encrypt their message according to cipher techniques of their choice.",
-          "Others (man in the middle and receiver) have to decrypt the encrypted message, using appropriate technique, in given time period.",
-          "Any participant found engaging in unfair practices or violating the integrity of the competition will be immediately disqualified.",
-        ],
-      },
-    ],
-    "co-ordinators": [
-      {
-        name: "Aditya Bhakhar",
-        profilePic: "Aditya_Bhakhar.jpg",
-        mobileNumber: "9925347434",
-      },
-      {
-        name: "Manthan Lad",
-        profilePic: "Manthan_Lad.jpg",
-        mobileNumber: "9974578747",
-      },
-      {
-        name: "Kunj Khimani",
-        profilePic: "Kunj_Khimani.jpg",
-        mobileNumber: "9512720719",
-      },
-    ],
-    volunteers: [
-      {
-        name: "Dishali Rabadiya",
-        profilePic: "dishali_rabadiya.JPG",
-        mobileNumber: "6355600581",
-      },
-      {
-        name: "Mangalya Desai",
-        profilePic: "Mangalya _Desai.JPG",
-        mobileNumber: "9428146849",
-      },
-    ],
-    facultyCoordinators: [
-      {
-        name: "Dr. Bintu Kadhiwala",
-      },
-    ],
-  },
-
-  {
-    id: "escape-the-room",
-    name: "Escape Room",
-    coverImage: "/events/poster/escape-room.png",
-    logo: "/events/logo/escape-room.png",
-    Tagline: "Your Mind is the Key OR Challenge the Room, Find the Exit",
-    description: "",
-    eventType: "GROUP",
-    teamSize: "4",
-    minMember: "4",
-    maxMember: "4",
-    date: "",
-    time: "",
-    rounds: [
-      {
-        name: "Round 1: Escape The Room",
-        Rules: [
-          "Stage 1: Debug The Code",
-          "Participants need to debug the code and find the first two digits for the lock.",
-          "Any participant found engaging in unfair practices or violating the integrity of the competition will be immediately disqualified.",
-        ],
-      },
-    ],
-    "co-ordinators": [
-      {
-        name: "Tirth Asodariya",
-        profilePic: "Tirth_Asodariya.jpg",
-        mobileNumber: "8485912886",
-      },
-      {
-        name: "Aadyanshi Patel",
-        profilePic: "Aadyanshi_Patel.jpeg",
-        mobileNumber: "9409610008",
-      },
-      {
-        name: "Anjali Jariwala",
-        profilePic: "Anjali_Jariwala.jpg",
-        mobileNumber: "9662522126",
-      },
-    ],
-    volunteers: [
-      {
-        name: "Om Sonani",
-        profilePic: "Om_Sonani.png",
-        mobileNumber: "9081488388",
-      },
-    ],
-    facultyCoordinators: [
-      {
-        name: "Prof. Vandana Joshi",
-      },
-    ],
-  },
-  {
-    id: "brain-o-teaser",
-    name: "Brain-O-Teaser",
-    coverImage: "/events/poster/brain-o-teaser.png",
-    logo: "/events/logo/brain-o-teaser.png",
-    Tagline: "Trace the Error, Chase the IP",
-    description: "",
-    eventType: "SOLO & GROUP",
-    teamSize: "2",
-    minMember: "1",
-    maxMember: "2",
-    date: "",
-    time: "",
-    rounds: [
-      {
-        name: "Round 1: Bug Finder & Output Crack",
-        Rules: [
-          "Marks based evaluation will be done. In case of tie time factor will be considered.",
-        ],
-      },
-      {
-        name: "Round 2: Find your IP and get the key",
-        Rules: [
-          "Participants will be given a couple of codes to solve and reach to the final machine and get the key from the computer and submit it.",
-          "Time based evaluation.",
-        ],
-      },
-    ],
-    "co-ordinators": [
-      {
-        name: "Krish Padmani",
-        profilePic: "KRISH_PADMANI.jpg",
-        mobileNumber: "",
-      },
-      {
-        name: "Kirtan Vaghasia",
-        profilePic: "kirtan_vaghasia.jpg",
-        mobileNumber: "9824570380",
-      },
-      {
-        name: "Parva Shah",
-        profilePic: "Parva_Shah.jpg",
-        mobileNumber: "9327453584",
-      },
-    ],
-    volunteers: [
-      {
-        name: "Jainil Tailor",
-        profilePic: "Jainil_Tailor.jpg",
-        mobileNumber: "9510054054",
-      },
-      {
-        name: "Parv Shekhaliya",
-        profilePic: "Parv_Shekhaliya.jpg",
-        mobileNumber: "7801811690",
-      },
-    ],
-    facultyCoordinators: [
-      {
-        name: "Prof. Jaydeep Gheewala",
-      },
-    ],
-  },
-  {
-    id: "the-resume-relay",
-    name: "Resume Relay",
-    coverImage: "/events/poster/the-resume-relay.png",
-    logo: "/events/logo/the-resume-relay.png",
-    Tagline: "Resume Ready, Job Steady",
-    description: "",
-    eventType: "SOLO",
-    teamSize: "",
-    minMember: "1",
-    maxMember: "1",
-    date: "",
-    time: "",
-    rounds: [
-      {
-        name: "Round 1: The 'Role Play Resume' Challenge",
-        Rules: [
-          "Participants will choose one job posting from a selection provided by the organizers.",
-          "Participants must tailor their resume specifically to the job posting they have chosen.",
-          "Direct copying of content from any sources is not allowed.",
-          "Participants may use their own preferred professional format. The resume should not exceed 2 pages in length.",
-        ],
-      },
-      {
-        name: "Round 2: Pitch Swap Showdown: Resume Meets Voice",
-        Rules: [
-          "Each participant must prepare a 30-second elevator pitch based on the resume they crafted in Round 1.",
-          "Participants will be randomly paired with another participant.",
-          "Participants will receive their partner’s pitch and have 10 minutes to review and present it.",
-        ],
-      },
-    ],
-    "co-ordinators": [
-      {
-        name: "Rahul Mevada",
-        profilePic: "Rahul_Mewada.png",
-        mobileNumber: "7016947035",
-      },
-      {
-        name: "Manan Parekh",
-        profilePic: "Manan_Parekh.jpg",
-        mobileNumber: "9723645289",
-      },
-      {
-        name: "Devanshi Trivedi",
-        profilePic: "Devanshi_Trivedi.jpg",
-        mobileNumber: "9879416300",
-      },
-    ],
-    volunteers: [
-      {
-        name: "Parth Hathiwala",
-        profilePic: "Parth_Hathiwala.jpg",
-        mobileNumber: "7405488754",
-      },
-    ],
-    facultyCoordinators: [
-      {
-        name: "Prof. Snehal Gandhi",
-      },
-    ],
-  },
-  {
-    id: "stock-x-stake",
-    name: "Stock X Stake",
-    coverImage: "/events/poster/stock-x-stake.png",
-    logo: "/events/logo/stock-x-stake.png",
-    Tagline: "Paisa kamya nahi banya jata hai",
-    description: "",
-    eventType: "GROUP",
-    teamSize: "",
-    minMember: "2",
-    maxMember: "3",
-    date: "",
-    time: "",
-    rounds: [
-      {
-        name: "Round 1",
-        Rules: [
-          "Start with the same balance, investing in 6 companies over 5 rounds with 3 cycles each.",
-          "Buy or sell one company’s stock per cycle using stock up/down cards.",
-          "Teams with the highest net worth advance to the next round.",
-        ],
-      },
-      {
-        name: "Round 2: Bidwars",
-        Rules: [
-          "20 mystery items, 5 items drawn each round.",
-          "Teams bid on items within the announced price range using their starting capital.",
-          "Teams with the highest combined item value and remaining cash advance.",
-        ],
-      },
-    ],
-    "co-ordinators": [
-      {
-        name: "Kenil Vekriya",
-        profilePic: "kenil_vekariya.jpg",
-        mobileNumber: "9723354048",
-      },
-      {
-        name: "Aryan Jadav",
-        profilePic: "Aryan_jadav.jpg",
-        mobileNumber: "8490817117",
-      },
-      {
-        name: "Rahul Mehta",
-        profilePic: "Rahul_Mehta.jpg",
-        mobileNumber: "",
-      },
-      {
-        name: "Dev Vaghani",
-        profilePic: "Dev_Vaghani.jpg",
-        mobileNumber: "9313960234",
-      },
-    ],
-    volunteers: [
-      {
-        name: "Ronak Talaviya",
-        profilePic: "Ronak_Talaviya.jpg",
-        mobileNumber: "9265677161",
-      },
-      {
-        name: "Dhyey Chauhan",
-        profilePic: "Dhyey_chauhan.JPG",
-        mobileNumber: "9054680228",
-      },
-    ],
-    facultyCoordinators: [
-      {
-        name: "None",
-      },
-    ],
-  },
-  {
-    id: "memefest",
-    name: "Meme Fest",
-    coverImage: "/events/poster/meme-fest.png",
-    logo: "/events/logo/meme-fest.png",
-    Tagline: "Where Memes Meet Madness!",
-    description: "",
-    eventType: "GROUP",
-    teamSize: "",
-    minMember: "2",
-    maxMember: "3",
-    date: "21 September",
-    time: "9:30 AM to 12:00 PM",
-    rounds: [
-      {
-        name: "Round 1: Meme Challenge",
-        Rules: [
-          "Complete three types of meme-related questions: Punchline Recovery, Emoji Meme Guessing, and Muted Meme Clips.",
-          "A surprise question will help participants advance to Round 2.",
-        ],
-      },
-      {
-        name: "Round 2: Puzzle Challenge",
-        Rules: [
-          "Guess famous personalities or characters based on their shadows.",
-          "Complete a crossword puzzle related to famous personalities, YouTubers, or other well-known figures.",
-        ],
-      },
-    ],
-    "co-ordinators": [
-      {
-        name: "Hetvi Patel",
-        profilePic: "Hetvi_Patel.jpg",
-        mobileNumber: "9426670831",
-      },
-      {
-        name: "Meet Oza",
-        profilePic: "Meet_Oza.jpg",
-        mobileNumber: "9429929250",
-      },
-      {
-        name: "Nirav Paneliya",
-        profilePic: "Nirav_Paneliya.jpg",
-        mobileNumber: "6352389172",
-      },
-      {
-        name: "Aryan Nimavat",
-        profilePic: "Aryan_Nimavat.jpg",
-        mobileNumber: "6351863630",
-      },
-    ],
-    volunteers: [
-      {
-        name: "Ansh Patel",
-        profilePic: "Ansh_Patel.jpg",
-        mobileNumber: "8849621862",
-      },
-      {
-        name: "Suhani Gohil",
-        profilePic: "Suhani_Gohil.JPG",
-        mobileNumber: "6354167241",
-      },
-    ],
-    facultyCoordinators: [
-      {
-        name: "None",
-      },
-    ],
-  },
-  {
-    id: "human-or-ai",
-    name: "Human Or Ai",
-    coverImage: "/events/poster/human-or-ai.png",
-    logo: "/events/logo/human-or-ai.png",
-    Tagline: "Where Imagination Meets Innovation",
-    description: "",
-    eventType: "SOLO",
-    teamSize: "",
-    minMember: "",
-    maxMember: "",
-    date: "",
-    time: "",
-    rounds: [
-      {
-        name: "Round 1: Guess the Prompt",
-        Rules: [
-          "Choose one of four given prompts based on displayed images.",
-          "Using more than one tab (e.g., Google docs) will result in disqualification.",
-        ],
-      },
-      {
-        name: "Round 2: Prompt Generation",
-        Rules: [
-          "Participants will recreate three displayed images using Microsoft Designer and Adobe image generator.",
-          "Using more than two tabs (e.g., Google docs & AI image generator) will result in disqualification.",
-        ],
-      },
-    ],
-    "co-ordinators": [
-      {
-        name: "Ansh Mangukiya",
-        profilePic: "Ansh_Mangukiya.jpg",
-        mobileNumber: "",
-      },
-      {
-        name: "Pratham Desai",
-        profilePic: "",
-        mobileNumber: "7623048812",
-      },
-      {
-        name: "Krish Dobariya",
-        profilePic: "Krish_Dobariya.jpg",
-        mobileNumber: "9023910508",
-      },
-    ],
-    volunteers: [
-      {
-        name: "Preet Limbasiya",
-        profilePic: "",
-        mobileNumber: "9726643698",
-      },
-      {
-        name: "Nisharg Nanavati",
-        profilePic: "",
-        mobileNumber: "6359908964",
-      },
-    ],
-    facultyCoordinators: [
-      {
-        name: "Prof. Dhatri Pandya",
-      },
-    ],
-  },
-  {
-    id: "split-or-steal",
-    name: "Split Or Steal",
-    coverImage: "/events/poster/split-or-steal.png",
-    logo: "/events/logo/split-or-steal.png",
-    Tagline: "Take it or Leave it!",
-    description: "",
-    eventType: "GROUP",
-    teamSize: "2",
-    minMember: "2",
-    maxMember: "2",
-    date: "",
-    time: "",
-    rounds: [
-      {
-        name: "Round 1: Truth or Triumph",
-        Rules: [
-          "Participants cannot change their decision once taken.",
-          "Splitting is allowed for a maximum of 3 times.",
-          "Teams made by volunteers are final.",
-          "Decision by coordinators/volunteers is final and non-arguable.",
-        ],
-      },
-      {
-        name: "Round 2: Mystery Round",
-        Rules: [
-          "Participants cannot change their decision once taken.",
-          "Decision by coordinators is final and non-arguable.",
-        ],
-      },
-    ],
-    "co-ordinators": [
-      {
-        name: "Ayush Desai",
-        profilePic: "Ayush_desai.jpg",
-        mobileNumber: "9624486046",
-      },
-      {
-        name: "Parth Lathiya",
-        profilePic: "Parth_Lathiya.jpg",
-        mobileNumber: "9537150942",
-      },
-      {
-        name: "Om Vasoya",
-        profilePic: "Om_vasoya.JPG",
-        mobileNumber: "8320169729",
-      },
-      {
-        name: "Aryan Prajapati",
-        profilePic: "Aryan_Prajapati.jpg",
-        mobileNumber: "7574969717",
-      },
-    ],
-    volunteers: [
-      {
-        name: "Shreya Patel",
-        profilePic: "Shreya Patel.jpg",
-        mobileNumber: "7990365829",
-      },
-      {
-        name: "Jeel Khunt",
-        profilePic: "Jeel_Khunt.jpg",
-        mobileNumber: "9099395009",
-      },
-    ],
-    facultyCoordinators: [
-      {
-        name: "None",
-      },
-    ],
-  },
-
   {
     id: "dataloom",
     name: "Data Loom",
@@ -777,69 +318,186 @@ const events = [
       },
     ],
   },
-];
 
-export const featuredEvents = [
   {
-    id: "brain-o-teaser",
-    name: "Brain-O-Teaser",
-    coverImage: "/events/poster/brain-o-teaser.png",
-    logo: "/events/logo/brain-o-teaser.png",
-    Tagline: "Trace the Error, Chase the IP",
+    id: "escape-the-room",
+    name: "Escape Room",
+    coverImage: "/events/poster/escape-room.png",
+    logo: "/events/logo/escape-room.png",
+    Tagline: "Your Mind is the Key OR Challenge the Room, Find the Exit",
     description: "",
-    eventType: "SOLO & GROUP",
-    teamSize: "2",
-    minMember: "1",
-    maxMember: "2",
+    eventType: "GROUP",
+    teamSize: "4",
+    minMember: "4",
+    maxMember: "4",
     date: "",
     time: "",
     rounds: [
       {
-        name: "Round 1: Bug Finder & Output Crack",
+        name: "Round 1: Escape The Room",
         Rules: [
-          "Marks based evaluation will be done. In case of tie time factor will be considered.",
-        ],
-      },
-      {
-        name: "Round 2: Find your IP and get the key",
-        Rules: [
-          "Participants will be given a couple of codes to solve and reach to the final machine and get the key from the computer and submit it.",
-          "Time based evaluation.",
+          "Stage 1: Debug The Code",
+          "Participants need to debug the code and find the first two digits for the lock.",
+          "Any participant found engaging in unfair practices or violating the integrity of the competition will be immediately disqualified.",
         ],
       },
     ],
     "co-ordinators": [
       {
-        name: "Krish Padmani",
-        profilePic: "KRISH_PADMANI.jpg",
-        mobileNumber: "",
+        name: "Tirth Asodariya",
+        profilePic: "Tirth_Asodariya.jpg",
+        mobileNumber: "8485912886",
       },
       {
-        name: "Kirtan Vaghasia",
-        profilePic: "kirtan_vaghasia.jpg",
-        mobileNumber: "9824570380",
+        name: "Aadyanshi Patel",
+        profilePic: "Aadyanshi_Patel.jpeg",
+        mobileNumber: "9409610008",
       },
       {
-        name: "Parva Shah",
-        profilePic: "Parva_Shah.jpg",
-        mobileNumber: "9327453584",
+        name: "Anjali Jariwala",
+        profilePic: "Anjali_Jariwala.jpg",
+        mobileNumber: "9662522126",
       },
     ],
     volunteers: [
       {
-        name: "Jainil Tailor",
-        profilePic: "Jainil_Tailor.jpg",
-        mobileNumber: "9510054054",
-      },
-      {
-        name: "Parv Shekhaliya",
-        profilePic: "Parv_Shekhaliya.jpg",
-        mobileNumber: "7801811690",
+        name: "Om Sonani",
+        profilePic: "Om_Sonani.png",
+        mobileNumber: "9081488388",
       },
     ],
     facultyCoordinators: [
       {
-        name: "Prof. Jaydeep Gheewala",
+        name: "Prof. Vandana Joshi",
+      },
+    ],
+  },
+  {
+    id: "human-or-ai",
+    name: "Human Or Ai",
+    coverImage: "/events/poster/human-or-ai.png",
+    logo: "/events/logo/human-or-ai.png",
+    Tagline: "Where Imagination Meets Innovation",
+    description: "",
+    eventType: "SOLO",
+    teamSize: "",
+    minMember: "",
+    maxMember: "",
+    date: "",
+    time: "",
+    rounds: [
+      {
+        name: "Round 1: Guess the Prompt",
+        Rules: [
+          "Choose one of four given prompts based on displayed images.",
+          "Using more than one tab (e.g., Google docs) will result in disqualification.",
+        ],
+      },
+      {
+        name: "Round 2: Prompt Generation",
+        Rules: [
+          "Participants will recreate three displayed images using Microsoft Designer and Adobe image generator.",
+          "Using more than two tabs (e.g., Google docs & AI image generator) will result in disqualification.",
+        ],
+      },
+    ],
+    "co-ordinators": [
+      {
+        name: "Ansh Mangukiya",
+        profilePic: "Ansh_Mangukiya.jpg",
+        mobileNumber: "",
+      },
+      {
+        name: "Pratham Desai",
+        profilePic: "",
+        mobileNumber: "7623048812",
+      },
+      {
+        name: "Krish Dobariya",
+        profilePic: "Krish_Dobariya.jpg",
+        mobileNumber: "9023910508",
+      },
+    ],
+    volunteers: [
+      {
+        name: "Preet Limbasiya",
+        profilePic: "",
+        mobileNumber: "9726643698",
+      },
+      {
+        name: "Nisharg Nanavati",
+        profilePic: "",
+        mobileNumber: "6359908964",
+      },
+    ],
+    facultyCoordinators: [
+      {
+        name: "Prof. Dhatri Pandya",
+      },
+    ],
+  },
+  {
+    id: "man-in-the-middle",
+    name: "Man In Middle",
+    coverImage: "/events/poster/man-in-the-middle.png",
+    logo: "/events/logo/man-in-the-middle.png",
+    Tagline: "The Art of Interception!",
+    description: "",
+    eventType: "SOLO",
+    teamSize: "",
+    minMember: "",
+    maxMember: "",
+    date: "",
+    time: "",
+    rounds: [
+      {
+        name: "Round 1: Decode the Message",
+        Rules: [
+          "Participants must decode the given words based on substitution technique.",
+          "Any participant found engaging in unfair practices or violating the integrity of the competition will be immediately disqualified.",
+        ],
+      },
+      {
+        name: "Round 2: Man in the Middle",
+        Rules: [
+          "A part of participants(sender) has to encrypt their message according to cipher techniques of their choice.",
+          "Others (man in the middle and receiver) have to decrypt the encrypted message, using appropriate technique, in given time period.",
+          "Any participant found engaging in unfair practices or violating the integrity of the competition will be immediately disqualified.",
+        ],
+      },
+    ],
+    "co-ordinators": [
+      {
+        name: "Aditya Bhakhar",
+        profilePic: "Aditya_Bhakhar.jpg",
+        mobileNumber: "9925347434",
+      },
+      {
+        name: "Manthan Lad",
+        profilePic: "Manthan_Lad.jpg",
+        mobileNumber: "9974578747",
+      },
+      {
+        name: "Kunj Khimani",
+        profilePic: "Kunj_Khimani.jpg",
+        mobileNumber: "9512720719",
+      },
+    ],
+    volunteers: [
+      {
+        name: "Dishali Rabadiya",
+        profilePic: "dishali_rabadiya.JPG",
+        mobileNumber: "6355600581",
+      },
+      {
+        name: "Mangalya Desai",
+        profilePic: "Mangalya _Desai.JPG",
+        mobileNumber: "9428146849",
+      },
+    ],
+    facultyCoordinators: [
+      {
+        name: "Dr. Bintu Kadhiwala",
       },
     ],
   },
@@ -902,7 +560,7 @@ export const featuredEvents = [
       },
       {
         name: "Suhani Gohil",
-        profilePic: "Suhani_Gohil.jpg",
+        profilePic: "Suhani_Gohil.JPG",
         mobileNumber: "6354167241",
       },
     ],
@@ -913,57 +571,219 @@ export const featuredEvents = [
     ],
   },
   {
-    id: "escape-the-room",
-    name: "Escape Room",
-    coverImage: "/events/poster/escape-room.png",
-    logo: "/events/logo/escape-room.png",
-    Tagline: "Your Mind is the Key OR Challenge the Room, Find the Exit",
+    id: "the-resume-relay",
+    name: "Resume Relay",
+    coverImage: "/events/poster/the-resume-relay.png",
+    logo: "/events/logo/the-resume-relay.png",
+    Tagline: "Resume Ready, Job Steady",
     description: "",
-    eventType: "GROUP",
-    teamSize: "4",
-    minMember: "4",
-    maxMember: "4",
+    eventType: "SOLO",
+    teamSize: "",
+    minMember: "1",
+    maxMember: "1",
     date: "",
     time: "",
     rounds: [
       {
-        name: "Round 1: Escape The Room",
+        name: "Round 1: The 'Role Play Resume' Challenge",
         Rules: [
-          "Stage 1: Debug The Code",
-          "Participants need to debug the code and find the first two digits for the lock.",
-          "Any participant found engaging in unfair practices or violating the integrity of the competition will be immediately disqualified.",
+          "Participants will choose one job posting from a selection provided by the organizers.",
+          "Participants must tailor their resume specifically to the job posting they have chosen.",
+          "Direct copying of content from any sources is not allowed.",
+          "Participants may use their own preferred professional format. The resume should not exceed 2 pages in length.",
+        ],
+      },
+      {
+        name: "Round 2: Pitch Swap Showdown: Resume Meets Voice",
+        Rules: [
+          "Each participant must prepare a 30-second elevator pitch based on the resume they crafted in Round 1.",
+          "Participants will be randomly paired with another participant.",
+          "Participants will receive their partner’s pitch and have 10 minutes to review and present it.",
         ],
       },
     ],
     "co-ordinators": [
       {
-        name: "Tirth Asodariya",
-        profilePic: "Tirth_Asodariya.jpg",
-        mobileNumber: "8485912886",
+        name: "Rahul Mevada",
+        profilePic: "Rahul_Mewada.png",
+        mobileNumber: "7016947035",
       },
       {
-        name: "Aadyanshi Patel",
-        profilePic: "Aadyanshi_Patel.jpeg",
-        mobileNumber: "9409610008",
+        name: "Manan Parekh",
+        profilePic: "Manan_Parekh.jpg",
+        mobileNumber: "9723645289",
       },
       {
-        name: "Anjali Jariwala",
-        profilePic: "Anjali_Jariwala.jpg",
-        mobileNumber: "9662522126",
+        name: "Devanshi Trivedi",
+        profilePic: "Devanshi_Trivedi.jpg",
+        mobileNumber: "9879416300",
       },
     ],
     volunteers: [
       {
-        name: "Om Sonani",
-        profilePic: "Om_Sonani.png",
-        mobileNumber: "9081488388",
+        name: "Parth Hathiwala",
+        profilePic: "Parth_Hathiwala.jpg",
+        mobileNumber: "7405488754",
       },
     ],
     facultyCoordinators: [
       {
-        name: "Prof. Vandana Joshi",
+        name: "Prof. Snehal Gandhi",
+      },
+    ],
+  },
+  {
+    id: "split-or-steal",
+    name: "Split Or Steal",
+    coverImage: "/events/poster/split-or-steal.png",
+    logo: "/events/logo/split-or-steal.png",
+    Tagline: "Take it or Leave it!",
+    description: "",
+    eventType: "GROUP",
+    teamSize: "2",
+    minMember: "2",
+    maxMember: "2",
+    date: "",
+    time: "",
+    rounds: [
+      {
+        name: "Round 1: Truth or Triumph",
+        Rules: [
+          "Participants cannot change their decision once taken.",
+          "Splitting is allowed for a maximum of 3 times.",
+          "Teams made by volunteers are final.",
+          "Decision by coordinators/volunteers is final and non-arguable.",
+        ],
+      },
+      {
+        name: "Round 2: Mystery Round",
+        Rules: [
+          "Participants cannot change their decision once taken.",
+          "Decision by coordinators is final and non-arguable.",
+        ],
+      },
+    ],
+    "co-ordinators": [
+      {
+        name: "Ayush Desai",
+        profilePic: "Ayush_desai.jpg",
+        mobileNumber: "9624486046",
+      },
+      {
+        name: "Parth Lathiya",
+        profilePic: "Parth_Lathiya.jpg",
+        mobileNumber: "9537150942",
+      },
+      {
+        name: "Om Vasoya",
+        profilePic: "Om_vasoya.JPG",
+        mobileNumber: "8320169729",
+      },
+      {
+        name: "Aryan Prajapati",
+        profilePic: "Aryan_Prajapati.jpg",
+        mobileNumber: "7574969717",
+      },
+    ],
+    volunteers: [
+      {
+        name: "Shreya Patel",
+        profilePic: "Shreya Patel.jpg",
+        mobileNumber: "7990365829",
+      },
+      {
+        name: "Jeel Khunt",
+        profilePic: "Jeel_Khunt.jpg",
+        mobileNumber: "9099395009",
+      },
+    ],
+    facultyCoordinators: [
+      {
+        name: "None",
+      },
+    ],
+  },
+  {
+    id: "stock-x-stake",
+    name: "Stock X Stake",
+    coverImage: "/events/poster/stock-x-stake.png",
+    logo: "/events/logo/stock-x-stake.png",
+    Tagline: "Paisa kamya nahi banya jata hai",
+    description: "",
+    eventType: "GROUP",
+    teamSize: "",
+    minMember: "2",
+    maxMember: "3",
+    date: "",
+    time: "",
+    rounds: [
+      {
+        name: "Round 1",
+        Rules: [
+          "Start with the same balance, investing in 6 companies over 5 rounds with 3 cycles each.",
+          "Buy or sell one company’s stock per cycle using stock up/down cards.",
+          "Teams with the highest net worth advance to the next round.",
+        ],
+      },
+      {
+        name: "Round 2: Bidwars",
+        Rules: [
+          "20 mystery items, 5 items drawn each round.",
+          "Teams bid on items within the announced price range using their starting capital.",
+          "Teams with the highest combined item value and remaining cash advance.",
+        ],
+      },
+    ],
+    "co-ordinators": [
+      {
+        name: "Kenil Vekriya",
+        profilePic: "kenil_vekariya.jpg",
+        mobileNumber: "9723354048",
+      },
+      {
+        name: "Aryan Jadav",
+        profilePic: "Aryan_jadav.jpg",
+        mobileNumber: "8490817117",
+      },
+      {
+        name: "Rahul Mehta",
+        profilePic: "Rahul_Mehta.jpg",
+        mobileNumber: "",
+      },
+      {
+        name: "Dev Vaghani",
+        profilePic: "Dev_Vaghani.jpg",
+        mobileNumber: "9313960234",
+      },
+    ],
+    volunteers: [
+      {
+        name: "Ronak Talaviya",
+        profilePic: "Ronak_Talaviya.jpg",
+        mobileNumber: "9265677161",
+      },
+      {
+        name: "Dhyey Chauhan",
+        profilePic: "Dhyey_chauhan.JPG",
+        mobileNumber: "9054680228",
+      },
+    ],
+    facultyCoordinators: [
+      {
+        name: "None",
       },
     ],
   },
 ];
+
+export const featuredEvents = events.filter((event) => {
+  if (
+    event.id === "cineverse" ||
+    event.id === "stock-x-stake" ||
+    event.id === "devBattle"
+  ) {
+    return event;
+  }
+});
+
 export default events;

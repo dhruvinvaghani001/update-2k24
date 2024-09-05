@@ -41,10 +41,6 @@ const webTeam: PersonProps[] = [
 ];
 const updatesLeads: PersonProps[] = [
   {
-    name: "Aum Patel",
-    image: "aum_patel.jpg",
-  },
-  {
     name: "Zenil Dhameliya",
     image: "zenil_dhameliya.jpg",
   },
@@ -55,6 +51,10 @@ const updatesLeads: PersonProps[] = [
   {
     name: "Archi Gazdar",
     image: "archi_gazdar.jpg",
+  },
+  {
+    name: "Aum M Patel",
+    image: "aum_patel.jpg",
   },
   {
     name: "Mitesh Dobariya",

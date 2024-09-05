@@ -31,12 +31,12 @@ const HeroSection = () => {
             <Image
               src={UpdatesLogo}
               alt="Updates Logo"
-              className="aspect-video"
+              className="my-3"
               priority
             />
           </BlurFade>
           <BlurFade inView>
-            <p className="text-center text-pretty tracking-tighter text-lg sm:text-xl xl:text-2xl/none italic text-transparent bg-clip-text bg-gradient-to-br text-gradient-to-br from-yellow-300 to-orange-900">
+            <p className="text-center text-pretty tracking-tighter text-lg sm:text-xl text-muted-foreground -mt-4 italic">
               From floppy to the cloud
             </p>
           </BlurFade>

@@ -24,14 +24,16 @@ const Page = async (props: Props) => {
   const data = await UserDetail.findOne({
     userId: new mongoose.Types.ObjectId(session?.user.id),
   }).select("-userId -createdAt -updatedAt -_id -__v");
-
-  const userData = {
-    department: data.department,
-    year: data.year,
-    semester: data.semester,
-    enrollmentNo: data.enrollmentNo,
-    phoneNumber: data.phoneNumber,
-  };
+  let userData = {};
+  if (data) {
+    userData = {
+      department: data?.department,
+      year: data?.year,
+      semester: data?.semester,
+      enrollmentNo: data?.enrollmentNo,
+      phoneNumber: data?.phoneNumber,
+    };
+  }
 
   return (
     <div className="mt-8 mb-36">

@@ -8,12 +8,14 @@ import { Navbar } from "@/components/Navbar";
 import { UserProvider } from "@/context/UserContext";
 import { Toaster } from "@/components/ui/toaster";
 import NextTopLoader from "nextjs-toploader";
+import Footer from "@/components/Footer";
+import Script from "next/script";
 
 const sansFont = SansFont({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Updates 2k24",
-  description: "",
+  description: "From Floppy to Cloud, be a part in this amazing journey!",
 };
 
 export default async function RootLayout({
@@ -22,11 +24,28 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const session = await getServerSession(authOptions);
-  // console.log("this if from server");
-  // console.log(session);
 
   return (
     <html lang="en">
+      <head>
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=G-B68X6BZJW7`}
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-B68X6BZJW7');
+            `,
+          }}
+        />
+      </head>
       <body className={sansFont.className}>
         <NextTopLoader
           color="rgb(109, 40, 217)"
@@ -50,7 +69,7 @@ export default async function RootLayout({
             <Navbar />
           </UserProvider>
         </AuthProvider>
-        {/* <Button className="fixed right-12 top-12">Login/Register</Button> */}
+        <Footer />
       </body>
     </html>
   );

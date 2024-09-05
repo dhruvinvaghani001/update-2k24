@@ -1,4 +1,5 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
+import connectDB from "@/db";
 import Group from "@/models/group.model";
 import GroupRegistration from "@/models/groupRegistration.model";
 import mongoose from "mongoose";
@@ -10,6 +11,7 @@ export async function POST(
   { params }: { params: { id: string } }
 ) {
   try {
+    await connectDB();
     const reqBody = await request.json();
     const session = await getServerSession(authOptions);
     if (!session?.user.id && !session?.user.email) {

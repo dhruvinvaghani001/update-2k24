@@ -13,7 +13,7 @@ const FeaturedEvents = () => {
         <div className="flex items-center justify-between max-w-5xl mx-auto px-8">
           <div className="group relative flex max-w-fit flex-row items-center justify-center rounded-2xl py-1.5 text-3xl font-medium backdrop-blur-sm transition-shadow duration-500 ease-out [--bg-size:300%] ">
             <p
-              className={`border-none inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none`}
+              className={`border-none px-2 inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none`}
             >
               Featured Events
             </p>
@@ -44,7 +44,7 @@ const FeaturedEvents = () => {
                 <Card
                   title={data.name}
                   tagline={data.Tagline}
-                  coverImage={data.coverImage}
+                  coverImage={data.logo}
                   key={data.id}
                 />
               </Link>
