@@ -52,17 +52,17 @@ const Counter: React.FC = () => {
     <div className="flex flex-col items-center justify-center mt-24 mb-12 text-white">
       <div className="flex justify-center space-x-4">
         <div className="text-center">
-          <div className="sm:text-6xl font-bold">{state.days}</div>
+          <div className="text-6xl font-bold">{state.days}</div>
           <small className="text-lg">Days</small>
         </div>
         <div className="text-6xl font-bold">:</div>
         <div className="text-center">
-          <div className="sm:text-6xl font-bold">
+          <div className="text-6xl font-bold">
             {formatNumber(state.hours)}
           </div>
           <small className="text-lg">Hours</small>
         </div>
-        <div className="sm:text-6xl font-bold">:</div>
+        <div className="text-6xl font-bold">:</div>
         <div className="text-center">
           <div className="text-6xl font-bold">
             {formatNumber(state.minutes)}
