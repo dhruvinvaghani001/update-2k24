@@ -22,8 +22,8 @@ const Footer = () => {
           <div className="flex flex-col gap-1">
             <p className="text-muted-foreground">Zenil Dhameliya</p>
             <p className="text-muted-foreground">Kaushal Gadhiya</p>
-            <p className="text-muted-foreground">Archi Gazdar</p>
             <p className="text-muted-foreground">Aum M Patel</p>
+            <p className="text-muted-foreground">Archi Gazdar</p>
             <p className="text-muted-foreground">Mitesh Dobariya</p>
           </div>
         </div>

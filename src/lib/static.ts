@@ -49,12 +49,12 @@ const updatesLeads: PersonProps[] = [
     image: "kaushal_gadhiya.jpg",
   },
   {
-    name: "Archi Gazdar",
-    image: "archi_gazdar.jpg",
-  },
-  {
     name: "Aum M Patel",
     image: "aum_patel.jpg",
+  },
+  {
+    name: "Archi Gazdar",
+    image: "archi_gazdar.jpg",
   },
   {
     name: "Mitesh Dobariya",
