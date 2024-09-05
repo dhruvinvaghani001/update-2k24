@@ -124,8 +124,8 @@ export default function GroupRegistrationForm({
                 />
               </FormControl>
               <FormMessage className="text-sm text-rose-600">
-                If a friend&apos;s email isn&apos;t available, they might be in
-                another group or not signed in.
+                If email address isn&apos;t available, they may not have
+                registered or be in another group.
               </FormMessage>
               <FormMessage className="text-sm text-rose-600">
                 Groups are final once created; no changes can be made.
