@@ -40,17 +40,19 @@ const Page = async (props: Props) => {
       <GradientAnimatedText className="font-bold tracking-tighter text-3xl xl:text-4xl/none ">
         Let&apos;s Get You Started
       </GradientAnimatedText>
-      <div className="mx-auto flex flex-col justify-center items-center mt-6">
-        <Image
-          src={session.user.image || ""}
-          alt={session.user.name || "user"}
-          height={75}
-          width={75}
-          className="rounded-full"
-        />
-        <div className="mt-2 text-lg">{session.user.name}</div>
-      </div>
       <BlurFade inView className="my-8 mx-8">
+        <div className="mx-auto flex flex-col justify-center items-center mt-6">
+          <Image
+            src={session.user.image || ""}
+            alt={session.user.name || "user"}
+            height={75}
+            width={75}
+            className="rounded-full"
+          />
+          <div className="mt-2 text-lg">{session.user.name}</div>
+        </div>
+      </BlurFade>
+      <BlurFade inView delay={0.2} className="my-8 mx-8">
         <DetailForm userDetails={userData} />
       </BlurFade>
     </div>

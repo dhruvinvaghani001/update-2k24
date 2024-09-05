@@ -10,14 +10,14 @@ const ScheduleSection = dynamic(() => import("@/components/ScheduleSection"));
 export const metadata: Metadata = {
   title: "Updates 2k24",
   description:
-    "Updates 2k24 is The Official Tech-event of Department of Computer engineering, SCET. Be a part of this Event and transition from Floppy To Cloud.",
+    "Updates 2k24 - The Official Tech Fest of the Computer Engineering Department at SCET. Get ready to dive into exciting events, where we go from Floppy to Cloud, celebrating tech in every way!",
   openGraph: {
     title: "Updates 2k24",
     description:
-      "Updates 2k24 is The Official Tech-event of Department of Computer engineering, SCET. Be a part of this Event and transition from Floppy To Cloud.",
+      "Updates 2k24 - The Official Tech Fest of the Computer Engineering Department at SCET. Get ready to dive into exciting events, where we go from Floppy to Cloud, celebrating tech in every way!",
     images: [
       {
-        url: "/path-to-your-og-image.jpg",
+        url: "/updates-poster.png",
         width: 1200,
         height: 630,
         alt: "Updates 2k24 poster",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Updates 2k24",
     description:
-      "Updates 2k24 is The Official Tech-event of Department of Computer engineering, SCET. Be a part of this Event and transition from Floppy To Cloud.",
-    images: ["/path-to-your-twitter-image.jpg"], // Replace with the path to your Twitter card image
+      "Updates 2k24 - The Official Tech Fest of the Computer Engineering Department at SCET. Get ready to dive into exciting events, where we go from Floppy to Cloud, celebrating tech in every way!",
+    images: ["/updates-poster.png"],
   },
 };
 export default async function Page() {
