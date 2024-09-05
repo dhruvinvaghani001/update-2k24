@@ -22,7 +22,20 @@ export async function POST(
     }
     const membersId = reqBody.emails.map((item: any) => item.value);
     membersId.push(session?.user.id.toString());
+    const objectIdInstances = membersId.map(
+      (id: string) => new mongoose.Types.ObjectId(id)
+    );
 
+    const existingDocument = await GroupRegistration.findOne({
+      userId: { $in: objectIdInstances },
+    }).select("_id");
+
+    if (existingDocument) {
+      return NextResponse.json(
+        { message: "Please refresh Page!" },
+        { status: 409 }
+      );
+    }
     const group = await Group.create({
       eventId: params.id,
       ownerId: session.user.id,
