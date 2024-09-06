@@ -4,6 +4,7 @@ import GradientAnimatedText from "./GradientAnimatedText";
 import Image from "next/image";
 import codewinglet from "/public/sponsers/codewinglet.svg";
 import vsOverseas from "/public/sponsers/vs-overseas.png";
+import Link from "next/link";
 
 const SponserSection = () => {
   return (
@@ -16,18 +17,32 @@ const SponserSection = () => {
       </BlurFade>
       <BlurFade inView className="mt-6 mb-12 md:my-12">
         <div className="flex flex-col md:flex-row justify-center items-center md:gap-12 m-4">
-          <Image
-            src={codewinglet}
-            alt="Events Schedule"
-            className="aspect-video scale-75 md:scale-100 invert w-4/5 md:w-1/4 rounded-lg"
-            loading="lazy"
-          />
-          <Image
-            src={vsOverseas}
-            alt="Events Schedule"
-            className="scale-75 md:scale-100 invert w-4/5 md:w-1/4 rounded-lg"
-            loading="lazy"
-          />
+          <Link
+            href={"https://www.codewinglet.com/"}
+            target="_blank"
+            title="CodeWinglet"
+            className="aspect-video scale-75 md:scale-100 invert w-4/5 md:w-1/4 rounded-lg flex items-center justify-center"
+          >
+            <Image
+              src={codewinglet}
+              alt="Events Schedule"
+              // className="aspect-video scale-75 md:scale-100 invert w-4/5 md:w-1/4 rounded-lg"
+              loading="lazy"
+            />
+          </Link>
+          <Link
+            href={"https://www.instagram.com/v.s.overseas/"}
+            target="_blank"
+            title="V.S Overseas"
+            className="aspect-video scale-75 md:scale-100 invert w-4/5 md:w-1/4 rounded-lg flex items-center justify-center"
+          >
+            <Image
+              src={vsOverseas}
+              alt="Events Schedule"
+              // className="scale-75 md:scale-100 invert w-4/5 md:w-1/4 rounded-lg"
+              loading="lazy"
+            />
+          </Link>
         </div>
       </BlurFade>
     </section>
