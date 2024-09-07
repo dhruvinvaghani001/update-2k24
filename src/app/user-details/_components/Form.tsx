@@ -166,7 +166,9 @@ const DetailForm = ({ userDetails }: any) => {
                   className="max-w-xs"
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage>
+                If you don&apos;t have then you can enter your Roll number
+              </FormMessage>
             </FormItem>
           )}
         />
