@@ -12,9 +12,11 @@ type Props = {};
 const RegisterSoloButton = ({
   eventId,
   isAlredyRegister,
+  isDetailsAvailable,
 }: {
   eventId: string;
   isAlredyRegister: boolean;
+  isDetailsAvailable: boolean;
 }) => {
   const { data: session, status } = useSession();
   const router = useRouter();
@@ -26,6 +28,15 @@ const RegisterSoloButton = ({
       return;
     }
     if (status == "authenticated") {
+      if (!isDetailsAvailable) {
+        router.push("/user-details");
+        return toast({
+          title: "Please submit your details!",
+          variant: "destructive",
+          description: "After submiting your details you can participate!",
+          duration: 1500,
+        });
+      }
       try {
         setIsLoading(true);
         const response = await axios.post(

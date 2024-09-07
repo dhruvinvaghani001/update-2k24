@@ -15,6 +15,7 @@ import User from "@/models/user.model";
 import events from "@/lib/events";
 import GradientAnimatedText from "@/components/GradientAnimatedText";
 import { Metadata } from "next";
+import UserDetail from "@/models/userdetails.model";
 
 export async function generateMetadata({
   params,
@@ -71,6 +72,12 @@ const page = async ({ params }: { params: { id: string } }) => {
   }
 
   await connectDB();
+
+  const userDetails = await UserDetail.findOne({
+    userId: new mongoose.Types.ObjectId(session?.user.id),
+  });
+
+  const isDetailsAvailable = userDetails ? true : false;
 
   const eventData = await Event.findOne({
     name: params.id,
@@ -175,6 +182,7 @@ const page = async ({ params }: { params: { id: string } }) => {
             <RegisterSoloButton
               eventId={eventData._id.toString()}
               isAlredyRegister={isSoloAlredyRegistered}
+              isDetailsAvailable={isDetailsAvailable}
             />
           </div>
         ) : dataOfMembers.length == 0 ? (
@@ -183,6 +191,7 @@ const page = async ({ params }: { params: { id: string } }) => {
             maxi={eventData.maxMember}
             eventId={eventData._id.toString()}
             emailOptions={emailOptions}
+            isDetailsAvailable={isDetailsAvailable}
           />
         ) : (
           <div className="p-4 w-full bg-gradient-to-br from-red-950/30 to-red-800/30 rounded-lg border border-red-900/70">

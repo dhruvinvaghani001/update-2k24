@@ -31,6 +31,7 @@ type GroupRegistrationFormProps = {
   mini: number;
   maxi: number;
   eventId: string;
+  isDetailsAvailable: boolean;
 };
 
 export default function GroupRegistrationForm({
@@ -38,6 +39,7 @@ export default function GroupRegistrationForm({
   mini,
   maxi,
   eventId,
+  isDetailsAvailable,
 }: GroupRegistrationFormProps) {
   const [isLoading, setIsLoading] = React.useState(false);
   const { data: session, status } = useSession();
@@ -66,6 +68,15 @@ export default function GroupRegistrationForm({
 
   const onSubmit = async (values: GroupFormValues) => {
     if (status == "authenticated") {
+      if (!isDetailsAvailable) {
+        router.push("/user-details");
+        return toast({
+          title: "Please submit your details!",
+          variant: "destructive",
+          description: "After submiting details you can participate!",
+          duration: 1500,
+        });
+      }
       try {
         setIsLoading(true);
         const response = await axios.post(
