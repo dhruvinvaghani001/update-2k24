@@ -263,7 +263,7 @@ const events = [
     logo: "/events/logo/dev-battle.png",
     Tagline: "Showcase Your Coding Skills in a Thrilling Competition!",
     description:
-      "A dynamic and competitive coding event challenging participants to showcase their debugging and coding skills in two exciting rounds.",
+      "We are thrilled to present the Codewinglet DevBattle, a dynamic and competitive coding event organized as part of the Software Department's events (Updates 2024). Our goal is to bring together the brightest minds from various colleges, challenging them to showcase their coding and debugging skills in a thrilling two-round competition.",
     eventType: "Coding Competition",
     teamSize: "Individual",
     minMember: "1",
@@ -272,20 +272,37 @@ const events = [
     time: "",
     rounds: [
       {
-        name: "Round 1: Debugging Round",
+        name: "Round 1: Debugging Round (45 minutes)",
         Rules: [
           "Questions are written in C language. You need to debug the question and write the output properly.",
           "No assistance will be provided with syntax errors, so choose the programming language you are most proficient in.",
         ],
       },
       {
-        name: "Round 2: Coding Challenge",
+        name: "Round 2: Coding Challenge (1.5 hrs)",
         Rules: [
           "You can solve the problem in any language you are most proficient in.",
           "All test cases should be passed when submitting the answer.",
           "Make sure you understand the problem statement thoroughly before starting your code.",
           "No assistance or clarifications will be provided.",
         ],
+      },
+    ],
+    prizePool: [
+      {
+        id: "firstPrize",
+        name: "1st Prize",
+        amount: "3000",
+      },
+      {
+        id: "secondPrize",
+        name: "2nd Prize",
+        amount: "2000",
+      },
+      {
+        id: "thirdPrize",
+        name: "3rd Prize",
+        amount: "1000",
       },
     ],
     "co-ordinators": [

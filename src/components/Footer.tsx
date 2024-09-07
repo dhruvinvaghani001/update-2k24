@@ -32,9 +32,33 @@ const Footer = () => {
             Web Developers
           </h1>
           <div className="flex flex-col gap-1">
-            <p className="text-muted-foreground">Dhruvin Vaghani</p>
-            <p className="text-muted-foreground">Nikhar Savaliya</p>
-            <p className="text-muted-foreground">Abhishek Radadiya</p>
+            <p className="text-muted-foreground">
+              <a
+                href="https://github.com/dhruvinvaghani001"
+                target="_blank"
+                className="underline underline-offset-4"
+              >
+                Dhruvin Vaghani
+              </a>
+            </p>
+            <p className="text-muted-foreground">
+              <a
+                href="https://github.com/nikhar-savaliya"
+                target="_blank"
+                className="underline underline-offset-4"
+              >
+                Nikhar Savaliya
+              </a>
+            </p>
+            <p className="text-muted-foreground">
+              <a
+                href="https://github.com/abhiradadiya07"
+                target="_blank"
+                className="underline underline-offset-4"
+              >
+                Abhishek Radadiya
+              </a>
+            </p>
             <p className="text-muted-foreground">Vansh Golakiya</p>
             <p className="text-muted-foreground">Satyam Tiwari</p>
             <p className="text-muted-foreground">Dev Italiya</p>

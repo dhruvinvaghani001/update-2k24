@@ -257,6 +257,51 @@ const page = async ({ params }: { params: { id: string } }) => {
               })}
             </ul>
           </div>
+          {currEvent.prizePool && (
+            <div className="p-4 mt-6 md:mt-0 w-full col-span-6 bg-gradient-to-br from-slate-900/30 to-violet-900/30 rounded-lg border border-violet-400/70">
+              <h4 className="text-3xl mb-2 mt-1 font-bold text-violet-500">
+                Prizes and Awards:
+              </h4>
+              <p className="text-[11px] mb-2 text-muted-foreground sm:text-sm">
+                *Candidates who meet the necessary qualifications based on our
+                review may be considered for an interview
+              </p>
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-violet-900/50">
+                    <th className="p-2 text-left text-yellow-200 font-bold border border-violet-400/50">
+                      Rank
+                    </th>
+                    <th className="p-2 text-left text-yellow-200 font-bold border border-violet-400/50">
+                      Prize
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {currEvent.prizePool &&
+                    currEvent.prizePool.map((prize, index) => (
+                      <tr
+                        key={prize.id}
+                        className="hover:bg-violet-900/30 transition-colors"
+                      >
+                        <td className="p-2 border border-violet-400/50 text-white font-semibold">
+                          {prize.name}
+                        </td>
+                        <td className="p-2 border border-violet-400/50 text-white  list-disc">
+                          <p className="text-emerald-500 font-semibold">
+                            ₹{prize.amount}
+                          </p>
+                          <p className="text-sm">+ Exclusive Gift</p>
+                          <p className="text-sm">
+                            + Certificate of Achievement
+                          </p>
+                        </td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
         <div className="p-4 mt-6 w-full bg-gradient-to-br from-slate-900/30 to-teal-900/30 rounded-lg border border-teal-400/70 sm:grid sm:grid-cols-2">
           <div className="sm:border-r-2 sm:mr-4">
