@@ -54,6 +54,7 @@ const RegisterSoloButton = ({
           duration: 1500,
         });
       } catch (error) {
+        setIsLoading(false);
         console.log(error);
         return toast({
           title: "Something went wrong",
@@ -70,19 +71,17 @@ const RegisterSoloButton = ({
   return (
     <Button
       onClick={handleSoloRegistration}
-      disabled={isAlredyRegister}
+      disabled={isAlredyRegister || isLoading}
       className="flex items-center gap-2 max-md:w-full"
     >
-      {isLoading && (
-        <Loader2 className="size-5 animate-spin text-foreground/75 " />
-      )}
       {isAlredyRegister ? (
         <>
-          {" "}
-          <CheckCircle className="text-green-100" /> Alredy Registered
+          <CheckCircle className="text-green-100" /> Already Registered
         </>
+      ) : isLoading ? (
+        <Loader2 className="size-5 animate-spin text-foreground/75 " />
       ) : (
-        <>Register for this Event</>
+        "Register"
       )}
     </Button>
   );

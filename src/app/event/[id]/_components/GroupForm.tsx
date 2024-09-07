@@ -20,6 +20,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { toast } from "@/components/ui/use-toast";
 import { Separator } from "@radix-ui/react-separator";
+import { Loader2 } from "lucide-react";
 
 export type EmailOption = {
   value: string;
@@ -144,8 +145,12 @@ export default function GroupRegistrationForm({
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full md:w-fit">
-          Register Group
+        <Button type="submit" disabled={isLoading} className="w-full md:w-fit">
+          {isLoading ? (
+            <Loader2 className="size-5 animate-spin text-foreground/75 " />
+          ) : (
+            "Register Group"
+          )}
         </Button>
       </form>
     </Form>

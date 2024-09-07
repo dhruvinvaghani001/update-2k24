@@ -173,9 +173,12 @@ const DetailForm = ({ userDetails }: any) => {
           )}
         />
 
-        <Button type="submit" className="flex gap-1 items-center max-md:w-full">
-          {isLoading && <Loader2 className="size-5 animate-spin" />}
-          Submit
+        <Button
+          type="submit"
+          className="flex gap-1 items-center max-md:w-full"
+          disabled={isLoading}
+        >
+          {isLoading ? <Loader2 className="size-5 animate-spin" /> : "Submit"}
         </Button>
       </form>
     </Form>
