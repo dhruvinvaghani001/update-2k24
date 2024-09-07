@@ -382,6 +382,11 @@ const events = [
         profilePic: "Om_Sonani.png",
         mobileNumber: "9081488388",
       },
+      {
+        name: "Dhyani Solanki",
+        profilePic: "Dhyani_Solanki.jpg",
+        mobileNumber: "9081488388",
+      },
     ],
     facultyCoordinators: [
       {
@@ -425,8 +430,8 @@ const events = [
         mobileNumber: "",
       },
       {
-        name: "Pratham Desai",
-        profilePic: "",
+        name: "Alpesh Jasani",
+        profilePic: "Alpesh_Jasani.jpg",
         mobileNumber: "7623048812",
       },
       {
@@ -438,12 +443,12 @@ const events = [
     volunteers: [
       {
         name: "Preet Limbasiya",
-        profilePic: "",
+        profilePic: "Preet_Limbasiya.jpg",
         mobileNumber: "9726643698",
       },
       {
         name: "Nisharg Nanavati",
-        profilePic: "",
+        profilePic: "Nisharg_Nanavati.jpg",
         mobileNumber: "6359908964",
       },
     ],

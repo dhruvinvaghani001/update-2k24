@@ -90,6 +90,10 @@ const marketingTeam: PersonProps[] = [
     name: "Darshan Ukani",
     image: "Darshan_Ukani.jpg",
   },
+  {
+    name: "Manendra Jadeja",
+    image: "Manendra_Jadeja.JPG",
+  },
 ];
 
 const graphicsTeam: PersonProps[] = [
