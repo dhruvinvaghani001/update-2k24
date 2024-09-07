@@ -108,7 +108,7 @@ const page = async ({ params }: { params: { id: string } }) => {
 
     const userdata = await User.find({
       _id: { $nin: alredyresgitersIds },
-    });
+    }).sort({ email: 1 });
 
     // all emails which is available for the group
     emailOptions = userdata.map((user) => ({
