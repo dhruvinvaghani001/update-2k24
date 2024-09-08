@@ -63,9 +63,9 @@ const page = async ({ params }: { params: { id: string } }) => {
     return event.id === eventId;
   })[0];
 
-  console.log(eventId);
-  console.log("EVENT PAGE");
-  console.log(currEvent);
+  // console.log(eventId);
+  // console.log("EVENT PAGE");
+  // console.log(currEvent);
 
   if (!currEvent) {
     return redirect("/events");

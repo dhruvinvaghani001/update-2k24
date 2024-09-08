@@ -1,9 +1,9 @@
 const events = [
   {
     id: "avishkaar",
-    name: "Avishkaar",
-    coverImage: "/events/poster/avishkaar.png",
-    logo: "/events/logo/avishkaar.png",
+    name: "Aavishkar",
+    coverImage: "/events/poster/aavishkar.png",
+    logo: "/events/logo/aavishkar.png",
     Tagline: "Innovate to Elevate",
     description: "",
     eventType: "GROUP",
@@ -798,14 +798,242 @@ const events = [
   },
 ];
 
-export const featuredEvents = events.filter((event) => {
-  if (
-    event.id === "cineverse" ||
-    event.id === "stock-x-stake" ||
-    event.id === "devBattle"
-  ) {
-    return event;
-  }
-});
+// export const featuredEvents = events.filter((event) => {
+//   if (
+//     event.id === "devBattle" ||
+//     event.id === "cineverse" ||
+//     event.id === "stock-x-stake"
+//   ) {
+//     return event;
+//   }
+// });
+
+export const featuredEvents = [
+  {
+    id: "devBattle",
+    name: "Dev Battle",
+    coverImage: "/events/poster/dev-battle.png",
+    logo: "/events/logo/dev-battle.png",
+    Tagline: "Showcase Your Coding Skills in a Thrilling Competition!",
+    description:
+      "We are thrilled to present the Codewinglet DevBattle, a dynamic and competitive coding event organized as part of the Software Department's events (Updates 2024). Our goal is to bring together the brightest minds from various colleges, challenging them to showcase their coding and debugging skills in a thrilling two-round competition.",
+    eventType: "Coding Competition",
+    teamSize: "Individual",
+    minMember: "1",
+    maxMember: "1",
+    date: "",
+    time: "",
+    rounds: [
+      {
+        name: "Round 1: Debugging Round (45 minutes)",
+        Rules: [
+          "Questions are written in C language. You need to debug the question and write the output properly.",
+          "No assistance will be provided with syntax errors, so choose the programming language you are most proficient in.",
+        ],
+      },
+      {
+        name: "Round 2: Coding Challenge (1.5 hrs)",
+        Rules: [
+          "You can solve the problem in any language you are most proficient in.",
+          "All test cases should be passed when submitting the answer.",
+          "Make sure you understand the problem statement thoroughly before starting your code.",
+          "No assistance or clarifications will be provided.",
+        ],
+      },
+    ],
+    prizePool: [
+      {
+        id: "firstPrize",
+        name: "1st Prize",
+        amount: "3000",
+      },
+      {
+        id: "secondPrize",
+        name: "2nd Prize",
+        amount: "2000",
+      },
+      {
+        id: "thirdPrize",
+        name: "3rd Prize",
+        amount: "1000",
+      },
+    ],
+    "co-ordinators": [
+      {
+        name: "Abhishek Radadiya",
+        profilePic: "Abhishek Radadiya.jpg",
+        mobileNumber: "",
+      },
+      {
+        name: "Nikhar Savaliya",
+        profilePic: "nikhar_savaliya.jpg",
+        mobileNumber: "",
+      },
+      {
+        name: "Dhruvin Vaghani",
+        profilePic: "Dhruvin_Vaghani.jpg",
+        mobileNumber: "",
+      },
+    ],
+    volunteers: [
+      {
+        name: "Darsh Matariya",
+        profilePic: "Darsh_Matariya.jpg",
+        mobileNumber: "",
+      },
+    ],
+    facultyCoordinators: [
+      {
+        name: "",
+      },
+    ],
+  },
+  {
+    id: "cineverse",
+    name: "Cineverse",
+    coverImage: "/events/poster/cineverse.png",
+    logo: "/events/logo/cineverse.png",
+    Tagline: "Challenge Your Inner Movie Buff!",
+    description: "",
+    eventType: "GROUP",
+    teamSize: "",
+    minMember: "2",
+    maxMember: "3",
+    date: "20 September",
+    time: "9:30 to 11:00 AM",
+    rounds: [
+      {
+        name: "Round 1 - Quiz Round (“Lights, Camera, Quiz!”)",
+        Rules: [
+          "Team can consist of a Minimum of 2 members and a maximum of 3 members. Each Team must be registered before the start of the event.",
+          "Questions in this round will cover a variety of topics related to movies, series, songs, characters, singers, etc., including BOLLYWOOD and HOLLYWOOD categories. These questions may include identifying characters, actors, singers, and related trivia.",
+          "Questions will be presented in a multiple-choice format or one-word answers.",
+          "A total of 50 questions will be displayed.",
+          "Time limit will be 10 seconds per each question.",
+          "Some images will be intentionally shown as blurred, shadowed, or partial.",
+        ],
+      },
+      {
+        name: "Round 2 - Buzzer Round (“Buzz in, Win Big!”)",
+        Rules: [
+          "Identifying Bollywood songs from English Lyrics, Recognizing Movies/Series from signature steps, famous quotes or dialogues, memes, Identifying the name of the song from missing lines of lyrics.",
+          "Teams will press the buzzer; those who press first will get the chance to answer the question first.",
+          "If the answer guessed is incorrect, it will result in negative marking.",
+          "Marking scheme will be explained in detail during the event.",
+        ],
+      },
+    ],
+    "co-ordinators": [
+      {
+        name: "Yug Golakiya",
+        profilePic: "Yug_Golakiya.jpg",
+        mobileNumber: "9510705625",
+      },
+      {
+        name: "Rushi Patel",
+        profilePic: "Rushi_Patel.jpg",
+        mobileNumber: "7359760025",
+      },
+      {
+        name: "Priyanshi Dobariya",
+        profilePic: "Priyanshi_Dobariya.jpg",
+        mobileNumber: "7984790671",
+      },
+      {
+        name: "Shriya Lukhi",
+        profilePic: "Shriya_Lukhi.jpg",
+        mobileNumber: "9825995867",
+      },
+    ],
+    volunteers: [
+      {
+        name: "Palak Thumber",
+        profilePic: "Palak_thumber.jpg",
+        mobileNumber: "6351704499",
+      },
+      {
+        name: "Jiya Kalathiya",
+        profilePic: "Jiya_Kalathiya.jpg",
+        mobileNumber: "7016496279",
+      },
+    ],
+    facultyCoordinators: [
+      {
+        name: "None",
+      },
+    ],
+  },
+  {
+    id: "stock-x-stake",
+    name: "Stock X Stake",
+    coverImage: "/events/poster/stock-x-stake.png",
+    logo: "/events/logo/stock-x-stake.png",
+    Tagline: "Paisa kamya nahi banya jata hai",
+    description: "",
+    eventType: "GROUP",
+    teamSize: "",
+    minMember: "2",
+    maxMember: "3",
+    date: "",
+    time: "",
+    rounds: [
+      {
+        name: "Round 1",
+        Rules: [
+          "Start with the same balance, investing in 6 companies over 5 rounds with 3 cycles each.",
+          "Buy or sell one company’s stock per cycle using stock up/down cards.",
+          "Teams with the highest net worth advance to the next round.",
+        ],
+      },
+      {
+        name: "Round 2: Bidwars",
+        Rules: [
+          "20 mystery items, 5 items drawn each round.",
+          "Teams bid on items within the announced price range using their starting capital.",
+          "Teams with the highest combined item value and remaining cash advance.",
+        ],
+      },
+    ],
+    "co-ordinators": [
+      {
+        name: "Kenil Vekriya",
+        profilePic: "kenil_vekariya.jpg",
+        mobileNumber: "9723354048",
+      },
+      {
+        name: "Aryan Jadav",
+        profilePic: "Aryan_jadav.jpg",
+        mobileNumber: "8490817117",
+      },
+      {
+        name: "Rahul Mehta",
+        profilePic: "Rahul_Mehta.jpg",
+        mobileNumber: "",
+      },
+      {
+        name: "Dev Vaghani",
+        profilePic: "Dev_Vaghani.jpg",
+        mobileNumber: "9313960234",
+      },
+    ],
+    volunteers: [
+      {
+        name: "Ronak Talaviya",
+        profilePic: "Ronak_Talaviya.jpg",
+        mobileNumber: "9265677161",
+      },
+      {
+        name: "Dhyey Chauhan",
+        profilePic: "Dhyey_chauhan.JPG",
+        mobileNumber: "9054680228",
+      },
+    ],
+    facultyCoordinators: [
+      {
+        name: "None",
+      },
+    ],
+  },
+];
 
 export default events;
