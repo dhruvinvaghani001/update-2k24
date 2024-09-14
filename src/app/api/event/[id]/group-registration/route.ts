@@ -5,6 +5,7 @@ import GroupRegistration from "@/models/groupRegistration.model";
 import mongoose from "mongoose";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
+import { string } from "zod";
 
 export async function POST(
   request: NextRequest,
@@ -20,8 +21,24 @@ export async function POST(
         { status: 401 }
       );
     }
-    const membersId = reqBody.emails.map((item: any) => item.value);
+    const membersId: string[] = reqBody.emails.map((item: any) => item.value);
     membersId.push(session?.user.id.toString());
+
+    // const objectIdInstances = membersId.map(
+    //   (id) => new mongoose.Types.ObjectId(id)
+    // );
+
+    // const existingDocument = await GroupRegistration.findOne({
+    //   userId: { $in: objectIdInstances },
+    //   eventId: new mongoose.Types.ObjectId(params.id),
+    // }).select("_id");
+
+    // if (existingDocument) {
+    //   return NextResponse.json(
+    //     { message: "Refresh the page!" },
+    //     { status: 409 }
+    //   );
+    // }
 
     const group = await Group.create({
       eventId: params.id,
