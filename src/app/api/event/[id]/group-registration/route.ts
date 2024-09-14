@@ -5,7 +5,6 @@ import GroupRegistration from "@/models/groupRegistration.model";
 import mongoose from "mongoose";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-import { string } from "zod";
 
 export async function POST(
   request: NextRequest,
