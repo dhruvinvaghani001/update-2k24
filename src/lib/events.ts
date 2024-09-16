@@ -16,11 +16,11 @@ const events = [
       {
         name: "round 1",
         Rules: [
-          "Solo as well as group event (Min 1 participant and Max 3 participants)",
-          "Participants have to pitch their ideas to jury",
-          "You have to compulsory prepare a presentation of your idea",
-          "You could bring any real/physical product (Optional)",
-          "Each team would get maximum 3 mins to pitch their idea.",
+          "Participants may present a partial/ complete Model of their idea or only idea pitching of their product",
+          "participants can provide their list of equipments  for making their prototype through Google classroom ( Code will be provided on registration form )on the day of  registration it self so that we can procure well in time",
+          "Students can collect these components from Prof.Bhumika Bhatt by 19th September 12:00 PM so that participants can workupon model within time frame .",
+          "Maximum time to pitch an idea for your idea/model  is  5 to 7  minutes. ",
+          "Each team comprises of a maximum of 5 students  (if they have idea with  prototype) Maximum of 3 Students ( if only idea pitch )",
         ],
       },
     ],
@@ -115,6 +115,9 @@ const events = [
       {
         name: "Prof. Jaydeep Gheewala",
       },
+      {
+        name: "Prof. Jayesh Choudhary",
+      },
     ],
   },
   {
@@ -186,11 +189,7 @@ const events = [
         mobileNumber: "7016496279",
       },
     ],
-    facultyCoordinators: [
-      {
-        name: "None",
-      },
-    ],
+    facultyCoordinators: [],
   },
   {
     id: "dataloom",
@@ -253,6 +252,9 @@ const events = [
     facultyCoordinators: [
       {
         name: "Prof. Bhavesh Patel",
+      },
+      {
+        name: "Prof. Jaydeep Barad",
       },
     ],
   },
@@ -329,11 +331,7 @@ const events = [
         mobileNumber: "",
       },
     ],
-    facultyCoordinators: [
-      {
-        name: "",
-      },
-    ],
+    facultyCoordinators: [],
   },
 
   {
@@ -351,11 +349,36 @@ const events = [
     time: "",
     rounds: [
       {
-        name: "Round 1: Escape The Room",
+        name: "Round 1: Code Debugging",
         Rules: [
-          "Stage 1: Debug The Code",
-          "Participants need to debug the code and find the first two digits for the lock.",
-          "Any participant found engaging in unfair practices or violating the integrity of the competition will be immediately disqualified.",
+          "Platform: Online coding platform",
+          "Objective: Participants must debug a given code.",
+          "Outcome: The platform tracks participants' timing, correctness, and other relevant details.",
+          "Reward: Upon successfully debugging the code, participants will receive the first two digits necessary for the final stage.",
+        ],
+      },
+      {
+        name: "Round 2: Circuit Design",
+        Rules: [
+          "Task: Participants will be presented with a demo circuit and a truth table.",
+          "Objective: Based on the given Problem statement /truth table, participants must design and simulate a circuit.",
+          "Outcome: Participants will obtain the next two digits after successfully simulating the circuit.",
+          "Reward: The two digits from the circuit output will contribute to the final stage.",
+        ],
+      },
+      {
+        name: "Round 3: Riddle Solving",
+        Rules: [
+          "Task: Participants will receive a riddle that hints at the correct arrangement of the four digits obtained from the previous stages.",
+          "Objective: Solve the riddle to determine the correct order of the digits.",
+          "Final Goal: Use the arranged digits as a password to unlock the box containing the key to the locked lab.",
+        ],
+      },
+      {
+        name: "Winning Criteria",
+        Rules: [
+          "The first team to unlock the box and retrieve the key wins the competition.",
+          "If no team successfully unlocks the box, the winner will be determined based on the best overall timing and performance across all stages.",
         ],
       },
     ],
@@ -391,6 +414,9 @@ const events = [
     facultyCoordinators: [
       {
         name: "Prof. Vandana Joshi",
+      },
+      {
+        name: "Prof. Rachana Oza",
       },
     ],
   },
@@ -455,6 +481,9 @@ const events = [
     facultyCoordinators: [
       {
         name: "Prof. Dhatri Pandya",
+      },
+      {
+        name: "Prof. Nirali Nanavati",
       },
     ],
   },
@@ -586,9 +615,7 @@ const events = [
         mobileNumber: "6354167241",
       },
     ],
-    facultyCoordinators: [
-      
-    ],
+    facultyCoordinators: [],
   },
   {
     id: "the-resume-relay",
@@ -717,9 +744,7 @@ const events = [
         mobileNumber: "9099395009",
       },
     ],
-    facultyCoordinators: [
-      
-    ],
+    facultyCoordinators: [],
   },
   {
     id: "stock-x-stake",
@@ -786,9 +811,7 @@ const events = [
         mobileNumber: "9054680228",
       },
     ],
-    facultyCoordinators: [
-     
-    ],
+    facultyCoordinators: [],
   },
 ];
 
@@ -951,9 +974,7 @@ export const featuredEvents = [
         mobileNumber: "7016496279",
       },
     ],
-    facultyCoordinators: [
-    
-    ],
+    facultyCoordinators: [],
   },
   {
     id: "stock-x-stake",
@@ -1020,9 +1041,7 @@ export const featuredEvents = [
         mobileNumber: "9054680228",
       },
     ],
-    facultyCoordinators: [
-     
-    ],
+    facultyCoordinators: [],
   },
 ];
 

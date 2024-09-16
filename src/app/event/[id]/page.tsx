@@ -16,6 +16,7 @@ import events from "@/lib/events";
 import GradientAnimatedText from "@/components/GradientAnimatedText";
 import { Metadata } from "next";
 import UserDetail from "@/models/userdetails.model";
+import Link from "next/link";
 
 export async function generateMetadata({
   params,
@@ -186,13 +187,15 @@ const page = async ({ params }: { params: { id: string } }) => {
             />
           </div>
         ) : dataOfMembers.length == 0 ? (
-          <GroupRegistrationForm
-            mini={eventData.minMember}
-            maxi={eventData.maxMember}
-            eventId={eventData._id.toString()}
-            emailOptions={emailOptions}
-            isDetailsAvailable={isDetailsAvailable}
-          />
+          <>
+            <GroupRegistrationForm
+              mini={eventData.minMember}
+              maxi={eventData.maxMember}
+              eventId={eventData._id.toString()}
+              emailOptions={emailOptions}
+              isDetailsAvailable={isDetailsAvailable}
+            />
+          </>
         ) : (
           <div className="p-4 w-full bg-gradient-to-br from-red-950/30 to-red-800/30 rounded-lg border border-red-900/70">
             <p className="italic text-sm text-violet-50/60 mb-4">

@@ -21,6 +21,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "@/components/ui/use-toast";
 import { Separator } from "@radix-ui/react-separator";
 import { Loader2 } from "lucide-react";
+import Link from "next/link";
 
 export type EmailOption = {
   value: string;
@@ -45,7 +46,6 @@ export default function GroupRegistrationForm({
   const [isLoading, setIsLoading] = React.useState(false);
   const { data: session, status } = useSession();
   const router = useRouter();
-
   const groupFormSchema = z.object({
     emails: z
       .array(
@@ -152,6 +152,19 @@ export default function GroupRegistrationForm({
             "Register Group"
           )}
         </Button>
+        {eventId == "66d55fb267e58136c12b3531" && (
+          <>
+            <FormMessage className="text-white">
+              If you have Prototype ready then submit it here,{"   "}
+              <Link
+                href="https://classroom.google.com/c/NzEyODEzNDYxMDMy?cjc=7u7kf6c"
+                className="underline  text-blue-600"
+              >
+                Click Here
+              </Link>
+            </FormMessage>
+          </>
+        )}
       </form>
     </Form>
   );
