@@ -6,6 +6,7 @@ import {
   imageData,
   mainCoordinators,
   marketingTeam,
+  specialThanks,
   updatesLeads,
   webTeam,
 } from "@/lib/static";
@@ -60,6 +61,11 @@ const page = () => {
         Web Team
       </GradientAnimatedText>
       <PersonCardList data={webTeam} />
+
+      <GradientAnimatedText className="text-2xl mt-10 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
+        Special Thanks
+      </GradientAnimatedText>
+      <PersonCardList data={specialThanks} />
 
       <GradientAnimatedText className="text-2xl mt-10 mb-2 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none">
         Marketing Team

@@ -587,9 +587,7 @@ const events = [
       },
     ],
     facultyCoordinators: [
-      {
-        name: "None",
-      },
+      
     ],
   },
   {
@@ -720,9 +718,7 @@ const events = [
       },
     ],
     facultyCoordinators: [
-      {
-        name: "None",
-      },
+      
     ],
   },
   {
@@ -791,9 +787,7 @@ const events = [
       },
     ],
     facultyCoordinators: [
-      {
-        name: "None",
-      },
+     
     ],
   },
 ];
@@ -958,9 +952,7 @@ export const featuredEvents = [
       },
     ],
     facultyCoordinators: [
-      {
-        name: "None",
-      },
+    
     ],
   },
   {
@@ -1029,9 +1021,7 @@ export const featuredEvents = [
       },
     ],
     facultyCoordinators: [
-      {
-        name: "None",
-      },
+     
     ],
   },
 ];

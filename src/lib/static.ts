@@ -213,6 +213,13 @@ const imageData = [
   },
 ];
 
+const specialThanks = [
+  {
+    name: "Nihar Lakhani - La Mont Perfumes",
+    image: "Nihar_Lakhani.jpeg",
+  },
+];
+
 export {
   mainCoordinators,
   webTeam,
@@ -221,4 +228,5 @@ export {
   marketingTeam,
   graphicsTeam,
   imageData,
+  specialThanks,
 };
