@@ -102,6 +102,7 @@ const DetailForm = ({ userDetails }: any) => {
                     "MH",
                     "CL",
                     "AIDS",
+                    "IC",
                     "CH",
                     "EL",
                     "EC",

@@ -21,7 +21,19 @@ const userDetailSchema = new Schema<IUserDetail>(
     },
     department: {
       type: String,
-      enum: ["CO", "IT", "MH", "CL", "AIDS", "CH", "EL", "EC", "MCA", "TT"],
+      enum: [
+        "CO",
+        "IT",
+        "MH",
+        "CL",
+        "IC",
+        "AIDS",
+        "CH",
+        "EL",
+        "EC",
+        "MCA",
+        "TT",
+      ],
       required: true,
     },
     year: {
