@@ -9,7 +9,12 @@ type Props = {};
 
 const page = async (props: Props) => {
   const session = await getServerSession(authOptions);
-  if (session?.user.id != "66dc4f05984c28cea64f493b") {
+  const adminIds = [
+    "66ea5f6302cb7135404eeda1",
+    "66dc4f05984c28cea64f493b",
+    "66dc341e884535d469197ab1",
+  ];
+  if (!adminIds.includes(session?.user.id.toString()!)) {
     redirect("/");
   }
 

@@ -155,7 +155,8 @@ export default function GroupRegistrationForm({
         {eventId == "66d55fb267e58136c12b3531" && (
           <>
             <FormMessage className="text-white">
-              If you have Prototype ready then submit it here,{"   "}
+              If you want to issue components, from the department, required to
+              build your prototype then
               <Link
                 href="https://classroom.google.com/c/NzEyODEzNDYxMDMy?cjc=7u7kf6c"
                 className="underline  text-blue-600"
