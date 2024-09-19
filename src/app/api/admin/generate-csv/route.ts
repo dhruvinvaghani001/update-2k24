@@ -77,6 +77,11 @@ export async function POST(request: NextRequest) {
           },
         },
         {
+          $sort: {
+            createdAt: 1,
+          },
+        },
+        {
           $project: {
             _id: 0,
             userId: 0,
@@ -145,6 +150,7 @@ export async function POST(request: NextRequest) {
         {
           $sort: {
             groupId: 1,
+            createdAt: 1,
           },
         },
         {
