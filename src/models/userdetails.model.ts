@@ -33,6 +33,7 @@ const userDetailSchema = new Schema<IUserDetail>(
         "EC",
         "MCA",
         "TT",
+        "IMCA",
       ],
       required: true,
     },

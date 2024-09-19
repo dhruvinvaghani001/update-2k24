@@ -108,6 +108,7 @@ const DetailForm = ({ userDetails }: any) => {
                     "EC",
                     "MCA",
                     "TT",
+                    "IMCA",
                   ]}
                   {...field}
                   label="Select Department"
